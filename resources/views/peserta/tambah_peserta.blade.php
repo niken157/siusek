@@ -1,0 +1,72 @@
+@extends('template')
+
+@section('content')
+<div class="card">
+    <div class="card-body">
+      <h1>Form Tambah Data Peserta</h1>
+    <form action="/peserta/store" method="post">
+        {{ csrf_field() }}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">NIS Peserta</label>
+            <input name="nis" type="text" class="form-control @error('nis') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan nis" autofocus value="{{ old('nis') }}" required>
+            @error('nis')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{$message}}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nama Peserta</label>
+            <input name="nama_peserta" type="text" class="form-control @error('nama_peserta') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan nama peserta " value="{{ old('nama_peserta') }}" required>
+            @error('nama_peserta')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{$message}}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="keterangan">Kelas:</label>
+            <select name="kelas" required="reqired" class="form-control" id="kelas">
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="keterangan">Jurusan:</label>
+            <select name="jurusan" required="reqired" class="form-control" id="jurusan">
+            <option value="RPL">RPL</option>
+            <option value="TKJ">TKJ</option>
+            <option value="TIPTL">TIPTL</option>
+            <option value="TKRO">TKRO</option>
+            <option value="TPM">TPM</option>
+            <option value="DKV">DKV</option>
+            <option value="TAB">TAB</option>
+            <option value="TKKR">TKKR</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="keterangan">Jenis Kelamin:</label>
+            <select name="jenis_kelamin" required="reqired" class="form-control" id="jenis_kelamin">
+            <option value="Perempuan">Perempuan</option>
+            <option value="Laki-Laki">Laki-Laki</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="keterangan">Agama:</label>
+            <select name="agama" required="reqired" class="form-control" id="agama">
+            <option value="Islam">Islam</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Budha">Budha</option>
+            <option value="Konghucu">Konghucu</option>
+            </select>
+</div>
+        <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
+        <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
+        <input type="submit" value="Simpan Data" class="btn btn-primary">
+    </form>
+    </div>
+</div>
+@endsection

@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+
+class HomeController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    // public function index()
+    // {
+    //     return view('index');
+    // }
+
+    public function index()
+    {
+            $ujian = DB::table('peserta')
+                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                    // ->where('keterangan', 'pinjam')
+                    ->get();
+            //tampilkan view barang dan kirim ujiannya ke view tersebut
+            return view('index',['ujian' => $ujian]);//variabel passing
+    }
+}

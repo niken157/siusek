@@ -1,0 +1,52 @@
+
+@extends('template')
+
+@section('content')
+    <h1 class="mt-4">Data Kartu Ujian</h1>
+<br>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Data Kartu Ujian
+            <span style="float: right">
+                <a class="align-items-center justify-content-between btn btn-primary" href="/peserta/tambah" role="button"><i class="fa-solid fa-loader"></i>Generate</a>
+
+            {{-- <a class="align-items-center justify-content-between btn btn-primary" href="/ujian/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a> --}}
+
+            <a class="align-items-center justify-content-between btn btn-primary" href="/ujian/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
+
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Peserta</th>
+                        <th>Ruangan</th>
+                        <th>Sesi</th>
+                        <th>No PC</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php $no = 1; @endphp
+                    @foreach($ujian as $u)
+                        <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $u->nama_peserta}}</td>
+                            <td>{{ $u->nama_ruangan}}</td>
+                            <td>{{ $u->no_sesi}}</td>
+                            <td>{{ $u->nomor_pc}}</td>
+                            <td>
+                                <a class="btn btn-outline-primary" href="/ujian/edit/{{ $u->id_ujian }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
+                                |
+                                <a class="btn btn-outline-danger" href="/ujian/hapus/{{ $u->id_ujian }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+@endsection
