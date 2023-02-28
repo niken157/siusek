@@ -52,6 +52,54 @@ a.	Telah diselenggarakan Ujian Akhir Semester Ganjil dari pukul ...... : ...... 
                 <td>:</td>
                 <td>.............. orang, yakni :</td>
               </tr>
+                  //table link dari absensi yang tidak hadir
+                              <table border="1"rules ="all">
+                                <tbody>
+                              <tr>
+                              <td>Baris 1 kolom 1</td>
+                              <td >Baris 1 kolom 1</td>
+                              <td >Baris 1 kolom 1</td>
+                              </tr>
+                              <tr>
+                              <td>Baris 1 kolom 1</td>
+                              <td>Baris 1 kolom 1</td>
+                              <td>Baris 1 kolom 1</td>
+                              </tr>
+        
+                            </tbody>
+                            </table><br>
+        <p>
+        b. Catatan selama pelaksanaan Ujian Akhir Semester Ganjil 
+        ............................................................................................................................................................................<br>
+        ............................................................................................................................................................................<br>
+</p>
+<p>
+        Berita acara ini dibuat dengan sesungguhnya.<br> 
+      </p>
+      <b>Pengawas</b> <br>
+      <table>
+            <tbody>
+              <tr>
+                <td>1. Tanda Tangan </td>
+                <td>:</td>
+                <td>.................</td>
+              </tr>
+              <tr>
+                <td>&nbsp;Nama</td>
+                <td>:</td>
+                <td>.................</td>
+              </tr>
+              <tr>
+                <td>&nbsp;NIP</td>
+                <td>:</td>
+                <td>.................</td>
+              </tr>
+              <tbody>
+            </table>
+            <br><br>
+            <p>
+  <i>Keterangan</i> :*) Lingkari yang sesuai
+</p>
             </tbody>
           </table>
     </div>
