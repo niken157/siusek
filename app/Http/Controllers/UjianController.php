@@ -44,6 +44,16 @@ class UjianController extends Controller
             //tampilkan view barang dan kirim ujiannya ke view tersebut
             return view('print_absen',['ujian' => $ujian, 'nomer_ruangan' => $nomer_ruangan, 'no_sesi' => $no_sesi]);//variabel passing
     }
+    public function kartu()
+    {
+            $ujian = DB::table('peserta')
+                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                    ->get();
+            //tampilkan view barang dan kirim ujiannya ke view tersebut
+            return view('kartu',['ujian' => $ujian]);//variabel passing
+    }
 
     /**
      * Show the form for creating a new resource.

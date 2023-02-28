@@ -39,7 +39,7 @@
                             <td>{{ $u->nomor_pc}}</td>
                             <td>
                                 <a class="btn btn-outline-primary" href="/ujian/edit/{{ $u->id_ujian }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
-                                |
+
                                 <a class="btn btn-outline-danger" href="/ujian/hapus/{{ $u->id_ujian }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
                             </td>
                         </tr>

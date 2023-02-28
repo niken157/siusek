@@ -34,7 +34,11 @@ class HomeController extends Controller
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
                     // ->where('keterangan', 'pinjam')
                     ->get();
+            $peserta = DB::table('peserta')->get();
+            $ruangan = DB::table('ruangan')->get();
+            $sesi = DB::table('sesi')->get();
+            $uji = DB::table('ujian')->get();
             //tampilkan view barang dan kirim ujiannya ke view tersebut
-            return view('index',['ujian' => $ujian]);//variabel passing
+            return view('index',['ujian' => $ujian,'peserta' => $peserta,'ruangan' => $ruangan,'sesi' => $sesi,'uji' => $uji]);//variabel passing
     }
 }
