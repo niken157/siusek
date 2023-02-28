@@ -150,9 +150,9 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Berita Acara
                             </a>
-                            <a class="nav-link" href="/absen">
+                            <a class="nav-link" href="/daftar_hadir">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Absen
+                                Daftar Hadir
                             </a>
                         </div>
                     </div>

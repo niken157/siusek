@@ -14,10 +14,35 @@ class UjianController extends Controller
                      ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
                      ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
-                    // ->where('keterangan', 'pinjam')
                     ->get();
             //tampilkan view barang dan kirim ujiannya ke view tersebut
             return view('ujian.ujian',['ujian' => $ujian]);//variabel passing
+    }
+    public function absen()
+    {
+            $ujian = DB::table('peserta')
+                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                     ->groupBy('ruangan.nama_ruangan', 'sesi.no_sesi')
+                    ->get();
+            //tampilkan view barang dan kirim ujiannya ke view tersebut
+            return view('daftar_hadir',['ujian' => $ujian]);//variabel passing
+    }
+    public function cetak($nomer_ruangan,$no_sesi)
+    {
+            $ujian = DB::table('peserta')
+                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                    //  ->where('ruangan.nomer_ruangan', $nomer_ruangan)
+                     ->where([
+                        ['ruangan.nomer_ruangan', '=', $nomer_ruangan],
+                        ['sesi.no_sesi', '=', $no_sesi] ])
+                     ->orderBy('nomor_pc', 'asc')
+                    ->get();
+            //tampilkan view barang dan kirim ujiannya ke view tersebut
+            return view('print_absen',['ujian' => $ujian, 'nomer_ruangan' => $nomer_ruangan, 'no_sesi' => $no_sesi]);//variabel passing
     }
 
     /**

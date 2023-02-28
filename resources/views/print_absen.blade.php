@@ -12,7 +12,7 @@
                         <td><h6 class="text-center">GRUP / SESI</h6></td>
                     </tr>
                     <tr>
-                        <td><h1 class="text-center">1</h1></td>
+                        <td><h1 class="text-center">{{ $no_sesi}}</h1></td>
                     </tr>
                 </table>
               </div>
@@ -28,7 +28,7 @@
                         <td><h6 class="text-center">RUANG / LAB</h6></td>
                     </tr>
                     <tr>
-                        <td><h1 class="text-center">1</h1></td>
+                        <td><h1 class="text-center">{{ $nomer_ruangan}}</h1></td>
                     </tr>
                 </table>
               </div>
@@ -47,30 +47,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>NO</td>
-                        <td>NO UJIAN</td>
-                        <td>NAMA PESERTA UJIAN</td>
-                        <td>KELAS</td>
-                        <td>TANDA TANGAN</td>
-                    </tr>
-                    {{-- @php $no = 1; @endphp
-                    @foreach($peserta as $p)
+                    @php $no = 1; @endphp
+                    @foreach($ujian as $p)
                         <tr>
                             <td>{{ $no++ }}</td>
+                            <td>{{ $p->nomor_pc }}</td>
                             <td>{{ $p->nama_peserta }}</td>
-                            <td>{{ $p->nis }}</td>
-                            <td>{{ $p->kelas }}</td>
-                            <td>{{ $p->jurusan }}</td>
-                            <td>{{ $p->jenis_kelamin }}</td>
-                            <td>{{ $p->agama }}</td>
-                            <td>
-                                <a class="btn btn-outline-primary" href="/peserta/edit/{{ $p->id_peserta }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
-
-                                <a class="btn btn-outline-danger" href="/peserta/hapus/{{ $p->id_peserta }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
-                            </td>
+                            <td>{{ $p->kelas }} {{ $p->jurusan }}</td>
+                            <td>1</td>
                         </tr>
-                        @endforeach --}}
+                        @endforeach
                 </tbody>
             </table>
         </div>
