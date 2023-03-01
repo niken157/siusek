@@ -53,28 +53,25 @@ a.	Telah diselenggarakan Ujian Akhir Semester Ganjil dari pukul ...... : ...... 
                 <td>.............. orang, yakni :</td>
               </tr>
                   //table link dari absensi yang tidak hadir
-                              <table border="1"rules ="all">
-                                <tbody>
-                              <tr>
-                              <td>Baris 1 kolom 1</td>
-                              <td >Baris 1 kolom 1</td>
-                              <td >Baris 1 kolom 1</td>
+                              <table style="border: 1px solid black;">
+                              <tr style="border: 1px solid black;">
+                              <td style="border: 1px solid black;">Baris 1 kolom 1</td>
+                              <td style="border: 1px solid black;" >Baris 1 kolom 1</td>
+                              <td style="border: 1px solid black;" >Baris 1 kolom 1</td>
                               </tr>
-                              <tr>
-                              <td>Baris 1 kolom 1</td>
-                              <td>Baris 1 kolom 1</td>
-                              <td>Baris 1 kolom 1</td>
+                              <tr style="border: 1px solid black;">
+                              <td style="border: 1px solid black;">Baris 1 kolom 1</td>
+                              <td style="border: 1px solid black;">Baris 1 kolom 1</td>
+                              <td style="border: 1px solid black;">Baris 1 kolom 1</td>
                               </tr>
-        
-                            </tbody>
                             </table><br>
         <p>
-        b. Catatan selama pelaksanaan Ujian Akhir Semester Ganjil 
+        b. Catatan selama pelaksanaan Ujian Akhir Semester Ganjil
         ............................................................................................................................................................................<br>
         ............................................................................................................................................................................<br>
 </p>
 <p>
-        Berita acara ini dibuat dengan sesungguhnya.<br> 
+        Berita acara ini dibuat dengan sesungguhnya.<br>
       </p>
       <b>Pengawas</b> <br>
       <table>
