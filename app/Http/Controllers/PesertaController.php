@@ -31,7 +31,7 @@ class PesertaController extends Controller
 	public function store(Request $request)
 	{
         $validator = Validator::make($request->all(), [
-            'nis' => 'required|unique:peserta|max:50',
+            'nis' => 'required|unique:peserta|integer',
             'nama_peserta' => 'required|unique:peserta|max:50',
             'kelas' => 'required',
 			'jurusan' => 'required',

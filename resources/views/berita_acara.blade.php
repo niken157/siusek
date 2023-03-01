@@ -4,16 +4,15 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <img src="{{ asset('image/smk.png')}}" class="rounded mx-auto d-block" height="200" width="200" alt="...">
-        <h3 class="text-center">BERITA ACARA</h3>
-        <h4 class="text-center">UJIAN AKHIR SEMESTER GANJIL</h4>
-        <h4 class="text-center">SMK PGRI WLINGI</h4>
-        <h4 class="text-center">TAHUN PELAJARAN 2023 / 2024</h4>
-        <hr><hr>
+        <img src="{{ asset('image/smk.png')}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
+        <h6 class="text-center">BERITA ACARA</h6>
+        <h6 class="text-center">UJIAN AKHIR SEMESTER GANJIL</h6>
+        <h6 class="text-center">SMK PGRI WLINGI</h6>
+        <h6 class="text-center">TAHUN PELAJARAN 2023 / 2024</h6>
+       <hr size="10px" color="black" size = “2” width = “80%”>
         <p>
-            Pada hari ini ......................... Tanggal ...................  Bulan  Desember Tahun Dua Ribu Dua Puluh Dua. <br>
-a.	Telah diselenggarakan Ujian Akhir Semester Ganjil dari pukul ...... : ...... sampai dengan ...... : ......
-
+            Pada hari ini ............... Tanggal .................  Bulan  Desember Tahun Dua Ribu Dua Puluh Dua. <br>
+a.	Telah diselenggarakan Ujian Akhir Semester Ganjil dari pukul ...... : ...... sampai dengan .... : ....
         </p>
         <table class="table">
             <tbody>
@@ -53,21 +52,58 @@ a.	Telah diselenggarakan Ujian Akhir Semester Ganjil dari pukul ...... : ...... 
                 <td>.............. orang, yakni :</td>
               </tr>
                   //table link dari absensi yang tidak hadir
-                              <table border="1"rules ="all">
+                              <table class="table"style="border: 1px solid black;">
                                 <tbody>
                               <tr>
-                              <td>Baris 1 kolom 1</td>
-                              <td >Baris 1 kolom 1</td>
-                              <td >Baris 1 kolom 1</td>
+                              <td style="border: 1px solid black;"><b>NO</b></td>
+                              <td style="border: 1px solid black;"><b>NAMA</b></td>
+                              <td style="border: 1px solid black;"><b>KELAS</b></td>
+                              <td style="border: 1px solid black;"></td>
+                              <td style="border: 1px solid black;"><b>NO</b></td>
+                              <td style="border: 1px solid black;"><b>NAMA<b></td>
+                              <td style="border: 1px solid black;"><b>KELAS</b></td>
                               </tr>
-                              <tr>
-                              <td>Baris 1 kolom 1</td>
-                              <td>Baris 1 kolom 1</td>
-                              <td>Baris 1 kolom 1</td>
+                              <tr style="border: 1px solid black;">
+                              <td style="border: 1px solid black;"><b> 1</b></td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"><b>5</b></td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
                               </tr>
-        
+                              <tr style="border: 1px solid black;">
+                              <td style="border: 1px solid black;"> <b>2</b></td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"><b>6 </b></td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              </tr>
+                              </tr>
+                              <tr style="border: 1px solid black;">
+                              <td style="border: 1px solid black;"> <b>3</b></td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"><b> 7</b></td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              </tr>
+                              
+                              </tr>
+                              <tr style="border: 1px solid black;">
+                              <td style="border: 1px solid black;"> <b>4</b></td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"><b> 8</b></td>
+                              <td style="border: 1px solid black;"> </td>
+                              <td style="border: 1px solid black;"> </td>
+                              </tr>
                             </tbody>
-                            </table><br>
+                            </table>
         <p>
         b. Catatan selama pelaksanaan Ujian Akhir Semester Ganjil 
         ............................................................................................................................................................................<br>
@@ -104,6 +140,7 @@ a.	Telah diselenggarakan Ujian Akhir Semester Ganjil dari pukul ...... : ...... 
           </table>
     </div>
   </div>
+ 
 @endsection
 <script type="text/javascript">
     window.print();
