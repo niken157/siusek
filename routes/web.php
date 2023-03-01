@@ -23,6 +23,7 @@ Route::get('/berita_acara', function () {
 Route::get('/daftar_hadir', [UjianController::class, 'absen']);
 Route::get('/cetak/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak']);
 Route::get('/kartu', [UjianController::class, 'kartu']);
+Route::get('/cetakKartu/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetakKartu']);
 // Route::get('/cetak', function () {
 //     return view('print_absen');
 // });

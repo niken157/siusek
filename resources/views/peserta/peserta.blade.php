@@ -36,9 +36,9 @@
                             <td>{{ $p->jenis_kelamin }}</td>
                             <td>{{ $p->agama }}</td>
                             <td>
-                                <a class="btn btn-primary" href="/peserta/edit/{{ $p->id_peserta }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
+                                <a class="btn btn-outline-primary" href="/peserta/edit/{{ $p->id_peserta }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
 
-                                <a class="btn btn-danger" href="/peserta/hapus/{{ $p->id_peserta }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-outline-danger" href="/peserta/hapus/{{ $p->id_peserta }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

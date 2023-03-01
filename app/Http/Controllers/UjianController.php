@@ -114,6 +114,20 @@ class UjianController extends Controller
         // passing data peminjaman yang didapat ke view/pages edit.blade.php
         return view('kartu_satuan' , ['ujian' => $ujian]);
     }
+    public function cetakKartu($nomer_ruangan,$no_sesi)
+    {
+            $ujian = DB::table('peserta')
+                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                     ->where([
+                        ['ruangan.nomer_ruangan', '=', $nomer_ruangan],
+                        ['sesi.no_sesi', '=', $no_sesi] ])
+                     ->orderBy('nomor_pc', 'asc')
+                    ->get();
+            //tampilkan view barang dan kirim ujiannya ke view tersebut
+            return view('kartu_persesi',['ujian' => $ujian, 'nomer_ruangan' => $nomer_ruangan, 'no_sesi' => $no_sesi]);//variabel passing
+    }
     public function update(Request $request)
     {
         //update data peminjaman berdasarkan id

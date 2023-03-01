@@ -32,7 +32,7 @@
                             <td>{{ $p->no_sesi}}</td>
                             <td>
                                 <a class="btn btn-outline-primary" href="/cetak/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button"><i class="fas fa-fw fa-print"> </i> Absen</a>
-                                <a class="btn btn-outline-primary" href="/cetakKartu/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button"><i class="fas fa-fw fa-print"> </i>Kartu</a>
+                                <a class="btn btn-outline-warning" href="/cetakKartu/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button"><i class="fas fa-fw fa-print"> </i>Kartu</a>
                             </td>
                         </tr>
                         @endforeach
