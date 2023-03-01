@@ -1,11 +1,10 @@
-
 @extends('template')
 
 @section('content')
 <div class="card">
     <div class="card-body">
         <img src="{{ asset('image/smk.png')}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
-        <h6 class="text-center">BERITA ACARA</h6>
+        <h4 class="text-center"><b>BERITA ACARA</b></h4>
         <h6 class="text-center">UJIAN AKHIR SEMESTER GANJIL</h6>
         <h6 class="text-center">SMK PGRI WLINGI</h6>
         <h6 class="text-center">TAHUN PELAJARAN 2023 / 2024</h6>
@@ -106,12 +105,12 @@ a.	Telah diselenggarakan Ujian Akhir Semester Ganjil dari pukul ...... : ...... 
                             </table>
         <p>
         b. Catatan selama pelaksanaan Ujian Akhir Semester Ganjil 
-        ............................................................................................................................................................................<br>
-        ............................................................................................................................................................................<br>
+        ................................................................................................................................................................................................................................................
+        ................................................................................................................................................................................................................................................
 </p>
 <p>
         Berita acara ini dibuat dengan sesungguhnya.<br> 
-      </p>
+      
       <b>Pengawas</b> <br>
       <table>
             <tbody>
@@ -132,7 +131,7 @@ a.	Telah diselenggarakan Ujian Akhir Semester Ganjil dari pukul ...... : ...... 
               </tr>
               <tbody>
             </table>
-            <br><br>
+            <br><br></p>
             <p>
   <i>Keterangan</i> :*) Lingkari yang sesuai
 </p>
