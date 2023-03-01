@@ -2,13 +2,13 @@
 @extends('template')
 
 @section('content')
-    <h1 class="mt-4">Cetak Daftar Absen</h1>
+    <h1 class="mt-4">Cetak Daftar Hadir</h1>
 <br>
     <div>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Cetak Daftar Absen
+            Cetak Daftar Hadir
             <span style="float: right">
             </div>
         <div class="card-body">

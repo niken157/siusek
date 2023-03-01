@@ -9,7 +9,7 @@
             <i class="fas fa-table me-1"></i>
             Data Kartu Ujian
             <span style="float: right">
-                <a class="align-items-center justify-content-between btn btn-primary" href="/peserta/tambah" role="button"><i class="fa-solid fa-loader"></i>Generate</a>
+                <a class="align-items-center justify-content-between btn btn-warning" href="/kartu" role="button"><i class="fa-solid fa-print"></i> Cetak Kartu</a>
 
             {{-- <a class="align-items-center justify-content-between btn btn-primary" href="/ujian/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a> --}}
 
