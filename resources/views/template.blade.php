@@ -81,23 +81,9 @@
                             <div class="sb-sidenav-menu-heading">Home</div>
                             <a class="nav-link" href="/">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Utama
                             </a>
                             <div class="sb-sidenav-menu-heading">Data Utama</div>
-                            {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Data Peserta
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a> --}}
-                            {{-- <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Semua</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">RPL</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">TKJ</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">TITL</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">DKV</a>
-                                </nav>
-                            </div> --}}
                             <a class="nav-link" href="/peserta">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Data Peserta
@@ -110,37 +96,6 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Data Sesi
                             </a>
-                            {{-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Pages
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Authentication
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
-                                        </nav>
-                                    </div>
-                                </nav>
-                            </div> --}}
                             <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="/ujian">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -154,8 +109,12 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Daftar Hadir
                             </a>
+                            <div class="sb-sidenav-menu-heading">Setting</div>
+                            <a class="nav-link" href="/peraturan">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Pengaturan
+                            </a>
                         </div>
-                    </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
                         Start Bootstrap
