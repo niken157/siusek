@@ -69,7 +69,7 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                               <td style="border: 1px solid black ;"class="text-center"width="10px"><b>NO</b></td>
                               <td style="border: 1px solid black;"class="text-center" width="270px"><b>NAMA</b></td>
                               <td style="border: 1px solid black;"class="text-center"><b>KELAS</b></td>
-                              <td style="border: 1px solid black;"width="1px"></td>
+                             
                               <td style="border: 1px solid black;"class="text-center"width="10px"><b>NO</b></td>
                               <td style="border: 1px solid black;"class="text-center"width="270px"><b>NAMA<b></td>
                               <td style="border: 1px solid black;"class="text-center"><b>KELAS</b></td>
@@ -78,7 +78,7 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                               <td style="border: 1px solid black;"class="text-center"><b> 1</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"></td>
+                              
                               <td style="border: 1px solid black;" class="text-center"><b>5</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
@@ -87,7 +87,7 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                               <td style="border: 1px solid black;" class="text-center"><b>2</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"></td>
+                              
                               <td style="border: 1px solid black;"class="text-center"><b>6 </b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
@@ -97,7 +97,7 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                               <td style="border: 1px solid black;"class="text-center"> <b>3</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"></td>
+                             
                               <td style="border: 1px solid black;"class="text-center"><b> 7</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
@@ -108,7 +108,7 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                               <td style="border: 1px solid black;"class="text-center"> <b>4</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"></td>
+                              
                               <td style="border: 1px solid black;" class="text-center"><b> 8</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
