@@ -2,7 +2,7 @@
 @extends('template')
 
 @section('content')
-    <h1 class="mt-4">Sistem Administrasi Ujian Sekolah</h1>
+    <h1 class="mt-4">{{ $setting->nama_aplikasi}}</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active"></li>
     </ol>
