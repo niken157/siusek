@@ -5,6 +5,8 @@ use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\UjianController;
 use App\Http\Controllers\SesiController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,8 +61,8 @@ Route::get('/kartu_satuan/{id_ujian}', [UjianController::class, 'print']);
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 //setting
-//Route::get('/pengaturan', [SettingController::class, 'index']);
+Route::get('/pengaturan', [SettingController::class, 'index']);
 Route::get('/pengaturan/{id_setting}', [SettingController::class, 'edit']);
 Route::post('/pengaturan/update', [SettingController::class, 'update']);

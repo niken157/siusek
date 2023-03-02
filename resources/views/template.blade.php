@@ -110,7 +110,7 @@
                                 Daftar Hadir
                             </a>
                             <div class="sb-sidenav-menu-heading">Setting</div>
-                            <a class="nav-link" href="/peraturan">
+                            <a class="nav-link" href="/pengaturan">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Pengaturan
                             </a>

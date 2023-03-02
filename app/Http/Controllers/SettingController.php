@@ -50,7 +50,7 @@ class SettingController extends Controller
         ->where('id_setting', $id_setting)
         ->first();
 
-        return view('pengaturan' , ['setting' => $setting]);
+        return view('pengaturan_edit' , ['setting' => $setting]);
     }
 
     /**

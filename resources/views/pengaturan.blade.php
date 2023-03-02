@@ -3,46 +3,47 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-      <h1>Edit Pengaturan</h1>
+      <h1>Pengaturan Web</h1>
       <?php
         $date= date('d F Y, h:i:s A');
         ?>
+        @foreach($setting as $s)
     <form action="/setting/update" method="post">
         {{ csrf_field() }}
-        <input type="hidden" name="id_setting" value="{{ $setting->id_setting}}">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">ID Setting</label>
-            <input name="id_setting" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $setting->id_setting }}"required>
-        </div>
+        <input type="hidden" name="id_setting" value="{{ $s->id_setting}}">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nama Aplikasi </label>
-            <input name="nama_aplikasi" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $setting->nama_aplikasi }}"required>
+            <input name="nama_aplikasi" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->nama_aplikasi }}"readonly>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Logo</label>
-            <input name="logo" required="reqired" type="varchar" class="form-control" id="exampleFormControlInput1" value="{{ $setting->logo }}"required>
-        </div>
+            <label for="formFile" class="form-label">Logo</label><br>
+            <img src="/image/{{ $s->logo}}" style="width: 120px;float: left;margin-bottom: 5px;">
+          </div><br><br><br><br><br><br>
+        {{-- <div class="mb-3">
+            <label for="formFile" class="form-label">Logo</label>
+            <input name="logo" class="form-control" type="file" id="formFile" value="{{ old('gambar') }}">
+          </div> --}}
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Semester</label>
-            <input name="semester" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $setting->semester }}"required>
+            <input name="semester" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->semester }}"readonly>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Tahun Ajaran </label>
-            <input name="tahun_ajaran" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $setting->tahun_ajaran }}"required>
+            <input name="tahun_ajaran" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->tahun_ajaran }}"readonly>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Tahun Ini</label>
-            <input name="tahun_ini" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $setting->tahun_ini }}"required>
+            <input name="tahun_ini" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $s->tahun_ini }}"readonly>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Bulan </label>
-            <input name="bulan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $setting->bulan }}"required>
+            <input name="bulan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->bulan }}"readonly>
         </div>
-        <input type="hidden" name="created_at" value="{{ $setting->created_at }}">
-        <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
-        <input type="submit" value="Simpan Data">
-    </form>
+        <span style="float: right">
+            <a class="btn btn-primary" href="/peserta/edit/{{ $s->id_setting }}" role="button"><i class="fas fa-fw fa-edit"></i> Ubah Pengaturan</a>
 
+    </form>
+@endforeach
     </div>
   </div>
   @endsection
