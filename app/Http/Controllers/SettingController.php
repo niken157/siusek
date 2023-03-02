@@ -16,6 +16,11 @@ class SettingController extends Controller
         $setting = DB:: table('setting') ->get();
         return view ('pengaturan',['setting'=> $setting]);
     }
+    public function ba()
+    {
+        $setting = DB:: table('setting') ->first();
+        return view ('berita_acara',['setting'=> $setting]);
+    }
 
     /**
      * Show the form for creating a new resource.

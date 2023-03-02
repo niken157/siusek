@@ -24,6 +24,7 @@
         margin-left: 10px;
         margin-right: 10px;
     }
+    .upper { text-transform: uppercase; }
 </style>
 @php $no = 1; @endphp
 @foreach($ujian as $u)
@@ -33,11 +34,11 @@
         <div class="card-body" style="border: 1px solid black;">
             <div class="row">
               <div class="col-sm-3">
-                <img src="{{ asset('image/smk.png')}}" class="rounded" height="40" width="40" alt="...">
+                <img src="/image/{{ $setting->logo}}" class="rounded" height="40" width="40" alt="...">
               </div>
               <div class="col-sm-9">
-                <p><b>KARTU UJIAN PESERTA GANJIL</b></p>
-                <p>TAHUN PELAJARAN 2023/2024</p>
+                <p class="upper"><b>KARTU UJIAN PESERTA {{ $setting->semester}}</b></p>
+                <p>TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</p>
               </div>
             </div>
           </div>

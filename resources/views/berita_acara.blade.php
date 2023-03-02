@@ -14,16 +14,19 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-   
-        <img src="{{ asset('image/smk.png')}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
+        <style>
+            .upper { text-transform: uppercase; }
+        </style>
+
+        <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
         <h4 class="text-center"><b>BERITA ACARA</b></h4>
-        <h6 class="text-center">UJIAN AKHIR SEMESTER .............</h6>
+        <h6 class="text-center upper">UJIAN AKHIR SEMESTER {{ $setting->semester}}</h6>
         <h6 class="text-center">SMK PGRI WLINGI</h6>
-        <h6 class="text-center">TAHUN PELAJARAN ......... / .........</h6>
+        <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
        <hr class="border border-dark opacity-75">
         <p>
-            Pada hari ini ............... Tanggal .................  Bulan  ............... Tahun ............................. <br>
-a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... : ...... sampai dengan ...... : ......
+            Pada hari ini ............... Tanggal .................  Bulan  {{ $setting->bulan}} Tahun .................................................. <br>
+a.	Telah diselenggarakan Ujian Akhir Semester {{ $setting->semester}} dari pukul ...... : ...... sampai dengan ...... : ......
         </p>
         <table class="table">
             <tbody>
@@ -62,14 +65,14 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                 <td>:</td>
                 <td>.............. orang, yakni :</td>
               </tr>
-                 
+
                               <table class="table"style="border: 1px solid black;">
                                 <tbody>
                               <tr>
                               <td style="border: 1px solid black ;"class="text-center"width="10px"><b>NO</b></td>
                               <td style="border: 1px solid black;"class="text-center" width="270px"><b>NAMA</b></td>
                               <td style="border: 1px solid black;"class="text-center"><b>KELAS</b></td>
-                             
+
                               <td style="border: 1px solid black;"class="text-center"width="10px"><b>NO</b></td>
                               <td style="border: 1px solid black;"class="text-center"width="270px"><b>NAMA<b></td>
                               <td style="border: 1px solid black;"class="text-center"><b>KELAS</b></td>
@@ -78,7 +81,7 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                               <td style="border: 1px solid black;"class="text-center"><b> 1</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
-                              
+
                               <td style="border: 1px solid black;" class="text-center"><b>5</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
@@ -87,7 +90,7 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                               <td style="border: 1px solid black;" class="text-center"><b>2</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
-                              
+
                               <td style="border: 1px solid black;"class="text-center"><b>6 </b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
@@ -97,18 +100,18 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                               <td style="border: 1px solid black;"class="text-center"> <b>3</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
-                             
+
                               <td style="border: 1px solid black;"class="text-center"><b> 7</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
                               </tr>
-                              
+
                               </tr>
                               <tr style="border: 1px solid black;">
                               <td style="border: 1px solid black;"class="text-center"> <b>4</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
-                              
+
                               <td style="border: 1px solid black;" class="text-center"><b> 8</b></td>
                               <td style="border: 1px solid black;"> </td>
                               <td style="border: 1px solid black;"> </td>
@@ -116,12 +119,12 @@ a.	Telah diselenggarakan Ujian Akhir Semester .............. dari pukul ...... :
                             </tbody>
                             </table>
         <p>
-        b. Catatan selama pelaksanaan Ujian Akhir Semester Ganjil 
+        b. Catatan selama pelaksanaan Ujian Akhir Semester {{ $setting->semester}}
         ................................................................................................................................................................................................................................................
         ................................................................................................................................................................................................................................................
 </p>
 <p>
-        Berita acara ini dibuat dengan sesungguhnya.<br> 
+        Berita acara ini dibuat dengan sesungguhnya.<br>
       <b>Pengawas</b> <br>
       <table>
             <tbody>

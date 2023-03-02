@@ -19,10 +19,6 @@
             <label for="formFile" class="form-label">Logo</label><br>
             <img src="/image/{{ $s->logo}}" style="width: 120px;float: left;margin-bottom: 5px;">
           </div><br><br><br><br><br><br>
-        {{-- <div class="mb-3">
-            <label for="formFile" class="form-label">Logo</label>
-            <input name="logo" class="form-control" type="file" id="formFile" value="{{ old('gambar') }}">
-          </div> --}}
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Semester</label>
             <input name="semester" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->semester }}"readonly>

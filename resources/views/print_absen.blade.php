@@ -19,6 +19,7 @@
     p{
         font-size: 14px;
     }
+    .upper { text-transform: uppercase; }
 </style>
 <div class="card">
     <div class="card-body">
@@ -35,9 +36,9 @@
               </div>
               <div class="col-8">
                 <h4 class="text-center"><b> D A F T A R  &nbsp&nbsp  H A D I R</b></h4>
-                <h6 class="text-center">PESERTA UJIAN AKHIR SEMESTER GENAP</h6>
+                <h6 class="text-center upper">PESERTA UJIAN AKHIR SEMESTER {{ $setting->semester}}</h6>
                 <h6 class="text-center">SMK PGRI WLINGI</h6>
-                <h6 class="text-center">TAHUN PELAJARAN 2023 / 2024</h6>
+                <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
               </div>
               <div class="col-2">
                 <table class="table table-bordered" style="border: 1px solid black;">
@@ -106,7 +107,7 @@
             <div style="float: right">
                 <table>
                     <tr>
-                        <td><h6>Blitar, ..... Desember 2023 <br>
+                        <td><h6>Blitar, ..... {{ $setting->bulan}} {{ $setting->tahun_ini}} <br>
                             Pengawas
                             </h6></td>
                     </tr>
