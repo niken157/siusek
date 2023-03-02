@@ -60,3 +60,7 @@ Route::get('/kartu_satuan/{id_ujian}', [UjianController::class, 'print']);
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+//setting
+//Route::get('/pengaturan', [SettingController::class, 'index']);
+Route::get('/pengaturan/{id_setting}', [SettingController::class, 'edit']);
+Route::post('/pengaturan/update', [SettingController::class, 'update']);
