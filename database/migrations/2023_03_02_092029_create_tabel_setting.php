@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('setting', function (Blueprint $table) {
             $table->Increments('id_setting');
-            $table->string('nama_aplikasi');
+            $table->string('nama_ujian');
             $table->string('logo');
             $table->enum('semester',['Genap','Ganjil']);
             $table->string('tahun_ajaran');
-            $table->string('tahun_ini');
-            $table->string('bulan');
             $table->timestamps();
         });
     }
