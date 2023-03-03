@@ -38,9 +38,9 @@ class HomeController extends Controller
                     $ruangan = DB::table('ruangan')->get();
                     $sesi = DB::table('sesi')->get();
                     $uji = DB::table('ujian')->get();
-
+                    $setting = DB:: table('setting') ->first();
             //tampilkan view barang dan kirim ujiannya ke view tersebut
-            return view('index',['ujian' => $ujian,'peserta' => $peserta,'ruangan' => $ruangan, 'sesi' => $sesi,'uji' => $uji]);
-        
+            return view('index',['ujian' => $ujian,'peserta' => $peserta,'ruangan' => $ruangan, 'sesi' => $sesi,'uji' => $uji,'setting' => $setting]);
+
     }
 }

@@ -1,15 +1,16 @@
 @extends('template')
 
 @section('content')
+<br>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            <h3> DATA SESI UJIAN </h3>
+            DATA SESI UJIAN
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-primary" href="/sesi/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
         </div>
         <div class="card-body">
-            <table class="table table-striped" id="datatablesSimple">
+            <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>

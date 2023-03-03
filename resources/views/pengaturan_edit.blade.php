@@ -3,8 +3,10 @@
 @section('content')
 <br>
 <div class="card">
+    <div class="card-header">
+      <h3>PENGATURAN WEB</h3>
+    </div>
     <div class="card-body">
-      <h1>Edit Pengaturan</h1>
       <?php
         $date= date('d F Y, h:i:s A');
         ?>
@@ -40,7 +42,7 @@
           </div>
         <input type="hidden" name="created_at" value="{{ $setting->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
-        <input type="submit" value="Simpan Data">
+        <input class="btn btn-primary" type="submit" value="Simpan Data">
     </form>
 
     </div>

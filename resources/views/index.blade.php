@@ -50,7 +50,7 @@
             Pembagian Peserta Ujian
         </div>
         <div class="card-body">
-            <table id="datatablesSimple">
+            <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>

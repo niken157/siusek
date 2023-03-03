@@ -2,9 +2,12 @@
 @extends('template')
 
 @section('content')
+<br>
 <div class="card">
+    <div class="card-header">
+        <h3>FORM TAMBAH DATA UJIAN</h3>
+      </div>
     <div class="card-body">
-      <h1> Tambah Data Ujian</h1>
     <form action="/ujian/store" method="post">
         {{ csrf_field() }}
         <div class="mb-3">

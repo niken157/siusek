@@ -3,8 +3,10 @@
 @section('content')
 <br>
 <div class="card">
+    <div class="card-header">
+      <h3>PENGATURAN WEB</h3>
+    </div>
     <div class="card-body">
-      <h1>Pengaturan Web</h1>
       <?php
         $date= date('d F Y, h:i:s A');
         ?>

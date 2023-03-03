@@ -2,10 +2,11 @@
 @extends('template')
 
 @section('content')
+<br>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-           <h3> DATA KARTU UJIAN </h3>
+            DATA KARTU UJIAN
             <span style="float: right">
                 <a class="align-items-center justify-content-between btn btn-warning" href="/kartu" role="button"><i class="fa-solid fa-print"></i> Cetak Kartu</a>
 
@@ -15,7 +16,7 @@
 
         </div>
         <div class="card-body">
-            <table class="table table-striped " id="datatablesSimple">
+            <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -38,7 +39,7 @@
                             <td>
                             <a class="btn btn-outline-warning" href="/kartu_satuan/{{ $u->id_ujian }}" role="button"><i class="fa-solid fa-print"></i></a>
                                 <a class="btn btn-outline-primary" href="/ujian/edit/{{ $u->id_ujian }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
-                                
+
                                 <a class="btn btn-outline-danger" href="/ujian/hapus/{{ $u->id_ujian }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
                             </td>
                         </tr>

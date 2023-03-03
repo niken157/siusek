@@ -68,8 +68,9 @@ class SettingController extends Controller
             'nama_ujian' => $request-> nama_ujian,
             'logo' => $request-> logo,
             'semester' => $request->semester,
-            'tahun_ajaran' => $request->tahun_ajaran
-
+            'tahun_ajaran' => $request->tahun_ajaran,
+            'created_at' => $request->created_at,
+            'updated_at' => $request->updated_at
     ]);
     //alihkan ke halaman home
     return redirect('/pengaturan');

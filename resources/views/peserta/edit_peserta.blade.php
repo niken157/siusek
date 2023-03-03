@@ -1,9 +1,12 @@
 @extends('template')
 
 @section('content')
+<br>
 <div class="card">
+    <div class="card-header">
+        <h3>FORM EDIT DATA PESERTA</h3>
+      </div>
     <div class="card-body">
-      <h1>Form Edit Data Peserta</h1>
       <?php
         $date= date('d F Y, h:i:s A');
         ?>
