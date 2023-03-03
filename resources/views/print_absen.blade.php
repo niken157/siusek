@@ -36,7 +36,7 @@
               </div>
               <div class="col-8">
                 <h4 class="text-center"><b> D A F T A R  &nbsp&nbsp  H A D I R</b></h4>
-                <h6 class="text-center upper">PESERTA UJIAN AKHIR SEMESTER {{ $setting->semester}}</h6>
+                <h6 class="text-center upper">PESERTA {{ $setting->nama_ujian}} {{ $setting->semester}}</h6>
                 <h6 class="text-center">SMK PGRI WLINGI</h6>
                 <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
               </div>
@@ -107,7 +107,7 @@
             <div style="float: right">
                 <table>
                     <tr>
-                        <td><h6>Blitar, ..... {{ $setting->bulan}} {{ $setting->tahun_ini}} <br>
+                        <td><h6>Blitar, ....................... <br>
                             Pengawas
                             </h6></td>
                     </tr>
