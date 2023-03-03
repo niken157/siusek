@@ -20,13 +20,13 @@
 
         <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
         <h4 class="text-center"><b>BERITA ACARA</b></h4>
-        <h6 class="text-center upper">{{ $setting->nama_ujian}} {{ $setting->semester}}</h6>
+        <h6 class="text-center upper">UJIAN AKHIR SEMESTER {{ $setting->semester}}</h6>
         <h6 class="text-center">SMK PGRI WLINGI</h6>
         <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
        <hr class="border border-dark opacity-75">
         <p>
-            Pada hari ini ............... Tanggal .................  Bulan  ............... Tahun .................................................. <br>
-a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari pukul ...... : ...... sampai dengan ...... : ......
+            Pada hari ini ............... Tanggal .................  Bulan  {{ $setting->bulan}} Tahun .................................................. <br>
+a.	Telah diselenggarakan Ujian Akhir Semester {{ $setting->semester}} dari pukul ...... : ...... sampai dengan ...... : ......
         </p>
         <table class="table">
             <tbody>
@@ -119,7 +119,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                             </tbody>
                             </table>
         <p>
-        b. Catatan selama pelaksanaan {{ $setting->nama_ujian}} {{ $setting->semester}}
+        b. Catatan selama pelaksanaan Ujian Akhir Semester {{ $setting->semester}}
         ................................................................................................................................................................................................................................................
         ................................................................................................................................................................................................................................................
 </p>

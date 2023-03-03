@@ -38,7 +38,7 @@
                 <img src="/image/{{ $setting->logo}}" class="rounded" height="40" width="40" alt="...">
               </div>
               <div class="col-sm-9">
-                <p class="upper"><b>KARTU PESERTA SEMESTER {{ $setting->semester}}</b></p>
+                <p class="upper"><b>KARTU UJIAN PESERTA {{ $setting->semester}}</b></p>
                 <p>TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</p>
               </div>
             </div>
