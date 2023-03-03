@@ -2,15 +2,17 @@
 @extends('template')
 
 @section('content')
+    <h1 class="mt-4">Cetak Daftar Hadir</h1>
+<br>
     <div>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-           <h3> CETAK DAFTAR HADIR </h3>
+            Cetak Daftar Hadir
             <span style="float: right">
             </div>
         <div class="card-body">
-            <table class="table table-striped id="datatablesSimple">
+            <table id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>

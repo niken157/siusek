@@ -65,13 +65,12 @@ class SettingController extends Controller
     {
         DB::table('setting')->where('id_setting', $request->id_setting)->update([
             'id_setting' => $request-> id_setting,
-            'nama_aplikasi' => $request-> nama_aplikasi,
+            'nama_ujian' => $request-> nama_ujian,
             'logo' => $request-> logo,
             'semester' => $request->semester,
             'tahun_ajaran' => $request->tahun_ajaran,
-            'tahun_ini' => $request-> tahun_ini,
-            'bulan' => $request-> bulan
-
+            'created_at' => $request->created_at,
+            'updated_at' => $request->updated_at
     ]);
     //alihkan ke halaman home
     return redirect('/pengaturan');
