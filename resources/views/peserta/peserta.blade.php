@@ -2,16 +2,15 @@
 @extends('template')
 
 @section('content')
-    <h1 class="mt-4">Data Peserta ujian</h1><br>
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Data Peserta Ujian
+           <h3>DAFTAR PESERTA UJIAN</h3>
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-primary" href="/peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
         </div>
         <div class="card-body">
-            <table id="datatablesSimple">
+            <table class="table table-striped id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>
