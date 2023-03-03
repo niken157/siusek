@@ -36,7 +36,7 @@
             <input name="bulan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->bulan }}"readonly>
         </div>
         <span style="float: right">
-            <a class="btn btn-primary" href="/pengaturan_edit/{{ $s->id_setting }}" role="button"><i class="fas fa-fw fa-edit"></i> Ubah Pengaturan</a>
+            <a class="btn btn-primary" href="/peserta/edit/{{ $s->id_setting }}" role="button"><i class="fas fa-fw fa-edit"></i> Ubah Pengaturan</a>
 
     </form>
 @endforeach

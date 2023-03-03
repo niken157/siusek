@@ -61,5 +61,5 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('index');
 //setting
 Route::get('/pengaturan', [SettingController::class, 'index']);
-Route::get('/pengaturan_edit/{id_setting}', [SettingController::class, 'edit']);
+Route::get('/pengaturan/{id_setting}', [SettingController::class, 'edit']);
 Route::post('/pengaturan/update', [SettingController::class, 'update']);
