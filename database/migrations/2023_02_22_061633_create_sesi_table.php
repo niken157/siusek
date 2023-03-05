@@ -15,6 +15,7 @@ return new class extends Migration
             $table->Increments('id_sesi');
             $table->integer('no_sesi');
             $table->time('jam_sesi');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

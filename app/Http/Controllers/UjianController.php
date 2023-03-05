@@ -25,9 +25,16 @@ class UjianController extends Controller
                      ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
                      ->groupBy('ruangan.nama_ruangan', 'sesi.no_sesi')
+                     ->orderBy('nomer_ruangan', 'asc')
+                    ->get();
+            $peserta = DB::table('peserta')
+                    ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                    ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                    ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                    ->groupBy('ruangan.nama_ruangan', 'sesi.no_sesi')
                     ->get();
             //tampilkan view barang dan kirim ujiannya ke view tersebut
-            return view('daftar_hadir',['ujian' => $ujian]);//variabel passing
+            return view('daftar_hadir',['ujian' => $ujian,'peserta' => $peserta]);//variabel passing
     }
     public function cetak($nomer_ruangan,$no_sesi)
     {
@@ -116,21 +123,6 @@ class UjianController extends Controller
         $setting = DB:: table('setting') ->first();
         // passing data peminjaman yang didapat ke view/pages edit.blade.php
         return view('kartu_satuan' , ['ujian' => $ujian,'setting' => $setting]);
-    }
-    public function cetakKartu($nomer_ruangan,$no_sesi)
-    {
-            $ujian = DB::table('peserta')
-                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
-                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
-                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
-                     ->where([
-                        ['ruangan.nomer_ruangan', '=', $nomer_ruangan],
-                        ['sesi.no_sesi', '=', $no_sesi] ])
-                     ->orderBy('nomor_pc', 'asc')
-                    ->get();
-            $setting = DB:: table('setting') ->first();
-            //tampilkan view barang dan kirim ujiannya ke view tersebut
-            return view('kartu_persesi',['ujian' => $ujian,'setting' => $setting, 'nomer_ruangan' => $nomer_ruangan, 'no_sesi' => $no_sesi]);//variabel passing
     }
     public function update(Request $request)
     {

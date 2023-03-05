@@ -15,7 +15,7 @@ return new class extends Migration
             $table->Increments('id_peserta');
             $table->string('nis', 50)->unique();
             $table->string('nama_peserta');
-            $table->enum('kelas', ['10','11','12']);
+            $table->string('kelas');
             $table->enum('jurusan', ['RPL','TKJ','TIPTL','TKRO','TPM','DKV','TAB','TKKR']);
             $table->enum('jenis_kelamin', ['Perempuan','Laki-Laki']);
             $table->enum('agama',['Islam','Kristen','Katolik','Hindu','Budha','Konghucu']);

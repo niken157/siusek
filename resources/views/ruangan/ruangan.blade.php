@@ -31,9 +31,9 @@
                             <td>{{ $p->nama_ruangan}}</td>
                             <td>{{ $p->jumlah_PC}}</td>
                             <td>
-                                <a class="btn btn-outline-primary" href="/ruangan/edit/{{ $p->id_ruangan }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
+                                <a class="btn btn-outline-primary" title="edit data ruangan" href="/ruangan/edit/{{ $p->id_ruangan }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
 
-                                <a class="btn btn-outline-danger" href="/ruangan/hapus/{{ $p->id_ruangan }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-outline-danger" title="hapus data ruangan" href="/ruangan/hapus/{{ $p->id_ruangan }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
                             </td></td>
                         </tr>
                         @endforeach

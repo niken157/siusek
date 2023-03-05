@@ -34,6 +34,7 @@ class SesiController extends Controller
         $validator = Validator::make($request->all(), [
             'no_sesi' => 'required|unique:sesi|max:11',
             'jam_sesi' => 'required|unique:sesi|',
+            'keterangan' => 'required',
             'created_at' => 'required',
             'updated_at' => 'required',
         ]);
@@ -43,6 +44,7 @@ class SesiController extends Controller
         DB::table('sesi')->insert([
             'no_sesi' => $request-> no_sesi,
             'jam_sesi' => $request-> jam_sesi,
+            'keterangan' => $request-> keterangan,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at,
         ]);
@@ -78,6 +80,7 @@ class SesiController extends Controller
             'id_sesi' => $request-> id_sesi,
             'no_sesi' => $request-> no_sesi,
             'jam_sesi' => $request-> jam_sesi,
+            'keterangan' => $request-> keterangan,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
 

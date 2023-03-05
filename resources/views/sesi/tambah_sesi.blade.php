@@ -20,8 +20,17 @@
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Jam Sesi</label>
-            <input name="jam_sesi" type="time" class="form-control @error('jam_sesi') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan jam sesi"required>
+            <input name="jam_sesi" type="time" class="form-control @error('jam_sesi') is-invalid @enderror" id="exampleFormControlInput1" required>
             @error('jam_sesi')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{$message}}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Keterangan Hari</label>
+            <input name="keterangan" type="text" class="form-control @error('keterangan') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan keterangan hari"required>
+            @error('keterangan')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
                 </span>

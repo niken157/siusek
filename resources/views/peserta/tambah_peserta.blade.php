@@ -28,12 +28,13 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="keterangan">Kelas:</label>
-            <select name="kelas" required="reqired" class="form-control" id="kelas">
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            </select>
+            <label for="exampleFormControlInput1" class="form-label">Kelas Peserta</label>
+            <input name="kelas" type="text" class="form-control @error('kelas') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan kelas" autofocus value="{{ old('kelas') }}" required>
+            @error('kelas')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{$message}}</strong>
+                </span>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="keterangan">Jurusan:</label>

@@ -22,7 +22,6 @@ Route::get('/berita_acara', [SettingController::class, 'ba']);
 Route::get('/daftar_hadir', [UjianController::class, 'absen']);
 Route::get('/cetak/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak']);
 Route::get('/kartu', [UjianController::class, 'kartu']);
-Route::get('/cetakKartu/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetakKartu']);
 // Route::get('/cetak', function () {
 //     return view('print_absen');
 // });
@@ -61,5 +60,5 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('index');
 //setting
 Route::get('/pengaturan', [SettingController::class, 'index']);
-Route::get('/pengaturan/{id_setting}', [SettingController::class, 'edit']);
+Route::get('/pengaturan_edit/{id_setting}', [SettingController::class, 'edit']);
 Route::post('/pengaturan/update', [SettingController::class, 'update']);

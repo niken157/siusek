@@ -22,13 +22,8 @@
             <input name="nama_peserta" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan nama peserta " value="{{ $peserta->nama_peserta }}" required>
         </div>
         <div class="mb-3">
-            <label for="keterangan">Kelas:</label>
-            <select name="kelas" required="reqired" class="form-control" id="kelas">
-            <option value="{{ $peserta->kelas }}">{{ $peserta->kelas }}</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            </select>
+            <label for="exampleFormControlInput1" class="form-label">Kelas Peserta</label>
+            <input name="kelas" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $peserta->kelas }}" required>
         </div>
         <div class="mb-3">
             <label for="keterangan">Jurusan:</label>
