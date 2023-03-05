@@ -9,6 +9,8 @@
     <div class="card-body">
     <form action="/peserta/store" method="post">
         {{ csrf_field() }}
+        <div class="row">
+            <div class="col">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">NIS Peserta</label>
             <input name="nis" type="text" class="form-control @error('nis') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan nis" autofocus value="{{ old('nis') }}" required>
@@ -18,6 +20,8 @@
                 </span>
             @enderror
         </div>
+    </div>
+    <div class="col">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nama Peserta</label>
             <input name="nama_peserta" type="text" class="form-control @error('nama_peserta') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan nama peserta " value="{{ old('nama_peserta') }}" required>
@@ -27,6 +31,10 @@
                 </span>
             @enderror
         </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Kelas Peserta</label>
             <input name="kelas" type="text" class="form-control @error('kelas') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan kelas" autofocus value="{{ old('kelas') }}" required>
@@ -36,6 +44,8 @@
                 </span>
             @enderror
         </div>
+    </div>
+    <div class="col">
         <div class="mb-3">
             <label for="keterangan">Jurusan:</label>
             <select name="jurusan" required="reqired" class="form-control" id="jurusan">
@@ -49,6 +59,10 @@
             <option value="TKKR">TKKR</option>
             </select>
         </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
         <div class="mb-3">
             <label for="keterangan">Jenis Kelamin:</label>
             <select name="jenis_kelamin" required="reqired" class="form-control" id="jenis_kelamin">
@@ -56,6 +70,8 @@
             <option value="Laki-Laki">Laki-Laki</option>
             </select>
         </div>
+    </div>
+    <div class="col">
         <div class="mb-3">
             <label for="keterangan">Agama:</label>
             <select name="agama" required="reqired" class="form-control" id="agama">
@@ -66,7 +82,9 @@
             <option value="Budha">Budha</option>
             <option value="Konghucu">Konghucu</option>
             </select>
-</div>
+        </div>
+        </div>
+        </div>
         <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="submit" value="Simpan Data" class="btn btn-primary">

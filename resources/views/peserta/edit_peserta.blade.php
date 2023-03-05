@@ -13,18 +13,28 @@
     <form action="/peserta/update" method="post">
         {{ csrf_field() }}
         <input type="hidden" name="id_peserta" value="{{ $peserta->id_peserta }}">
+        <div class="row">
+            <div class="col">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">NIS Peserta</label>
             <input name="nis" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $peserta->nis }}" required>
         </div>
+    </div>
+    <div class="col">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nama Peserta</label>
             <input name="nama_peserta" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan nama peserta " value="{{ $peserta->nama_peserta }}" required>
         </div>
+    </div>
+</div>
+        <div class="row">
+            <div class="col">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Kelas Peserta</label>
             <input name="kelas" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $peserta->kelas }}" required>
         </div>
+    </div>
+    <div class="col">
         <div class="mb-3">
             <label for="keterangan">Jurusan:</label>
             <select name="jurusan" required="reqired" class="form-control" id="jurusan">
@@ -39,6 +49,10 @@
             <option value="TKKR">TKKR</option>
             </select>
         </div>
+    </div>
+</div>
+        <div class="row">
+            <div class="col">
         <div class="mb-3">
             <label for="keterangan">Jenis Kelamin:</label>
             <select name="jenis_kelamin" required="reqired" class="form-control" id="jenis_kelamin">
@@ -47,6 +61,8 @@
             <option value="Laki-Laki">Laki-Laki</option>
             </select>
         </div>
+    </div>
+    <div class="col">
         <div class="mb-3">
             <label for="keterangan">Agama:</label>
             <select name="agama" required="reqired" class="form-control" id="agama">
@@ -59,6 +75,8 @@
             <option value="Konghucu">Konghucu</option>
             </select>
         </div>
+    </div>
+</div>
         <input type="hidden" name="created_at" value="{{ $peserta->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="submit" value="Simpan Data" class="btn btn-primary">
