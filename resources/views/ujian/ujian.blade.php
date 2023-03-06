@@ -5,14 +5,13 @@
 <br>
     <div class="card mb-4">
         <div class="card-header">
-            <span style=" font-size: 1cm;">
-            DATA KARTU UJIAN
-            <span style="float: right">
-                <a class="align-items-center justify-content-between btn btn-warning" href="/kartu" role="button"><i class="fa-solid fa-print"></i> Cetak Kartu</a>
+            <h4>DATA KARTU UJIAN</h4>
 
-            {{-- <a class="align-items-center justify-content-between btn btn-primary" href="/ujian/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a> --}}
+            <span style="float: right">
+                <a class="align-items-center justify-content-between btn btn-warning" href="/kartu" target="_blank" role="button"><i class="fa-solid fa-print" title="cetak kartu semua peserta"></i> Cetak Kartu</a>
 
             <a class="align-items-center justify-content-between btn btn-primary" href="/ujian/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
+            <a class="align-items-center justify-content-between btn btn-primary" href="/ujian/generate" role="button"><i class="fas fa-fw fa-plus"></i> Generate</a>
 
         </div>
         <div class="card-body">
@@ -37,10 +36,9 @@
                             <td>{{ $u->no_sesi}}</td>
                             <td>{{ $u->nomor_pc}}</td>
                             <td>
-                            <a class="btn btn-outline-warning" href="/kartu_satuan/{{ $u->id_ujian }}" role="button"><i class="fa-solid fa-print"></i></a>
-                                <a class="btn btn-outline-primary" href="/ujian/edit/{{ $u->id_ujian }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
-
-                                <a class="btn btn-outline-danger" href="/ujian/hapus/{{ $u->id_ujian }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
+                            <a class="btn btn-outline-warning" target="_blank"  href="/kartu_satuan/{{ $u->id_ujian }}" role="button" title="cetak kartu peserta"><i class="fa-solid fa-print"></i></a>
+                                <a class="btn btn-outline-primary" href="/ujian/edit/{{ $u->id_ujian }}" role="button" title="edit data kartu"><i class="fas fa-fw fa-edit"></i></a>
+                                <a class="btn btn-outline-danger" href="/ujian/hapus/{{ $u->id_ujian }}" role="button" title="hapus data kartu"><i class="fas fa-fw fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach
