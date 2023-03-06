@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-xl-3 col-md-6">
             <div class="card bg-primary text-white mb-4">
-                <div class="card-body">Tabel Peserta Didik <span style="float: right"> <p>{{$peserta->count()}}</p></div>
+                <div class="card-body">Jumlah Peserta Didik <span style="float: right"> <p>{{$peserta->count()}}</p></div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="/peserta">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -18,7 +18,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-warning text-white mb-4">
-                <div class="card-body">Tabel Ruangan <span style="float: right"> <p>{{$ruangan->count()}}</div>
+                <div class="card-body">Jumlah Ruangan <span style="float: right"> <p>{{$ruangan->count()}}</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="/ruangan">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -27,7 +27,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-success text-white mb-4">
-                <div class="card-body">Tabel Sesi <span style="float: right"> <p>{{$sesi->count()}}</div>
+                <div class="card-body">Jumlah Sesi <span style="float: right"> <p>{{$sesi->count()}}</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="#">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -36,7 +36,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-danger text-white mb-4">
-                <div class="card-body">Tabel Ujian <span style="float: right"> <p>{{$uji->count()}}</div>
+                <div class="card-body">Jumlah PC <span style="float: right"> <p>{{$ruangan->sum('jumlah_PC')}}</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="/ujian">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
