@@ -50,15 +50,15 @@
                     </tr>
                 </table>
               </div>
-              <hr class="border border-dark border-1 opacity-75">
             </div>
+            <hr class="border border-dark opacity-75">
             <div class="row">
               <div class="col-7">
                 <table>
                     <tr>
                         <td><p><b>HARI,TANGGAL</b> </p></td>
                         <td><p>&nbsp&nbsp:</p></td>
-                        <td>&nbsp&nbsp&nbsp_________________________</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td><p><b>MATA UJIAN</b> </p></td>
@@ -95,15 +95,11 @@
                     @php $no = 1; $ttd = 1; @endphp
                     @foreach($ujian as $p)
                         <tr>
-                            <td>{{ $no++ }}.</td>
-                            <td class="text-center">{{ $p->nomor_pc }}</td>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $p->nomor_pc }}</td>
                             <td>{{ $p->nama_peserta }}</td>
-                            <td>{{ $p->kelas }}</td>
-                            @if ($ttd % 2 == 0)
-                                <td class="text-center">{{ $ttd++ }}</td>
-                            @else
-                                <td>{{ $ttd++ }}</td>
-                            @endif
+                            <td>{{ $p->kelas }} {{ $p->jurusan }}</td>
+                            <td>{{ $ttd++ }}</td>
                         </tr>
                         @endforeach
                 </tbody>

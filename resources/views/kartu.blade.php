@@ -16,34 +16,34 @@
     <body>
 <style>
     p{
-        font-size: 12px;
+        font-size: 9px;
         line-height: 70%;
     }
-    .card-body{
-        padding: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
+    .div {
+        margin-bottom: 10cm;
+        margin-left: 6cm;
+        margin-right: 10cm;
     }
     .upper { text-transform: uppercase; }
 </style>
 @php $no = 1; @endphp
 
 <br>
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<table class="table table-cols-1 table-cols-md-3 g-4">
     @foreach($ujian as $u)
-    <div class="col-6">
+    <div class="col-4">
         <div class="card-body" style="border: 1px solid black;">
-            <div class="row">
+            <table class="table">
               <div class="col-sm-3">
                 <img src="/image/{{ $setting->logo}}" class="rounded" height="40" width="40" alt="...">
-              </div>
-              <div class="col-sm-9">
+</table>
+              <table class="col-sm-9">
                 <p class="upper"><b>KARTU PESERTA SEMESTER {{ $setting->semester}}</b></p>
                 <p>TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</p>
-              </div>
-            </div>
-          </div>
-    <div class="card-body" style="border: 1px solid black;">
+</table>
+</table>
+         
+    <table class="card-body" style="border: 1px solid black;">
         <table>
             <tr>
                 <td><p>NAMA PESERTA</p></td>
@@ -56,39 +56,39 @@
                 <td><p>&nbsp&nbsp{{ $u->kelas }} {{ $u->jurusan }}</p></td>
             </tr>
         </table>
-    </div>
+</table>
     <div class="card-body" style="border: 1px solid black;">
         <table >
             <tr>
-                <div class="row">
-                    <div class="col">
+                <table class="table">
+                    <table class="col">
                         <td><p>Ruang / Sesi</p></td>
                         <td><p> &nbsp&nbsp&nbsp:</p></td>
                         <td><p>&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-                    </div>
-                    <div class="col">
+</table>
+                    <table class="table">
                         <td><p>No. Komputer</p></td>
                         <td><p> &nbsp&nbsp&nbsp:</p></td>
                         <td><p>&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
-                    </div>
-                  </div>
+</table>
+</table>
             </tr>
             <tr>
-                <div class="row">
-                    <div class="col">
+                <table class="table">
+                    <table class="col">
                         <td><p>Username</p></td>
                         <td><p> &nbsp&nbsp&nbsp:</p></td>
                         <td><p>&nbsp&nbsp{{ $u->nis}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-                    </div>
-                    <div class="col">
+</table>
+                    <table class="table">
                         <td><p>Password</p></td>
                         <td><p> &nbsp&nbsp&nbsp:</p></td>
-                        <td><p>&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-                    </div>
+                        <td><p>&nbsp&nbsppass</p></td>
+</table>
                 </div>
             </tr>
         </table>
-    </div><br>
+    </div><br><br>
     </div>
       @endforeach
 

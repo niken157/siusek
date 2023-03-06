@@ -21,10 +21,6 @@
             <label for="exampleFormControlInput1" class="form-label">jam sesi</label>
             <input name="jam_sesi" required="reqired" type="time" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->jam_sesi }}"required>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Keterangan Hari</label>
-            <input name="keterangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->keterangan }}"required>
-        </div>
         <input type="hidden" name="created_at" value="{{ $sesi->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="submit" value="Simpan Data">
