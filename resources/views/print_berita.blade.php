@@ -14,7 +14,7 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-    <style>         
+    <style>
             .upper { text-transform: uppercase; }
         </style>
 
@@ -48,12 +48,23 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
               <tr>
                 <td>Ruang</td>
                 <td>:</td>
-                <td>RUANG {{ $nomer_ruangan}}</td>
+                <td>{{ $nomer_ruangan}}</td>
               </tr>
+              @php
+              $u = DB::table('peserta')
+              ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+              ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+              ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+              ->where([
+                  ['ruangan.nomer_ruangan', '=', $nomer_ruangan],
+                  ['sesi.no_sesi', '=', $no_sesi] ])
+              ->orderBy('nomor_pc', 'asc')
+              ->get();
+          @endphp
               <tr>
                 <td>Jumlah Peserta</td>
                 <td>:</td>
-                <td>orang</td>
+                <td>{{ $u->count()}} orang</td>
               </tr>
               <tr>
                 <td>Jumlah hadir</td>
