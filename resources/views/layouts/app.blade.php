@@ -15,21 +15,22 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset ('log/fonts/icomoon/style.css')}}">
+    <link rel="stylesheet" href="{{ asset ('logi/fonts/icomoon/style.css')}}">
 
-    <link rel="stylesheet" href="{{ asset ('log/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('logi/css/owl.carousel.min.css')}}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset ('log/css/bootstrap.min.css')}}">
-
+    <link rel="stylesheet" href="{{ asset('logi/css/bootstrap.min.css')}}">
+    
     <!-- Style -->
-    <link rel="stylesheet" href="{{ asset ('log/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('logi/css/style.css')}}">
+   <!-- Scripts -->
+  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-</head>
-<body>
-    <div id="app">
+    <title>Login</title>
+  </head>
+  <body>
+  <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -88,9 +89,9 @@
             @yield('content')
         </main>
     </div>
-</body>
-</html>
-<script src="{{ asset ('log/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{ asset ('log/js/popper.min.js')}}"></script>
-    <script src="{{ asset ('log/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset ('log/js/main.js')}}"></script>
+  </body>
+</html> 
+<script src="{{ asset('logi/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('logi/js/popper.min.js')}}"></script>
+    <script src="{{ asset('logi/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('logi/js/main.js')}}"></script>

@@ -1,18 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="half">
-    <div class="bg order-1 order-md-2" style="background-image: url('{{ asset ('log/images/bg_1.jpg')}}');"></div>
+<div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('logi/images/login.jpeg');"></div>
     <div class="contents order-2 order-md-1">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
-          <div class="col-md-6">
-            <div class="form-block">
-              <div class="text-center mb-5">
-              <h3>Login to <strong>SIUSEK</strong></h3>
-              <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
-              </div>
+          <div class="col-md-7">
+            <h3>Login to <strong>SIUSEK</strong></h3>
+            <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
               {{-- <form action="#" method="post"> --}}
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -58,19 +55,14 @@
                         {{-- <button type="submit" value="Log In" class="btn btn-block btn-warning">
                              {{ __('Login')
                         </button> --}}
-
-              </form>
-            </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-
-
   </div>
-
-
-{{-- <div class="container">
+  </div>
+  {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -139,4 +131,6 @@
         </div>
     </div>
 </div> --}}
+
 @endsection
+
