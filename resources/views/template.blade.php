@@ -89,20 +89,20 @@
                             </a>
                             <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="/ujian">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Pembagian
                             </a>
-                            <a class="nav-link" href="/berita_acara">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            <a class="nav-link" href="/berita">
+                                <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
                                 Berita Acara
                             </a>
                             <a class="nav-link" href="/daftar_hadir">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
                                 Daftar Hadir
                             </a>
                             <div class="sb-sidenav-menu-heading">Setting</div>
                             <a class="nav-link" href="/pengaturan">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-gear"></i></div>
                                 Pengaturan
                             </a>
                         </div>

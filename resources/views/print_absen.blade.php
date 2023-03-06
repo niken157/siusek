@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Nama Webnya</title>
+        <title>SIUSEK</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="{{ asset('admin/css/styles.css')}}" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
               <div class="col-2">
                 <table class="table table-bordered" style="border: 1px solid black;" >
                     <tr>
-                        <td><h6 class="text-center">GRUP / SESI</h6></td>
+                        <td><h6 class="text-center">GRUP/SESI</h6></td>
                     </tr>
                     <tr>
                         <td><h2 class="text-center">{{ $no_sesi}}</h1></td>
@@ -50,15 +50,15 @@
                     </tr>
                 </table>
               </div>
+              <hr class="border-dark border">
             </div>
-            <hr class="border border-dark opacity-75">
             <div class="row">
               <div class="col-7">
                 <table>
                     <tr>
                         <td><p><b>HARI,TANGGAL</b> </p></td>
                         <td><p>&nbsp&nbsp:</p></td>
-                        <td></td>
+                        <td>&nbsp&nbsp&nbsp_________________________</td>
                     </tr>
                     <tr>
                         <td><p><b>MATA UJIAN</b> </p></td>
@@ -95,11 +95,15 @@
                     @php $no = 1; $ttd = 1; @endphp
                     @foreach($ujian as $p)
                         <tr>
-                            <td>{{ $no++ }}</td>
-                            <td>{{ $p->nomor_pc }}</td>
+                            <td>{{ $no++ }}.</td>
+                            <td class="text-center">{{ $p->nomor_pc }}</td>
                             <td>{{ $p->nama_peserta }}</td>
-                            <td>{{ $p->kelas }} {{ $p->jurusan }}</td>
-                            <td>{{ $ttd++ }}</td>
+                            <td>{{ $p->kelas }}</td>
+                            @if ($ttd % 2 == 0)
+                                <td class="text-center">{{ $ttd++ }}</td>
+                            @else
+                                <td>{{ $ttd++ }}</td>
+                            @endif
                         </tr>
                         @endforeach
                 </tbody>

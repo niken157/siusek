@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Nama Webnya</title>
+        <title>SIUSEK</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="{{ asset('admin/css/styles.css')}}" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -16,34 +16,34 @@
     <body>
 <style>
     p{
-        font-size: 9px;
+        font-size: 12px;
         line-height: 70%;
     }
-    .div {
-        margin-bottom: 10cm;
-        margin-left: 6cm;
-        margin-right: 10cm;
+    .card-body{
+        padding: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     .upper { text-transform: uppercase; }
 </style>
 @php $no = 1; @endphp
 
 <br>
-<table class="table table-cols-1 table-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach($ujian as $u)
-    <div class="col-4">
+    <div class="col-6">
         <div class="card-body" style="border: 1px solid black;">
-            <table class="table">
+            <div class="row">
               <div class="col-sm-3">
                 <img src="/image/{{ $setting->logo}}" class="rounded" height="40" width="40" alt="...">
-</table>
-              <table class="col-sm-9">
+              </div>
+              <div class="col-sm-9">
                 <p class="upper"><b>KARTU PESERTA SEMESTER {{ $setting->semester}}</b></p>
                 <p>TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</p>
-</table>
-</table>
-         
-    <table class="card-body" style="border: 1px solid black;">
+              </div>
+            </div>
+          </div>
+    <div class="card-body" style="border: 1px solid black;">
         <table>
             <tr>
                 <td><p>NAMA PESERTA</p></td>
@@ -56,39 +56,39 @@
                 <td><p>&nbsp&nbsp{{ $u->kelas }} {{ $u->jurusan }}</p></td>
             </tr>
         </table>
-</table>
+    </div>
     <div class="card-body" style="border: 1px solid black;">
         <table >
             <tr>
-                <table class="table">
-                    <table class="col">
+                <div class="row">
+                    <div class="col">
                         <td><p>Ruang / Sesi</p></td>
                         <td><p> &nbsp&nbsp&nbsp:</p></td>
                         <td><p>&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-</table>
-                    <table class="table">
+                    </div>
+                    <div class="col">
                         <td><p>No. Komputer</p></td>
                         <td><p> &nbsp&nbsp&nbsp:</p></td>
                         <td><p>&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
-</table>
-</table>
+                    </div>
+                  </div>
             </tr>
             <tr>
-                <table class="table">
-                    <table class="col">
+                <div class="row">
+                    <div class="col">
                         <td><p>Username</p></td>
                         <td><p> &nbsp&nbsp&nbsp:</p></td>
                         <td><p>&nbsp&nbsp{{ $u->nis}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-</table>
-                    <table class="table">
+                    </div>
+                    <div class="col">
                         <td><p>Password</p></td>
                         <td><p> &nbsp&nbsp&nbsp:</p></td>
-                        <td><p>&nbsp&nbsppass</p></td>
-</table>
+                        <td><p>&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+                    </div>
                 </div>
             </tr>
         </table>
-    </div><br><br>
+    </div><br>
     </div>
       @endforeach
 

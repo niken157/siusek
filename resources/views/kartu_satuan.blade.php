@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Nama Webnya</title>
+        <title>SIUSEK</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="{{ asset('admin/css/styles.css')}}" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -16,7 +16,7 @@
     <body>
 <style>
     p{
-        font-size: 9px;
+        font-size: 12px;
         line-height: 70%;
     }
     .card-body{
@@ -27,10 +27,11 @@
     .upper { text-transform: uppercase; }
 </style>
 @php $no = 1; @endphp
-@foreach($ujian as $u)
+
 <br>
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col-4">
+    @foreach($ujian as $u)
+    <div class="col-6">
         <div class="card-body" style="border: 1px solid black;">
             <div class="row">
               <div class="col-sm-3">
@@ -85,11 +86,14 @@
                         <td><p>&nbsp&nbsppass</p></td>
                     </div>
                 </div>
+            </tr>
         </table>
-    </div><br><br>
+    </div><br>
     </div>
+      @endforeach
+
   </div>
-  @endforeach
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="{{ asset('admin/js/scripts.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
