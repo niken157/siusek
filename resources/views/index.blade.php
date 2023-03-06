@@ -55,6 +55,7 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Peserta</th>
+                        <th>Kelas</th>
                         <th>Ruangan</th>
                         <th>Sesi</th>
                         <th>No PC</th>
@@ -66,6 +67,7 @@
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td>{{ $u->nama_peserta}}</td>
+                            <td>{{ $u->kelas}}</td>
                             <td>{{ $u->nama_ruangan}}</td>
                             <td>{{ $u->no_sesi}}</td>
                             <td>{{ $u->nomor_pc}}</td>
