@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('id_ruangan');
             $table->integer('id_sesi');
             $table->integer('nomor_pc');
+            $table->string('pass');
             $table->timestamps();
         });
     }

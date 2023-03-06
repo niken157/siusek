@@ -31,7 +31,8 @@ class UjianController extends Controller
                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
-                    ->groupBy('ruangan.nama_ruangan', 'sesi.no_sesi')
+                    ->groupBy('ruangan.nama_ruangan', 'sesi.no_sesi','peserta.id_peserta')
+
                     ->get();
             //tampilkan view barang dan kirim ujiannya ke view tersebut
             return view('daftar_hadir',['ujian' => $ujian,'peserta' => $peserta]);//variabel passing
@@ -81,12 +82,31 @@ class UjianController extends Controller
             'id_ruangan' => $request->id_ruangan,
             'id_sesi' => $request->id_sesi,
             'nomor_pc' => $request->nomor_pc,
+            'pass' => $request->pass,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);
         return redirect('/ujian');
     }
+    //generator
+    public function generate(Request $request)
+    {
+        $peserta = DB:: table('peserta') ->get();
+        $jml_dipilih=count($peserta);
+        for ($x = 0; $x <= $jml_dipilih; $x++) {
+            DB::table('ujian')->insert([
+                    'id_ujian' => $request->id_ujian[$x],
+                    'id_peserta' => $request->id_peserta[$x],
+                    'id_ruangan' => $request->id_ruangan[$x],
+                    'id_sesi' => $request->id_sesi[$x],
+                    'nomor_pc' => $request->nomor_pc[$x],
+                    'created_at' => $request->created_at[$x],
+                    'updated_at' => $request->updated_at[$x]
+            ]);
+           }
 
+        return redirect('/ujian');
+    }
 
     // public function show($id_peminjam)
     // {
@@ -133,6 +153,7 @@ class UjianController extends Controller
             'id_ruangan' => $request->id_ruangan,
             'id_sesi' => $request->id_sesi,
             'nomor_pc' => $request->nomor_pc,
+            'pass' => $request->pass,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);

@@ -16,7 +16,7 @@
     <body>
 <style>
     p{
-        font-size: 9px;
+        font-size: 12px;
         line-height: 70%;
     }
     .card-body{
@@ -31,7 +31,7 @@
 <br>
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach($ujian as $u)
-    <div class="col-4">
+    <div class="col-6">
         <div class="card-body" style="border: 1px solid black;">
             <div class="row">
               <div class="col-sm-3">
@@ -83,12 +83,12 @@
                     <div class="col">
                         <td><p>Password</p></td>
                         <td><p> &nbsp&nbsp&nbsp:</p></td>
-                        <td><p>&nbsp&nbsppass</p></td>
+                        <td><p>&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
                     </div>
                 </div>
             </tr>
         </table>
-    </div><br><br>
+    </div><br>
     </div>
       @endforeach
 

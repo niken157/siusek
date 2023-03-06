@@ -53,6 +53,10 @@
             <label for="exampleFormControlInput1" class="form-label">No PC</label>
             <input name="nomor_pc" value="{{ $ujian->nomor_pc}}" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan ID Sesi"required>
         </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input name="pass" value="{{ $ujian->pass}}" type="number" class="form-control" id="exampleFormControlInput1" required>
+        </div>
         <input type="hidden" name="created_at" value="{{ $ujian->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="submit" value="Simpan Data">

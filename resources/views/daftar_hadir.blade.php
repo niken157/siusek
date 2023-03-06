@@ -14,7 +14,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nomer Ruangan</th>
+                        <th width="50%">Nomer Ruangan</th>
                         <th>Ruangan</th>
                         <th>Sesi</th>
                         <th>Jumlah Peserta</th>
@@ -29,9 +29,20 @@
                             <td>{{ $p->nomer_ruangan}}</td>
                             <td>{{ $p->nama_ruangan}}</td>
                             <td>{{ $p->no_sesi}}</td>
-                            <td>{{ $peserta->count('id_peserta')}}</td>
+                            @php
+                                $u = DB::table('peserta')
+                                ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                                ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                                ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                                ->where([
+                                    ['ruangan.nomer_ruangan', '=', $p->nomer_ruangan],
+                                    ['sesi.no_sesi', '=', $p->no_sesi] ])
+                                ->orderBy('nomor_pc', 'asc')
+                                ->get();
+                            @endphp
+                            <td>{{ $u->count()}}</td>
                             <td>
-                                <a class="btn btn-outline-primary" title="cetak absen persesi" onclick="NewTab()" role="button"><i class="fas fa-fw fa-print"> </i></a>
+                                <a class="btn btn-outline-primary" title="cetak absen persesi" href="/cetak/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" onclick="NewTab()" role="button"><i class="fas fa-fw fa-print"> </i></a>
                             </td>
                             <script>
                                 function NewTab() {
