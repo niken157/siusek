@@ -14,7 +14,7 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-        <style>
+    <style>         
             .upper { text-transform: uppercase; }
         </style>
 
@@ -25,8 +25,8 @@
         <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
        <hr class="border border-dark opacity-75">
         <p>
-            Pada hari ini ............... Tanggal .................  Bulan  ............... Tahun .................................................. <br>
-a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari pukul ...... : ...... sampai dengan ...... : ......
+            Pada hari ini<?php echo date('Ymd '); ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo date('m'); ?> Tahun <?php echo date('Y '); ?><br >
+a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
         </p>
         <table class="table">
             <tbody>
@@ -43,17 +43,17 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
               <tr>
                 <td>Grup / Sesi</td>
                 <td>:</td>
-                <td>1   /   2   /  3   /  4  /  5   /  6   /  7   /  8         *)</td>
+                <td>{{ $no_sesi}}</td>
               </tr>
               <tr>
                 <td>Ruang</td>
                 <td>:</td>
-                <td>RUANG 1   /   2   /  3  /  4  /  5   /  6  /  7  /  8 /  9  / 10  *)</td>
+                <td>RUANG {{ $nomer_ruangan}}</td>
               </tr>
               <tr>
                 <td>Jumlah Peserta</td>
                 <td>:</td>
-                <td>.............. orang</td>
+                <td>orang</td>
               </tr>
               <tr>
                 <td>Jumlah hadir</td>
@@ -131,17 +131,17 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
               <tr>
                 <td>1. Tanda Tangan </td>
                 <td>:</td>
-                <td>.................</td>
+                <td>................................................</td>
               </tr>
               <tr>
                 <td>&nbsp;Nama</td>
                 <td>:</td>
-                <td>.................</td>
+                <td>................................................</td>
               </tr>
               <tr>
                 <td>&nbsp;NIP</td>
                 <td>:</td>
-                <td>.................</td>
+                <td>................................................</td>
               </tr>
               <tbody>
             </table>

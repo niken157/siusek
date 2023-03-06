@@ -92,7 +92,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Pembagian
                             </a>
-                            <a class="nav-link" href="/berita_acara">
+                            <a class="nav-link" href="/berita">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Berita Acara
                             </a>

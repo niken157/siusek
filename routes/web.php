@@ -18,7 +18,8 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/berita_acara', [SettingController::class, 'ba']);
+Route::get('/berita', [UjianController::class, 'berita']);
+Route::get('/cetak_berita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak_berita']);
 Route::get('/daftar_hadir', [UjianController::class, 'absen']);
 Route::get('/cetak/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak']);
 Route::get('/kartu', [UjianController::class, 'kartu']);

@@ -18,6 +18,34 @@ class UjianController extends Controller
             //tampilkan view barang dan kirim ujiannya ke view tersebut
             return view('ujian.ujian',['ujian' => $ujian]);//variabel passing
     }
+    public function berita(){
+        $setting = DB:: table('setting') ->first();
+        $ujian = DB::table('peserta')
+        ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+        ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+        ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+        ->groupBy('ruangan.nama_ruangan', 'sesi.no_sesi')
+        ->orderBy('nomer_ruangan', 'asc')
+       ->get();
+        return view ('berita',['setting'=> $setting,'ujian'=>$ujian]);
+    }
+    public function cetak_berita($nomer_ruangan,$no_sesi)
+    {
+            $ujian = DB::table('peserta')
+                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                    //  ->where('ruangan.nomer_ruangan', $nomer_ruangan)
+                     ->where([
+                        ['ruangan.nomer_ruangan', '=', $nomer_ruangan],
+                        ['sesi.no_sesi', '=', $no_sesi] ])
+                     ->orderBy('nomor_pc', 'asc')
+                    ->get();
+            $setting = DB:: table('setting') ->first();
+            $sesi = DB:: table('sesi') ->first();
+            //tampilkan view barang dan kirim ujiannya ke view tersebut
+            return view('print_berita',['ujian' => $ujian, 'nomer_ruangan' => $nomer_ruangan, 'no_sesi' => $no_sesi,'setting' => $setting,'sesi'=>$sesi]);//variabel passing
+    }
     public function absen()
     {
             $ujian = DB::table('peserta')
