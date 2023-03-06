@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Nama Webnya</title>
+        <title>SIUSEK</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="{{ asset('admin/css/styles.css')}}" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -92,7 +92,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Pembagian
                             </a>
-                            <a class="nav-link" href="/berita">
+                            <a class="nav-link" href="/berita_acara">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Berita Acara
                             </a>

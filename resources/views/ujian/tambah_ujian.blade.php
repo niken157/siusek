@@ -2,9 +2,6 @@
 @extends('template')
 
 @section('content')
-<?php
-$nomor_sewa=rand(10000,99999);
-?>
 <br>
 <div class="card">
     <div class="card-header">
@@ -49,10 +46,6 @@ $nomor_sewa=rand(10000,99999);
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">No PC</label>
             <input name="nomor_pc" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan ID Sesi"required>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Password</label>
-            <input name="pass" type="text" class="form-control" value="<?php echo $nomor_sewa; ?>" id="exampleFormControlInput1" placeholder="<?php echo $nomor_sewa; ?>"required>
         </div>
         <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
