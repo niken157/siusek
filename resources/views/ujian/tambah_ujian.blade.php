@@ -3,7 +3,9 @@
 
 @section('content')
 <?php
-$nomor_sewa=rand(10000,99999);
+$karakter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789';
+$nomor_sewa  = substr(str_shuffle($karakter), 0, $setting->jumlah_pass);
+// $nomor_sewa=rand(10000,99999);
 ?>
 <br>
 <div class="card">
