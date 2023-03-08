@@ -53,7 +53,7 @@ Route::get('/pembagian/edit/{id_ujian}', [UjianController::class, 'edit']);
 Route::post('/pembagian/update', [UjianController::class, 'update']);
 Route::get('/pembagian/hapus/{id_ujian}', [UjianController::class, 'hapus']);
 Route::get('/kartu_satuan/{id_ujian}', [UjianController::class, 'print']);
-Route::get('/pembagain/generate', [UjianController::class, 'generate']);
+Route::get('/pembagian/generate', [UjianController::class, 'generate']);
 
 Auth::routes();
 
