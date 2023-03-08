@@ -12,7 +12,7 @@
             <a class="align-items-center justify-content-between btn btn-primary" href="/peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
         </div>
         <div class="card-body">
-            <table class="table table-striped table-hover" id="datatablesSimple">
+            <table class="table table-striped table-hover" id="datatablesSimple" style=" font-size: 80%;">
                 <thead>
                     <tr>
                         <th>No</th>
