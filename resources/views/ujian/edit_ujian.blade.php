@@ -10,12 +10,12 @@
       <?php
         $date= date('d F Y, h:i:s A');
         ?>
-    <form action="/ujian/update" method="post">
+    <form action="/pembagian/update" method="post">
         {{ csrf_field() }}
         <input type="hidden" name="id_ujian" value="{{ $ujian->id_ujian }}">
         <div class="mb-3">
             <label for="id_peserta">ID Peserta Didik :</label>
-            <select name="id_peserta" class="form-control" id="id_peserta">
+            <select class="selectpicker" data-live-search="true" name="id_peserta" class="form-control" id="id_peserta">
                 @php
                     $peserta = DB::table('peserta')->get();
                 @endphp

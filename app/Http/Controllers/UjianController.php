@@ -132,7 +132,7 @@ class UjianController extends Controller
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);
-        return redirect('/ujian');
+        return redirect('/pembagian');
     }
     //generator
     public function generate(Request $request)
@@ -151,7 +151,7 @@ class UjianController extends Controller
             ]);
            }
 
-        return redirect('/ujian');
+        return redirect('/pembagian');
     }
 
     // public function show($id_peminjam)
@@ -204,13 +204,13 @@ class UjianController extends Controller
             'updated_at' => $request->updated_at
         ]);
         //alihkan ke halaman home
-        return redirect('/ujian');
+        return redirect('/pembagian');
     }
 
     public function hapus($id_ujian)
     {
         //menghapus data peminjaman berdasarkan id
             DB::table('ujian')->where('id_ujian', $id_ujian)->delete();
-            return redirect('/ujian');
+            return redirect('/pembagian');
     }
 }

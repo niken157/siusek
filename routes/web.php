@@ -46,14 +46,14 @@ Route::get('/sesi/edit/{id_sesi}', [SesiController::class, 'edit']);
 Route::post('/sesi/update', [SesiController::class, 'update']);
 Route::get('/sesi/hapus/{id_sesi}', [SesiController::class, 'hapus']);
 //halaman Ujian
-Route::get('/ujian', [UjianController::class, 'index']);
-Route::get('/ujian/tambah', [UjianController::class, 'create']);
-Route::post('/ujian/store', [UjianController::class, 'store']);
-Route::get('/ujian/edit/{id_ujian}', [UjianController::class, 'edit']);
-Route::post('/ujian/update', [UjianController::class, 'update']);
-Route::get('/ujian/hapus/{id_ujian}', [UjianController::class, 'hapus']);
+Route::get('/pembagian', [UjianController::class, 'index']);
+Route::get('/pembagian/tambah', [UjianController::class, 'create']);
+Route::post('/pembagian/store', [UjianController::class, 'store']);
+Route::get('/pembagian/edit/{id_ujian}', [UjianController::class, 'edit']);
+Route::post('/pembagian/update', [UjianController::class, 'update']);
+Route::get('/pembagian/hapus/{id_ujian}', [UjianController::class, 'hapus']);
 Route::get('/kartu_satuan/{id_ujian}', [UjianController::class, 'print']);
-Route::get('/ujian/generate', [UjianController::class, 'generate']);
+Route::get('/pembagain/generate', [UjianController::class, 'generate']);
 
 Auth::routes();
 

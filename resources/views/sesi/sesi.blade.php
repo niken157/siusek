@@ -15,8 +15,9 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nomer Sesi</th>
+                        <th>Nama Sesi</th>
                         <th>Jam Sesi</th>
+                        <th>Keterangan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -27,10 +28,11 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $p->no_sesi}}</td>
                             <td>{{ $p->jam_sesi}}</td>
+                            <td>{{ $p->keterangan}}</td>
                             <td>
-                                <a class="btn btn-outline-primary" href="/sesi/edit/{{ $p->id_sesi }}" role="button"><i class="fas fa-fw fa-edit"></i></a>
+                                <a class="btn btn-outline-primary" href="/sesi/edit/{{ $p->id_sesi }}" role="button"title="Edit Data Sesi"><i class="fas fa-fw fa-edit"></i></a>
 
-                                <a class="btn btn-outline-danger" href="/sesi/hapus/{{ $p->id_sesi }}" role="button"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-outline-danger" href="/sesi/hapus/{{ $p->id_sesi }}" role="button"title="Hapus Data Sesi"><i class="fas fa-fw fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

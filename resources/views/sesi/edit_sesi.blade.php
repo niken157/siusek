@@ -14,12 +14,16 @@
         {{ csrf_field() }}
         <input type="hidden" name="id_sesi" value="{{ $sesi->id_sesi}}">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">no sesi </label>
+            <label for="exampleFormControlInput1" class="form-label">Nama Sesi </label>
             <input name="no_sesi" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->no_sesi }}"required>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">jam sesi</label>
+            <label for="exampleFormControlInput1" class="form-label">Jam Sesi</label>
             <input name="jam_sesi" required="reqired" type="time" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->jam_sesi }}"required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
+            <input name="keterangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->keterangan }}"required>
         </div>
         <input type="hidden" name="created_at" value="{{ $sesi->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">

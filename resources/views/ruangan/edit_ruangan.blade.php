@@ -15,7 +15,7 @@
         <input type="hidden" name="id_ruangan" value="{{ $ruangan->id_ruangan}}">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nomor Ruangan</label>
-            <input name="nomer_ruangan" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->nomer_ruangan }}"required>
+            <input name="nomer_ruangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->nomer_ruangan }}"required>
             {{-- @error('nomer_ruangan')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
@@ -35,6 +35,15 @@
             <label for="exampleFormControlInput1" class="form-label">Jumlah PC</label>
             <input name="jumlah_PC" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->jumlah_PC }}"required>
             {{-- @error('jumlah_PC')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{$message}}</strong>
+                </span>
+            @enderror --}}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Cadangan PC</label>
+            <input name="cadangan_pc" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->cadangan_pc }}"required>
+            {{-- @error('cadangan_pc')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
                 </span>

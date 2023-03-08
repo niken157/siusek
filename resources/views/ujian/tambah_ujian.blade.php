@@ -3,9 +3,7 @@
 
 @section('content')
 <?php
-$karakter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789';
-$nomor_sewa  = substr(str_shuffle($karakter), 0, $setting->jumlah_pass);
-// $nomor_sewa=rand(10000,99999);
+$nomor_sewa=rand(10000,99999);
 ?>
 <br>
 <div class="card">
@@ -13,11 +11,11 @@ $nomor_sewa  = substr(str_shuffle($karakter), 0, $setting->jumlah_pass);
         <h3>FORM TAMBAH DATA UJIAN</h3>
       </div>
     <div class="card-body">
-    <form action="/ujian/store" method="post">
+    <form action="/pembagian/store" method="post">
         {{ csrf_field() }}
         <div class="mb-3">
             <label for="id_peserta">ID Peserta Didik :</label>
-            <select name="id_peserta" class="form-control" id="id_peserta">
+            <select class="selectpicker" data-live-search="true" name="id_peserta" class="form-control" id="id_peserta" visibleOptions="true">
                 @php
                     $peserta = DB::table('peserta')->get();
                 @endphp

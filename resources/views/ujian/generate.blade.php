@@ -5,7 +5,7 @@
 <div class="card">
     <div class="card-body">
       <h1> Tambah Data Ujian</h1>
-    <form action="/ujian/store" method="post">
+    <form action="/pembagian/store" method="post">
         {{ csrf_field() }}
         <div class="mb-3">
             <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">

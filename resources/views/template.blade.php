@@ -98,7 +98,7 @@
                                 Data Sesi
                             </a>
                             <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="/ujian">
+                            <a class="nav-link" href="/pembagain">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Pembagian
                             </a>
