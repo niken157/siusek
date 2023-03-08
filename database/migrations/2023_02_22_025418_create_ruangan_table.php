@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_ruangan');
             $table->string('nomer_ruangan',50)->unique();
             $table->string('jumlah_PC');
+            $table->string('cadangan_pc');
             $table->timestamps();
         });
     }

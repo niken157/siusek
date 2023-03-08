@@ -32,8 +32,8 @@ class SesiController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'no_sesi' => 'required|unique:sesi|max:11',
-            'jam_sesi' => 'required|unique:sesi|',
+            'no_sesi' => 'required',
+            'jam_sesi' => 'required',
             'keterangan' => 'required',
             'created_at' => 'required',
             'updated_at' => 'required',
