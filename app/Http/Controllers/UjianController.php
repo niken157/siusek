@@ -64,6 +64,23 @@ class UjianController extends Controller
        ->get();
         return view ('berita',['setting'=> $setting,'ujian'=>$ujian]);
     }
+    public function berita_acara($nomer_ruangan,$no_sesi)
+    {
+            $ujian = DB::table('peserta')
+                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                    //  ->where('ruangan.nomer_ruangan', $nomer_ruangan)
+                     ->where([
+                        ['ruangan.nomer_ruangan', '=', $nomer_ruangan],
+                        ['sesi.no_sesi', '=', $no_sesi] ])
+                     ->orderBy('nomor_pc', 'asc')
+                    ->get();
+            $setting = DB:: table('setting') ->first();
+            $sesi = DB:: table('sesi') ->first();
+            //tampilkan view barang dan kirim ujiannya ke view tersebut
+            return view('berita_acara',['ujian' => $ujian, 'nomer_ruangan' => $nomer_ruangan, 'no_sesi' => $no_sesi,'setting' => $setting,'sesi'=>$sesi]);//variabel passing
+    }
     public function cetak_berita($nomer_ruangan,$no_sesi)
     {
             $ujian = DB::table('peserta')

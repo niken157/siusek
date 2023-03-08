@@ -46,6 +46,10 @@
                 </div>
               </div>
             </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">tipe Password </label>
+                <input name="tipe_pass" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->tipe_pass }}"readonly>
+            </div>
         <span style="float: right">
             <a class="btn btn-primary" href="/pengaturan_edit/{{ $s->id_setting }}" role="button"><i class="fas fa-fw fa-edit"></i> Ubah Pengaturan</a>
 

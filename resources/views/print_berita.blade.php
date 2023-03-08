@@ -1,3 +1,36 @@
+<?php
+$tanggal = date('y-m-d');
+$day = date('D', strtotime($tanggal));
+$dayList = array(
+    'Sun' => 'Minggu',
+    'Mon' => 'Senin',
+    'Tue' => 'Selasa',
+    'Wed' => 'Rabu',
+    'Thu' => 'Kamis',
+    'Fri' => 'Jumat',
+    'Sat' => 'Sabtu'
+);
+$bulan = date('F', strtotime($tanggal));
+$bulanList = array(
+    'January' => 'Januari',
+    'February' => 'Februari',
+    'March' => 'Maret',
+    'April' => 'April',
+    'May' => 'Mei',
+    'June' => 'Juni',
+    'July' => 'Juli',
+    'August' => 'Agustus',
+    'September' => 'September',
+    'October' => 'Oktober',
+    'November' => 'November',
+    'December' => 'Desember'
+);
+
+$catatan = $_GET['catatan'];
+$jumlah_hadir = $_GET['jumlah_hadir'];
+$tdk_hadir = $_GET['tdk_hadir'];
+$tdk_masuk = $_GET['tdk_masuk'];
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,7 +58,7 @@
         <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
        <hr class="border border-dark opacity-75">
         <p>
-            Pada hari ini<?php echo date('Ymd '); ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo date('m'); ?> Tahun <?php echo date('Y '); ?><br >
+            Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
 a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
         </p>
         <table class="table">
@@ -69,71 +102,43 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
               <tr>
                 <td>Jumlah hadir</td>
                 <td>:</td>
-                <td>.............. orang</td>
+                <td><?php
+                    foreach($jumlah_hadir as $key => $val){
+                            echo $jumlah_hadir[$key];
+                    }
+                            ?> orang</td>
               </tr>
               <tr>
                 <td>Yang tidak hadir</td>
                 <td>:</td>
-                <td>.............. orang, yakni :</td>
+                <td><?php
+                    foreach($tdk_hadir as $key => $val){
+                            echo $tdk_hadir[$key];
+                    }
+                            ?> orang, yakni :</td>
+              </tr>
+              <tr>
+                <td colspan="3"><p>
+    <?php
+    foreach($tdk_masuk as $key => $val){
+            echo $tdk_masuk[$key]; ?> &nbsp,&nbsp <?php
+    }
+            ?>.
+</p></td>
               </tr>
 
-                              <table class="table"style="border: 1px solid black;">
-                                <tbody>
-                              <tr>
-                              <td style="border: 1px solid black ;"class="text-center"width="10px"><b>NO</b></td>
-                              <td style="border: 1px solid black;"class="text-center" width="270px"><b>NAMA</b></td>
-                              <td style="border: 1px solid black;"class="text-center"><b>KELAS</b></td>
 
-                              <td style="border: 1px solid black;"class="text-center"width="10px"><b>NO</b></td>
-                              <td style="border: 1px solid black;"class="text-center"width="270px"><b>NAMA<b></td>
-                              <td style="border: 1px solid black;"class="text-center"><b>KELAS</b></td>
-                              </tr>
-                              <tr style="border: 1px solid black;">
-                              <td style="border: 1px solid black;"class="text-center"><b> 1</b></td>
-                              <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"> </td>
-
-                              <td style="border: 1px solid black;" class="text-center"><b>5</b></td>
-                              <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"> </td>
-                              </tr>
-                              <tr style="border: 1px solid black;">
-                              <td style="border: 1px solid black;" class="text-center"><b>2</b></td>
-                              <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"> </td>
-
-                              <td style="border: 1px solid black;"class="text-center"><b>6 </b></td>
-                              <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"> </td>
-                              </tr>
-                              </tr>
-                              <tr style="border: 1px solid black;">
-                              <td style="border: 1px solid black;"class="text-center"> <b>3</b></td>
-                              <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"> </td>
-
-                              <td style="border: 1px solid black;"class="text-center"><b> 7</b></td>
-                              <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"> </td>
-                              </tr>
-
-                              </tr>
-                              <tr style="border: 1px solid black;">
-                              <td style="border: 1px solid black;"class="text-center"> <b>4</b></td>
-                              <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"> </td>
-
-                              <td style="border: 1px solid black;" class="text-center"><b> 8</b></td>
-                              <td style="border: 1px solid black;"> </td>
-                              <td style="border: 1px solid black;"> </td>
-                              </tr>
                             </tbody>
                             </table>
         <p>
-        b. Catatan selama pelaksanaan {{ $setting->nama_ujian}} {{ $setting->semester}}
-        ................................................................................................................................................................................................................................................
-        ................................................................................................................................................................................................................................................
-</p>
+        b. Catatan selama pelaksanaan {{ $setting->nama_ujian}} {{ $setting->semester}} <br>
+        <?php
+foreach($catatan as $key => $val){
+        echo $catatan[$key];
+}
+        ?>
+
+    </p>
 <p>
         Berita acara ini dibuat dengan sesungguhnya.<br>
       <b>Pengawas</b> <br>

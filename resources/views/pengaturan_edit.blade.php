@@ -50,6 +50,15 @@
                 </div>
             </div>
           </div>
+          <div class="mb-3">
+            <label for="keterangan">Tipe Password</label>
+            <select name="tipe_pass" required="reqired" class="form-control" id="tipe_pass">
+            <option value="{{ $setting->tipe_pass }}">{{ $setting->tipe_pass }}</option>
+            <option value="Kombinasi">Kombinasi</option>
+            <option value="Angka">Angka</option>
+            <option value="Huruf">Huruf</option>
+            </select>
+        </div>
         <input type="hidden" name="created_at" value="{{ $setting->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input class="btn btn-primary" type="submit" value="Simpan Data">
