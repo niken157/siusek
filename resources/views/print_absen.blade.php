@@ -17,9 +17,17 @@
     <body>
 <style>
     p{
-        font-size: 14px;
+        font-size: 12px;
+    }
+    .huruf{
+        font-size: 10px;
+        line-height: 70%;
     }
     .upper { text-transform: uppercase; }
+    .row {
+        border-top: 1px solid black ;
+        margin-bottom: -10px;
+    }
 </style>
 <div class="card">
     <div class="card-body">
@@ -50,7 +58,6 @@
                     </tr>
                 </table>
               </div>
-              <hr class="border-dark border">
             </div>
             <div class="row">
               <div class="col-7">
@@ -71,8 +78,8 @@
                 <table>
                     <tr>
                         <td><p><b>WAKTU</b> </p></td>
-                        <td><p>&nbsp:</p></td>
-                        <td><p>&nbsp____.____ - ____.____</p></td>
+                        <td><p>&nbsp&nbsp:</p></td>
+                        <td>____.____-____.____</td>
                     </tr>
                     <tr>
                         <td colspan="3"><p>&nbsp2.&nbsp____________________________</p></td>
@@ -81,13 +88,13 @@
               </div>
             </div>
           <div class="card-body">
-            <table class="table table-bordered" style="border: 1px solid black;">
+            <table class="table table-bordered huruf" style="border: 1px solid black;">
                 <thead>
                     <tr>
                         <th>NO</th>
                         <th>NO UJIAN</th>
                         <th>NAMA PESERTA UJIAN</th>
-                        <th>KELAS</th>
+                        <th  style=" width: 3cm">KELAS</th>
                         <th>TANDA TANGAN</th>
                     </tr>
                 </thead>
@@ -95,8 +102,8 @@
                     @php $no = 1; $ttd = 1; @endphp
                     @foreach($ujian as $p)
                         <tr>
-                            <td>{{ $no++ }}.</td>
-                            <td class="text-center">{{ $p->nomor_pc }}</td>
+                            <td>{{ $p->nomor_pc }}.</td>
+                            <td class="text-center">{{ $p->nis }}</td>
                             <td>{{ $p->nama_peserta }}</td>
                             <td>{{ $p->kelas }}</td>
                             @if ($ttd % 2 == 0)
@@ -111,12 +118,9 @@
             <div style="float: right">
                 <table>
                     <tr>
-                        <td><h6>Blitar, ....................... <br>
+                        <td><p>Blitar, ....................... <br>
                             Pengawas
-                            </h6></td>
-                    </tr>
-                    <tr>
-                        <td><br><br><br></td>
+                            </p></td>
                     </tr>
                     <tr>
                         <td><h6>_______________________</h6></td>

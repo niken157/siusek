@@ -7,6 +7,7 @@ use App\Http\Controllers\UjianController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SignaturePadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,12 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('signaturepad', [SignaturePadController::class, 'index']);
+Route::post('signaturepad', [SignaturePadController::class, 'upload'])->name('signaturepad.upload');
+
+Route::get('/ttd', function () {
+    return view('ttd');
+});
 Route::get('/berita', [UjianController::class, 'berita']);
 Route::get('/cetak_berita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak_berita']);
 Route::get('/berita_acara/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'berita_acara']);
@@ -62,3 +69,4 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/pengaturan', [SettingController::class, 'index']);
 Route::get('/pengaturan_edit/{id_setting}', [SettingController::class, 'edit']);
 Route::post('/pengaturan/update', [SettingController::class, 'update']);
+?>

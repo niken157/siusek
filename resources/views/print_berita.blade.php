@@ -30,6 +30,8 @@ $catatan = $_GET['catatan'];
 $jumlah_hadir = $_GET['jumlah_hadir'];
 $tdk_hadir = $_GET['tdk_hadir'];
 $tdk_masuk = $_GET['tdk_masuk'];
+$nama_pengawas = $_GET['nama_pengawas'];
+$nip_pengawas = $_GET['nip_pengawas'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -147,17 +149,31 @@ foreach($catatan as $key => $val){
               <tr>
                 <td>1. Tanda Tangan </td>
                 <td>:</td>
-                <td>................................................</td>
+                <td>
+                    <img src="/upload/sig.png" style="width: 150px;float: left;margin-bottom: 5px;">
+                </td>
               </tr>
               <tr>
                 <td>&nbsp;Nama</td>
                 <td>:</td>
-                <td>................................................</td>
+                <td>
+                    <?php
+                    foreach($nama_pengawas as $key => $val){
+                            echo $nama_pengawas[$key];
+                    }
+                            ?>
+                </td>
               </tr>
               <tr>
                 <td>&nbsp;NIP</td>
                 <td>:</td>
-                <td>................................................</td>
+                <td>
+                    <?php
+                    foreach($nip_pengawas as $key => $val){
+                            echo $nip_pengawas[$key];
+                    }
+                            ?>
+                </td>
               </tr>
               <tbody>
             </table>

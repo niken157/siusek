@@ -28,10 +28,6 @@
       </div>
     </div>
   </div>
-        <div class="mb-3">
-            <label for="formFile" class="form-label">Logo</label><br>
-            <img src="/image/{{ $s->logo}}" style="width: 120px;float: left;margin-bottom: 5px;">
-          </div><br><br><br><br><br><br>
             <div class="row">
               <div class="col">
                 <div class="mb-3">
@@ -47,9 +43,13 @@
               </div>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">tipe Password </label>
+                <label for="exampleFormControlInput1" class="form-label">Tipe Password </label>
                 <input name="tipe_pass" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->tipe_pass }}"readonly>
             </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Logo</label><br>
+                <img src="/image/{{ $s->logo}}" style="width: 120px;float: left;margin-bottom: 5px;">
+              </div><br><br><br><br><br><br>
         <span style="float: right">
             <a class="btn btn-primary" href="/pengaturan_edit/{{ $s->id_setting }}" role="button"><i class="fas fa-fw fa-edit"></i> Ubah Pengaturan</a>
 
