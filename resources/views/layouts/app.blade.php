@@ -15,23 +15,41 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset ('logi/fonts/icomoon/style.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset ('logi/fonts/icomoon/style.css')}}">
 
     <link rel="stylesheet" href="{{ asset('logi/css/owl.carousel.min.css')}}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('logi/css/bootstrap.min.css')}}">
-    
+
     <!-- Style -->
-    <link rel="stylesheet" href="{{ asset('logi/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('logi/css/style.css')}}"> --}}
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{{ asset('logi/css/style.css')}}">
    <!-- Scripts -->
+   <script src="{{ asset('logi/js/jquery.min.js')}}"></script>
+   <script src="{{ asset('logi/js/popper.js')}}"></script>
+   <script src="{{ asset('logi/js/bootstrap.min.js')}}"></script>
+   <script src="{{ asset('logi/js/main.js')}}"></script>
   @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <title>Login</title>
   </head>
   <body>
+    <style>
+        body {
+            background-color: rgb(82, 129, 160);
+        }
+        .height {
+        height: 480px;
+    }
+        /* .container {background-color: rgb(166, 197, 218);} */
+    </style>
   <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'SIUSEK') }}
@@ -83,14 +101,14 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
   </body>
-</html> 
+</html>
 <script src="{{ asset('logi/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{ asset('logi/js/popper.min.js')}}"></script>
     <script src="{{ asset('logi/js/bootstrap.min.js')}}"></script>

@@ -1,32 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="d-lg-flex half">
-    <div class="bg order-1 order-md-2" style="background-image: url('logi/images/login.jpeg');"></div>
-    <div class="contents order-2 order-md-1">
-
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-7">
-            <h3>Login to <strong>SIUSEK</strong></h3>
-            <p class="mb-4">Masukkan Email dan Password</p>
-              {{-- <form action="#" method="post"> --}}
-                <form method="POST" action="{{ route('login') }}">
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-11 ">
+                <div class="wrap d-md-flex shadow-lg">
+                    <div class="img" style="background-image: url('logi/images/log.jpeg');">
+              </div>
+                    <div class="login-wrap p-4 p-md-5 shadow-lg height">
+                  <div class="d-flex">
+                      <div class="w-100">
+                          <h3 class="mb-4">Login to <strong>SIUSEK</strong></h3>
+                      </div>
+                  </div>
+                  <form method="POST" action="{{ route('login') }}">
                     @csrf
-                <div class="form-group first">
-                  <label for="email">Email</label>
-                  {{-- <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username"> --}}
-                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                      <div class="form-group mb-3">
+                          <label class="label" for="name">Email</label>
+                          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                </div>
-                <div class="form-group last mb-3">
-                  <label for="password">Password</label>
-                  {{-- <input type="password" class="form-control" placeholder="Your Password" id="password"> --}}
+                      </div>
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
                   <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
@@ -35,33 +36,17 @@
                                     </span>
                                 @enderror
                 </div>
-
-                {{-- <div class="d-sm-flex mb-5 align-items-center">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                        <label class="control control--checkbox mb-3 mb-sm-0" for="remember">
-                            {{ __('Remember Me') }}
-                        </label>
-                    </div>
-                  {{-- <label class="control control--checkbox mb-3 mb-sm-0"><span class="caption">Remember me</span>
-                    <input type="checkbox" checked="checked"/>
-                    <div class="control__indicator"></div>
-                  </label>
-                  <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
-                </div> --}}
-
-                <input type="submit" value="Log In" class="btn btn-block btn-primary">
-                        {{-- <button type="submit" value="Log In" class="btn btn-block btn-warning">
-                             {{ __('Login')
-                        </button> --}}
-            </form>
+                <div class="form-group">
+                    <button type="submit" value="Log In" class="form-control btn btn-primary rounded submit px-3">Log In</button>
+                </div>
+              </form>
+            </div>
           </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  </div>
+</section>
+
   {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
