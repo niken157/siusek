@@ -29,7 +29,7 @@
             <div class="card bg-success text-white mb-4">
                 <div class="card-body">Jumlah Sesi <span style="float: right"> <p>{{$sesi->count()}}</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">View Details</a>
+                    <a class="small text-white stretched-link" href="/sesi">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <div class="card bg-danger text-white mb-4">
                 <div class="card-body">Jumlah PC <span style="float: right"> <p>{{$ruangan->sum('jumlah_PC')}}</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="/ujian">View Details</a>
+                    <a class="small text-white stretched-link" href="/pembagian">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
