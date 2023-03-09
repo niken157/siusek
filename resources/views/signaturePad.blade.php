@@ -20,14 +20,14 @@
 
 </head>
 <body class="bg-dark">
-<div class="container">
+{{-- <div class="container">
    <div class="row">
-       <div class="col-md-6 offset-md-3 mt-5">
+       <div class="col-md-6 offset-md-3 mt-5"> --}}
            <div class="card">
-               <div class="card-header">
+               {{-- <div class="card-header">
                    <h5>Tanda Tangan </h5>
                </div>
-               <div class="card-body">
+               <div class="card-body"> --}}
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success  alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert">×</button>
@@ -37,7 +37,7 @@
                     <form method="POST" action="{{ route('signaturepad.upload') }}">
                         @csrf
                         <div class="col-md-12">
-                            <label class="" for="">Signature:</label>
+                            <label class="" for="">Tanda Tangan:</label>
                             <br/>
                             <div id="sig" ></div>
                             <br/>
@@ -47,11 +47,11 @@
                         <br/>
                         <button class="btn btn-success">Save</button>
                     </form>
-               </div>
+               {{-- </div> --}}
            </div>
-       </div>
+       {{-- </div>
    </div>
-</div>
+</div> --}}
 <script type="text/javascript">
     var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
     $('#clear').click(function(e) {

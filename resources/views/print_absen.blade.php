@@ -29,32 +29,31 @@
         margin-bottom: -10px;
     }
 </style>
-<div class="card">
-    <div class="card-body">
-            <div class="row">
-              <div class="col-2">
+<div class="container-fluid">
+            <div class="row border-top-0">
+              <div class="col-3">
                 <table class="table table-bordered" style="border: 1px solid black;" >
                     <tr>
                         <td><h6 class="text-center">GRUP/SESI</h6></td>
                     </tr>
                     <tr>
-                        <td><h2 class="text-center">{{ $no_sesi}}</h1></td>
+                        <td><h3 class="text-center">{{ $no_sesi}}</h3></td>
                     </tr>
                 </table>
               </div>
-              <div class="col-8">
+              <div class="col-6">
                 <h4 class="text-center"><b> D A F T A R  &nbsp&nbsp  H A D I R</b></h4>
                 <h6 class="text-center upper">PESERTA {{ $setting->nama_ujian}} {{ $setting->semester}}</h6>
                 <h6 class="text-center">SMK PGRI WLINGI</h6>
                 <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <table class="table table-bordered" style="border: 1px solid black;">
                     <tr>
                         <td><h6 class="text-center">RUANG/LAB</h6></td>
                     </tr>
                     <tr>
-                        <td><h2 class="text-center">{{ $nomer_ruangan}}</h1></td>
+                        <td><h3 class="text-center">{{ $nomer_ruangan}}</h3></td>
                     </tr>
                 </table>
               </div>
@@ -68,21 +67,23 @@
                         <td>&nbsp&nbsp&nbsp_________________________</td>
                     </tr>
                     <tr>
-                        <td><p><b>MATA UJIAN</b> </p></td>
+                        <td><p><b>WAKTU</b> </p></td>
                         <td><p>&nbsp&nbsp:</p></td>
-                        <td><p>&nbsp1.&nbsp___________________________</p></td>
+                        <td><p>&nbsp&nbsp&nbsp_______________________________</p></td>
                     </tr>
                 </table>
               </div>
               <div class="col-5">
                 <table>
                     <tr>
-                        <td><p><b>WAKTU</b> </p></td>
+                        <td><p><b>MATA UJIAN</b> </p></td>
                         <td><p>&nbsp&nbsp:</p></td>
-                        <td>____.____-____.____</td>
+                        <td><p>&nbsp1.&nbsp___________________________</p></td>
                     </tr>
                     <tr>
-                        <td colspan="3"><p>&nbsp2.&nbsp____________________________</p></td>
+                        <td></td>
+                        <td></td>
+                        <td><p>&nbsp2.&nbsp____________________________</p></td>
                     </tr>
                 </table>
               </div>
@@ -128,7 +129,6 @@
                 </table>
               </div>
         </div>
-    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="{{ asset('admin/js/scripts.js')}}"></script>

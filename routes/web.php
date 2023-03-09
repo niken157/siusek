@@ -27,6 +27,7 @@ Route::get('/ttd', function () {
 });
 Route::get('/berita', [UjianController::class, 'berita']);
 Route::get('/cetak_berita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak_berita']);
+Route::get('/cetakberita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak_berita2']);
 Route::get('/berita_acara/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'berita_acara']);
 Route::get('/daftar_hadir', [UjianController::class, 'absen']);
 Route::get('/cetak/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak']);

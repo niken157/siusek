@@ -96,7 +96,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>:</td>
                 <td>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="jumlah_hadir[]" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="number" class="form-control" name="jumlah_hadir[]" aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <span class="input-group-text" id="basic-addon2">Orang</span>
                       </div>
                 </td>
@@ -105,7 +105,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>Yang tidak hadir</td>
                 <td>:</td>
                 <td><div class="input-group mb-3">
-                    <input type="text" class="form-control" name="tdk_hadir[]" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input type="number" class="form-control" name="tdk_hadir[]" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <span class="input-group-text" id="basic-addon2">Orang</span>
                   </div>, yakni :</td>
               </tr>
@@ -144,8 +144,10 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>1. Tanda Tangan </td>
                 <td>:</td>
                 <td>
-                    <a class="btn btn-outline-primary" title="Tanda Tangan" href="/signaturepad" role="button" target="_blank">Tanda Tangan Disini</a>
-
+                    {{-- <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="/signaturepad" allowfullscreen></iframe>
+                      </div> --}}
+                      <iframe src="/signaturepad" height="341px" width="800px"></iframe>
                 </td>
               </tr>
               <tr>
