@@ -15,8 +15,9 @@ class UjianController extends Controller
                      ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
                     ->get();
+                    $setting = DB:: table('setting') ->first();
             //tampilkan view barang dan kirim ujiannya ke view tersebut
-            return view('ujian.ujian',['ujian' => $ujian]);//variabel passing
+            return view('ujian.ujian',['ujian' => $ujian,'setting' => $setting]);//variabel passing
     }
     public function absen()
     {
@@ -206,6 +207,19 @@ class UjianController extends Controller
         $setting = DB:: table('setting') ->first();
         // passing data peminjaman yang didapat ke view/pages edit.blade.php
         return view('kartu_satuan' , ['ujian' => $ujian,'setting' => $setting]);
+    }
+    public function detail($id_ujian)
+    {
+        //mengambil data peminjaman berdasarkan id yang dipilih
+        $ujian = DB::table('peserta')
+                    ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                    ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                    ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                    ->where('id_ujian', $id_ujian)
+                    ->get();
+        $setting = DB:: table('setting') ->first();
+        // passing data peminjaman yang didapat ke view/pages edit.blade.php
+        return view('kartu_detail' , ['ujian' => $ujian,'setting' => $setting]);
     }
     public function update(Request $request)
     {
