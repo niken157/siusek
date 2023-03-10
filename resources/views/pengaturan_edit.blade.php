@@ -56,7 +56,7 @@
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">Logo</label><br>
-            <img src="/image/{{ $setting->logo}}" style="width: 120px;float: left;margin-bottom: 5px;">
+            <!-- <img src="/image/{{ $setting->logo}}" style="width: 120px;float: left;margin-bottom: 5px;"> -->
             <input name="logo" required="reqired" class="form-control" type="file" id="formFile" value="{{ $setting->logo }}">
           </div>
         <input type="hidden" name="created_at" value="{{ $setting->created_at }}">
