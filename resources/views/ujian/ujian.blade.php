@@ -14,7 +14,7 @@
 
         </div>
         <div class="card-body">
-            <table class="table table-striped table-hover" id="datatablesSimple">
+            <table class="table table-striped table-hover" id="datatablesSimple" >
                 <thead>
                     <tr>
                         <th>No</th>

@@ -4,7 +4,7 @@
 <br>
 <div class="card">
     <div class="card-header">
-        <h3>FORM UBAH DATA UJIAN</h3>
+        <h3>EDIT KARTU UJIAN</h3>
       </div>
     <div class="card-body">
       <?php
@@ -14,7 +14,7 @@
         {{ csrf_field() }}
         <input type="hidden" name="id_ujian" value="{{ $ujian->id_ujian }}">
         <div class="mb-3">
-            <label for="id_peserta">ID Peserta Didik :</label>
+            <label for="id_peserta">Nama Peserta :</label>
             <select class="selectpicker" data-live-search="true" name="id_peserta" class="form-control" id="id_peserta">
                 @php
                     $peserta = DB::table('peserta')->get();
