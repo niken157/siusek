@@ -11,28 +11,29 @@
                     <div class="login-wrap p-4 p-md-5 shadow-lg height">
                   <div class="d-flex">
                       <div class="w-100">
-                          <h3 class="mb-4">Login to <strong>SIUSEK</strong></h3>
+                          <h3 >Login to <strong>SIUSEK</strong></h3>
+                          <h6> Sistem Administrasi Ujian Sekolah</h6>
                       </div>
                   </div>
                   <form method="POST" action="{{ route('login') }}">
                     @csrf
-                      <div class="form-group mb-3">
-                          <label class="label" for="name">Email</label>
-                          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                      <div class="form mb-3">
+                          <label class="label" for="email"><strong>User Name</strong></label>
+                          <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{ "Pastikan Username Benar"}} </strong>
                                     </span>
                                 @enderror
                       </div>
-                <div class="form-group mb-3">
-                    <label for="password">Password</label>
-                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                     <div class="form mb-3">
+                         <label class="label" for="password"><strong>Password</strong></label>
+                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{ "password tidak sesuai atau salah" }}</strong>
                                     </span>
                                 @enderror
                 </div>
