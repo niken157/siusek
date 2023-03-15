@@ -32,6 +32,7 @@ class HomeController extends Controller
                      ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
                      ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                     ->groupBy('peserta.id_peserta')
                     // ->where('keterangan', 'pinjam')
                     ->get();
                     $peserta = DB::table('peserta')->get();

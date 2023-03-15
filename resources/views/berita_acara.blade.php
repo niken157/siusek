@@ -41,6 +41,13 @@ $bulanList = array(
             .container { margin: 150px auto; }
             .upper { text-transform: uppercase; }
         </style>
+        <style>
+            .kbw-signature { width: 100%; height: 200px;}
+            #sig canvas{
+                width: 100% !important;
+                height: auto;
+            }
+        </style>
 
         <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
         <h4 class="text-center"><b>BERITA ACARA</b></h4>
@@ -52,7 +59,8 @@ $bulanList = array(
             Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
 a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
         </p>
-        <form method="GET" name="frmpost" action="/cetak_berita/{{ $nomer_ruangan }}/{{ $no_sesi }}" target="_blank">
+        <form method="post" action="/berita/store">
+            {{ csrf_field() }}
         <table class="table">
             <tbody>
               <tr>
@@ -96,7 +104,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>:</td>
                 <td>
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control" name="jumlah_hadir[]" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="number" class="form-control" name="hadir" aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <span class="input-group-text" id="basic-addon2">Orang</span>
                       </div>
                 </td>
@@ -105,7 +113,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>Yang tidak hadir</td>
                 <td>:</td>
                 <td><div class="input-group mb-3">
-                    <input type="number" class="form-control" name="tdk_hadir[]" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input type="number" class="form-control" name="tdk_hadir" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <span class="input-group-text" id="basic-addon2">Orang</span>
                   </div>, yakni :</td>
               </tr>
@@ -113,13 +121,13 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>
                     <div class="mb-3">
                         <label for="tdk_masuk">Nama Peserta Didik Yang Tidak Hadir :</label>
-                        <select name="tdk_masuk[]" class="selectpicker  form-control" data-live-search="true" multiple placeholder="Pilih Peserta" id="multiple-select-field">
-                            <option name="tdk_masuk[]" value="-">Tidak Ada</option>
+                        <select name="nama[]" class="selectpicker  form-control" data-live-search="true" multiple placeholder="Pilih Peserta" id="multiple-select-field">
+                            <option value="-">Tidak Ada</option>
                             @php
                                 $peserta = DB::table('peserta')->get();
                             @endphp
                         @foreach($peserta as $p)
-                        <option name="tdk_masuk[]" value="{{ $p->nama_peserta }}">{{ $p->nama_peserta }}</option>
+                        <option value="{{ $p->nama_peserta }}">{{ $p->nama_peserta }}</option>
                         @endforeach
                         </select>
                     </div>
@@ -131,7 +139,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
         b. Catatan selama pelaksanaan {{ $setting->nama_ujian}} {{ $setting->semester}} <br>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Catatan:</label>
-            <textarea name="catatan[]" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea name="catatan" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
 </p>
 <p>
@@ -147,7 +155,24 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                     {{-- <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item" src="/signaturepad" allowfullscreen></iframe>
                       </div> --}}
-                      <iframe src="/signaturepad" height="341px" width="800px"></iframe>
+                      {{-- <iframe src="/signaturepad" height="341px" width="800px"></iframe> --}}
+                      <div class="card">
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success  alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        @endif
+                            <div class="col-md-12">
+                                <label class="" for="">Tanda Tangan:</label>
+                                <br/>
+                                <div id="sig" ></div>
+                                <br/>
+                                <button id="clear" class="btn btn-danger btn-sm">Clear Signature</button>
+                                <textarea id="signature64" name="signed" style="display: none"></textarea>
+                            </div>
+
+               </div>
                 </td>
               </tr>
               <tr>
@@ -155,7 +180,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>:</td>
                 <td>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="nama_pengawas[]" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="pengawas" aria-label="Recipient's username" aria-describedby="basic-addon2">
                       </div>
                 </td>
               </tr>
@@ -164,7 +189,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>:</td>
                 <td>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="nip_pengawas[]" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" name="nip" aria-label="Recipient's username" aria-describedby="basic-addon2">
                       </div>
                 </td>
               </tr>
@@ -176,12 +201,25 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
 </p>
             </tbody>
           </table>
-          <input type="submit" name="btnOk" value="Cetak" class="btn btn-outline-primary"  />
+          <input type="hidden" name="nomer_ruangan" value="{{ $nomer_ruangan}}">
+        <input type="hidden" name="no_sesi" value="{{ $no_sesi}}">
+
+          <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
+        <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
+          <input type="submit" name="btnOk" value="Simpan" class="btn btn-outline-primary"  />
           {{-- <a class="btn btn-outline-primary" title="cetak berita acara " href="/cetak_berita/{{ $nomer_ruangan }}/{{ $no_sesi }}" target="_blank" role="button"><i class="fas fa-fw fa-print"> </i></a> --}}
         </form>
 
     </div>
 
   </div>
+  <script type="text/javascript">
+    var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
+    $('#clear').click(function(e) {
+        e.preventDefault();
+        sig.signature('clear');
+        $("#signature64").val('');
+    });
+</script>
 @endsection
 

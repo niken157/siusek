@@ -15,28 +15,22 @@
                           <h6> Sistem Administrasi Ujian Sekolah</h6>
                       </div>
                   </div>
+                  @error('email')
+                        <div class="alert alert-danger  alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>{{ "Pastikan Username dan Password Benar"}} </strong>
+                        </div>
+                        @enderror
                   <form method="POST" action="{{ route('login') }}">
                     @csrf
                       <div class="form mb-3">
                           <label class="label" for="email"><strong>User Name</strong></label>
                           <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ "Pastikan Username Benar"}} </strong>
-                                    </span>
-                                @enderror
                       </div>
                      <div class="form mb-3">
                          <label class="label" for="password"><strong>Password</strong></label>
-                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ "password tidak sesuai atau salah" }}</strong>
-                                    </span>
-                                @enderror
-                </div>
+                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password" autofocus>
+                     </div>
                 <div class="form-group">
                     <button type="submit" value="Log In" class="form-control btn btn-primary rounded submit px-3">Log In</button>
                 </div>

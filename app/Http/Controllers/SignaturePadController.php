@@ -29,8 +29,8 @@ class SignaturePadController extends Controller
 
         $image_base64 = base64_decode($image_parts[1]);
 
-        $file = $folderPath . "sig" . '.'.$image_type;
-        // file_put_contents($file, $image_base64);
+        // $file = $folderPath . "sig" . '.'.$image_type;
+        $file = $folderPath . uniqid() . '.'.$image_type;
         file_put_contents($file, $image_base64);
         return back()->with('success', 'success Full upload signature');
     }

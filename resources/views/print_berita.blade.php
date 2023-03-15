@@ -26,12 +26,12 @@ $bulanList = array(
     'December' => 'Desember'
 );
 
-$catatan = $_GET['catatan'];
-$jumlah_hadir = $_GET['jumlah_hadir'];
-$tdk_hadir = $_GET['tdk_hadir'];
-$tdk_masuk = $_GET['tdk_masuk'];
-$nama_pengawas = $_GET['nama_pengawas'];
-$nip_pengawas = $_GET['nip_pengawas'];
+// $catatan = $_GET['catatan'];
+// $jumlah_hadir = $_GET['jumlah_hadir'];
+// $tdk_hadir = $_GET['tdk_hadir'];
+// $tdk_masuk = $_GET['tdk_masuk'];
+// $nama_pengawas = $_GET['nama_pengawas'];
+// $nip_pengawas = $_GET['nip_pengawas'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,28 +104,25 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
               <tr>
                 <td>Jumlah hadir</td>
                 <td>:</td>
-                <td><?php
-                    foreach($jumlah_hadir as $key => $val){
-                            echo $jumlah_hadir[$key];
-                    }
-                            ?> orang</td>
+                <td>{{ $tabel_berita_acara->hadir}} orang</td>
               </tr>
               <tr>
                 <td>Yang tidak hadir</td>
                 <td>:</td>
-                <td><?php
-                    foreach($tdk_hadir as $key => $val){
-                            echo $tdk_hadir[$key];
-                    }
-                            ?> orang, yakni :</td>
+                <td>{{ $tabel_berita_acara->tdk_hadir}} orang, yakni :</td>
               </tr>
               <tr>
                 <td colspan="3"><p>
-    <?php
-    foreach($tdk_masuk as $key => $val){
-            echo $tdk_masuk[$key]; ?> &nbsp,&nbsp <?php
-    }
-            ?>.
+                    @php
+              $ba = DB::table('tabel_berita_acara')
+                    ->where([
+                    ['nomer_ruangan', '=', $nomer_ruangan],
+                    ['no_sesi', '=', $no_sesi] ])
+              ->get();
+          @endphp
+          @foreach($ba as $b)
+                    {{ $b->nama}},
+                    @endforeach
 </p></td>
               </tr>
 
@@ -134,11 +131,8 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                             </table>
         <p>
         b. Catatan selama pelaksanaan {{ $setting->nama_ujian}} {{ $setting->semester}} <br>
-        <?php
-foreach($catatan as $key => $val){
-        echo $catatan[$key];
-}
-        ?>
+
+        {{ $tabel_berita_acara->catatan}}
 
     </p>
 <p>
@@ -150,36 +144,21 @@ foreach($catatan as $key => $val){
                 <td>1. Tanda Tangan </td>
                 <td>:</td>
                 <td>
-                    <img src="/upload/sig.png" style="width: 150px;float: left;margin-bottom: 5px;">
+                    <img src="/upload/{{ $tabel_berita_acara->ttd}}" style="width: 130px; height: 130px; float: left;margin-bottom: 5px;">
                 </td>
               </tr>
               <tr>
                 <td>&nbsp;Nama</td>
                 <td>:</td>
-                <td>
-                    <?php
-                    foreach($nama_pengawas as $key => $val){
-                            echo $nama_pengawas[$key];
-                    }
-                            ?>
-                </td>
+                <td>{{ $tabel_berita_acara->pengawas}}</td>
               </tr>
               <tr>
                 <td>&nbsp;NIP</td>
                 <td>:</td>
-                <td>
-                    <?php
-                    foreach($nip_pengawas as $key => $val){
-                            echo $nip_pengawas[$key];
-                    }
-                            ?>
-                </td>
+                <td>{{ $tabel_berita_acara->nip}}</td>
               </tr>
               <tbody>
             </table>
-            <br></p>
-            <p>
-  <i>Keterangan</i> :*) Lingkari yang sesuai
 </p>
             </tbody>
           </table>

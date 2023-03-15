@@ -42,8 +42,23 @@
                             @endphp
                             <td>{{ $u->count()}}</td>
                             <td>
-                                <a class="btn btn-outline-primary" title="cetak berita acara " href="/cetakberita/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button" target="_blank"><i class="fas fa-fw fa-print"> </i>Manual</a>
-                                <a class="btn btn-outline-primary" title="cetak berita acara " href="/berita_acara/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button"><i class="fas fa-fw fa-print"> </i>Digital</a>
+                                <a class="btn btn-outline-primary" title="Cetak Berita Acara " href="/cetakberita/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button" target="_blank"><i class="fas fa-fw fa-print"> </i>Manual</a>
+                                @php
+                                    $ba = DB::table('tabel_berita_acara')
+                                    ->where([
+                                        ['nomer_ruangan', '=', $p->nomer_ruangan],
+                                        ['no_sesi', '=', $p->no_sesi] ])
+                                    ->count()
+                                @endphp
+                                @if ($ba == 0)
+                                <a class="btn btn-outline-success" title="Berita Acara Digital" href="/berita_acara/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button"><i class="fas fa-fw fa-print"> </i>Digital</a>
+
+                                @else
+                                <a class="btn btn-outline-warning" title="Cetak Berita Acara Digital " href="/cetak_berita/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button" target="_blank"><i class="fas fa-fw fa-print"> </i>Cetak</a>
+                                <a class="btn btn-outline-danger" title="Hapus Riwayat Berita Acara " href="/berita/hapus_digital/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button"><i class="fas fa-fw fa-trash"> </i>Hapus</a>
+                                @endif
+
+
                             </td>
 
                         </tr>

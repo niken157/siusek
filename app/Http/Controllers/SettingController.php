@@ -71,6 +71,7 @@ class SettingController extends Controller
             'tahun_ajaran' => $request->tahun_ajaran,
             'jumlah_pass' => $request->jumlah_pass,
             'tipe_pass' => $request->tipe_pass,
+            'tipe_user' => $request->tipe_user,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
     ]);

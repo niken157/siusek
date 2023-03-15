@@ -37,15 +37,25 @@
               </div>
               <div class="col">
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Jumlah Password </label>
+                    <label for="exampleFormControlInput1" class="form-label">Jumlah Password dan Username </label>
                     <input name="jumlah_pass" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->jumlah_pass }}"readonly>
                 </div>
               </div>
             </div>
+            <div class="row">
+                <div class="col">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Tipe Password </label>
                 <input name="tipe_pass" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->tipe_pass }}"readonly>
             </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Tipe Username </label>
+                <input name="tipe_user" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $s->tipe_user }}"readonly>
+            </div>
+        </div>
+    </div>
             <div class="mb-3">
                 <label for="formFile" class="form-label">Logo</label><br>
                 <img src="/image/{{ $s->logo}}" style="width: 120px;float: left;margin-bottom: 5px;">

@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ujian', function (Blueprint $table) {
-            $table->Increments('id_ujian');
+        Schema::create('tabel_kartu', function (Blueprint $table) {
+            $table->Increments('id_kartu');
             $table->integer('id_peserta');
-            $table->integer('id_ruangan');
-            $table->integer('id_sesi');
-            $table->integer('nomor_pc');
+            $table->string('username');
+            $table->string('pass');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ujian');
+        Schema::dropIfExists('tabel_kartu');
     }
 };

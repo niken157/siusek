@@ -16,13 +16,14 @@
     <body>
 <style>
     p{
-        font-size: 8px;
+        font-size: 7px;
         line-height: 70%;
     }
     .div {
         margin-left: 15px;
         /* height: 10cm; */
         width: 6cm;
+        margin-bottom: 20px;
     }
     td {
     padding: 3px;
@@ -54,28 +55,31 @@
             </td>
         </tr>
         <tr class="kotak1">
-            <td><p>NAMA PESERTA :</p></td>
-            <td colspan="6"><p>&nbsp&nbsp{{ $u->nama_peserta}}</p></td>
+            <td><p>NAMA PESERTA </p></td>
+            <td colspan="6"><p>:&nbsp&nbsp{{ $u->nama_peserta}}</p></td>
         </tr>
         <tr class="kotak2">
-            <td><p>KELAS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</p></td>
-            <td colspan="6"><p>&nbsp&nbsp{{ $u->kelas }}</p></td>
+            <td><p>KELAS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+            <td colspan="6"><p>:&nbsp&nbsp{{ $u->kelas }}</p></td>
         </tr>
         <tr class="kotak1">
             <td><p>Ruang / Sesi</p></td>
-            <td><p>&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+            <td><p>:&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
             <td><p>No. Komputer</p></td>
-            <td><p>&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
+            <td><p>:&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
         </tr>
         <tr class="kotak2">
             <td><p>Username</p></td>
-            <td><p>&nbsp&nbsp{{ $u->nis}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+            @if ($u->username == 'nis')
+            <td><p>:&nbsp&nbsp{{ $u->nis}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+            @else
+            <td><p>:&nbsp&nbsp{{ $u->username}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+            @endif
             <td><p>Password</p></td>
-            <td><p>&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+            <td><p>:&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
         </tr>
     </table>
       @endforeach
-
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

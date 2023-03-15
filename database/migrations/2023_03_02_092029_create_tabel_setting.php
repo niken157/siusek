@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('tahun_ajaran');
             $table->integer('jumlah_pass');
             $table->enum('tipe_pass',['Kombinasi','Angka','Huruf']);
+            $table->enum('tipe_user',['nis','manual','random']);
             $table->timestamps();
         });
     }

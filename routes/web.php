@@ -26,9 +26,12 @@ Route::get('/ttd', function () {
     return view('ttd');
 });
 Route::get('/berita', [UjianController::class, 'berita']);
+Route::get('/berita_acara/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'berita_acara']);
+Route::post('/berita/store', [UjianController::class, 'store_ba']);
+Route::get('/berita/hapus_digital/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'hapus_digital']);
+
 Route::get('/cetak_berita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak_berita']);
 Route::get('/cetakberita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak_berita2']);
-Route::get('/berita_acara/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'berita_acara']);
 Route::get('/daftar_hadir', [UjianController::class, 'absen']);
 Route::get('/cetak/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak']);
 Route::get('/kartu', [UjianController::class, 'kartu']);

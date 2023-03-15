@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sesi', function (Blueprint $table) {
             $table->Increments('id_sesi');
-            $table->integer('no_sesi');
+            $table->string('no_sesi');
             $table->time('jam_sesi');
             $table->string('keterangan');
             $table->timestamps();

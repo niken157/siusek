@@ -37,7 +37,7 @@
     <div class="col">
         <div class="mb-3">
             <label for="keterangan">Jurusan:</label>
-            <select name="jurusan" required="reqired" class="form-control" id="jurusan">
+            <select name="jurusan" required="reqired" class="form-select" id="jurusan">
             <option value="{{ $peserta->jurusan }}">{{ $peserta->jurusan}}</option>
             <option value="RPL">RPL</option>
             <option value="TKJ">TKJ</option>
@@ -55,7 +55,7 @@
             <div class="col">
         <div class="mb-3">
             <label for="keterangan">Jenis Kelamin:</label>
-            <select name="jenis_kelamin" required="reqired" class="form-control" id="jenis_kelamin">
+            <select name="jenis_kelamin" required="reqired" class="form-select" id="jenis_kelamin">
             <option value="{{ $peserta->jenis_kelamin }}">{{ $peserta->jenis_kelamin }}</option>
             <option value="Perempuan">Perempuan</option>
             <option value="Laki-Laki">Laki-Laki</option>
@@ -65,7 +65,7 @@
     <div class="col">
         <div class="mb-3">
             <label for="keterangan">Agama:</label>
-            <select name="agama" required="reqired" class="form-control" id="agama">
+            <select name="agama" required="reqired" class="form-select" id="agama">
             <option value="{{ $peserta->agama}}">{{ $peserta->agama}}</option>
             <option value="Islam">Islam</option>
             <option value="Kristen">Kristen</option>

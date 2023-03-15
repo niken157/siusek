@@ -2,6 +2,11 @@
 @extends('template')
 
 @section('content')
+<style>
+    td {
+        font-size: 13px;
+    }
+</style>
 <br>
     <div class="card mb-4">
     <div class="card-header">
@@ -12,16 +17,16 @@
             <a class="align-items-center justify-content-between btn btn-primary" href="/peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
         </div>
         <div class="card-body">
-            <table class="table table-striped table-hover" id="datatablesSimple"  style=" font-size: 80%;">
+            <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Peserta</th>
+                        <th class="col-xs-1">Nama Peserta</th>
                         <th>Nis</th>
                         <th>Kelas</th>
                         <th>Jenis Kelamin</th>
                         <th>Agama</th>
-                        <th>Aksi</th>
+                        <th class="col-xs-1">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
