@@ -24,10 +24,20 @@ $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
             <label for="id_peserta">Nama Peserta Didik :</label>
             <select class="selectpicker" data-live-search="true" name="id_peserta" class="form-select" id="id_peserta" visibleOptions="true">
                 @php
-                    $peserta = DB::table('peserta')->get();
+                $peserta = DB::table('peserta')->get();
                 @endphp
             @foreach($peserta as $p)
-            <option value="{{ $p->id_peserta }}">{{ $p->nama_peserta }}</option>
+            @php
+                    $peserta = DB::table('peserta')->get();
+                    $u = DB::table('peserta')
+                      ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->where('ujian.id_peserta', $p->id_peserta)
+                    ->count();
+                @endphp
+            @if ($u == 0)
+                <option value="{{ $p->id_peserta }}">{{ $p->nama_peserta }}</option>
+            @endif
+
             @endforeach
             </select>
         </div>
@@ -49,7 +59,7 @@ $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
                     $ruangan = DB::table('sesi')->get();
                 @endphp
             @foreach($ruangan as $p)
-            <option value="{{ $p->id_sesi }}">{{ $p->no_sesi }}</option>
+            <option value="{{ $p->id_sesi }}">sesi-{{ $p->no_sesi }} Hari {{ $p->keterangan }}</option>
             @endforeach
             </select>
         </div>

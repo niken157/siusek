@@ -32,8 +32,8 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $u->nama_peserta}}</td>
                             <td>{{ $u->nama_ruangan}}</td>
-                            <td>{{ $u->no_sesi}}</td>
-                            <td>{{ $u->nomor_pc}}</td>
+                            <td>sesi-{{ $u->no_sesi}}</td>
+                            <td>pc-{{ $u->nomor_pc}}</td>
                             <td>
         <a href="" class="btn btn-outline-success" data-toggle="modal" title="Detail Kartu Peserta"
         data-target="#modal<?php echo $u->id_ujian; ?>"><i class="fa-solid fa-search"></i></a>

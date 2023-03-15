@@ -106,7 +106,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Data Sesi
                             </a>
-                            <div class="sb-sidenav-menu-heading">Data Ujian</div>
+                            <div class="sb-sidenav-menu-heading">Data Administrasi</div>
                             <a class="nav-link" href="/pembagian">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Pembagian
@@ -118,6 +118,10 @@
                             <a class="nav-link" href="/daftar_hadir">
                                 <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
                                 Daftar Hadir
+                            </a>
+                            <a class="nav-link" href="/cetak_ruangan">
+                                <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
+                                Cetak Ruangan
                             </a>
                             <div class="sb-sidenav-menu-heading">Setting</div>
                             <a class="nav-link" href="/pengaturan">
@@ -142,7 +146,7 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">PKL UNISBA 2023</div>
                             <div>
-                                <a href="#">Rizza Maidatul Masfufah, Niken Cahyaning tyas, Sigit Nur Ervansah</a>
+                                <a href="#">Rizza Maidatul Masfufah, Niken Cahyaning Tyas, Sigit Nur Ervansah</a>
                             </div>
                         </div>
                     </div>

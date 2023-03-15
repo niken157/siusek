@@ -8,7 +8,7 @@
     <div class="card-header">
             <!-- <i class="fas fa-table me-1"></i> -->
             <span style=" font-size: 1cm;">
-            DATA RUANGAN UJIAN
+            CETAK RUANGAN UJIAN
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-primary" href="/ruangan/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
         </div>
@@ -19,8 +19,6 @@
                         <th>No</th>
                         <th>Nomor Ruangan</th>
                         <th>Nama Ruangan</th>
-                        <th>Jumlah PC</th>
-                        <th>Cadangan PC</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -31,12 +29,10 @@
                             <td>{{ $no++ }}</td>
                             <td>R-{{ $p->nomer_ruangan}}</td>
                             <td>{{ $p->nama_ruangan}}</td>
-                            <td>{{ $p->jumlah_PC}}</td>
-                            <td>{{ $p->cadangan_pc}}</td>
                             <td>
-                                <a class="btn btn-outline-primary" href="/ruangan/edit/{{ $p->id_ruangan }}" role="button"title="Edit Data Ruangan"><i class="fas fa-fw fa-edit"></i></a>
+                                <a class="btn btn-outline-primary" target="_blank" href="/cetakruangan/{{ $p->id_ruangan }}" role="button"title="Cetak Ruangan"><i class="fas fa-fw fa-print"></i></a>
 
-                                <a class="btn btn-outline-danger"  href="/ruangan/hapus/{{ $p->id_ruangan }}" role="button" title="Hapus Data Ruangan"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-outline-success" target="_blank" href="/cetak_amplop/{{ $p->id_ruangan }}" role="button" title="Cetak Amplop Ruangan"><i class="fas fa-fw fa-envelope"></i></a>
                             </td></td>
                         </tr>
                         @endforeach

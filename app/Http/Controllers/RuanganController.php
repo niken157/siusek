@@ -16,6 +16,22 @@ class RuanganController extends Controller
         $ruangan = DB:: table('ruangan') ->get();
         return view ('ruangan.ruangan',['ruangan'=> $ruangan]);
     }
+    public function cetak_ruangan()
+    {
+        $ruangan = DB:: table('ruangan') ->get();
+        return view ('cetak_ruangan',['ruangan'=> $ruangan]);
+    }
+    public function cetakruangan($id_ruangan)
+    {
+        $setting = DB:: table('setting') ->first();
+        $ruangan = DB:: table('ruangan') ->first();
+        return view ('cetakruangan',['ruangan'=> $ruangan,'setting'=> $setting]);
+    }
+    public function cetak_amplop($id_ruangan)
+    {
+        $ruangan = DB:: table('ruangan') ->first();
+        return view ('cetak_amplop',['ruangan'=> $ruangan]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -34,6 +50,7 @@ class RuanganController extends Controller
             'nama_ruangan' => 'required|unique:ruangan|max:50',
             'nomer_ruangan' => 'required|unique:ruangan|max:50',
             'jumlah_PC' => 'required',
+            'cadangan_pc' => 'required',
             'created_at' => 'required',
             'updated_at' => 'required',
         ]);
@@ -44,6 +61,7 @@ class RuanganController extends Controller
             'nama_ruangan' => $request-> nama_ruangan,
             'nomer_ruangan' => $request-> nomer_ruangan,
             'jumlah_PC' => $request-> jumlah_PC,
+            'cadangan_pc' => $request-> cadangan_pc,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);
@@ -91,6 +109,7 @@ class RuanganController extends Controller
             'nama_ruangan' => $request-> nama_ruangan,
             'nomer_ruangan' => $request-> nomer_ruangan,
             'jumlah_PC' => $request-> jumlah_PC,
+            'cadangan_pc' => $request-> cadangan_pc,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
 

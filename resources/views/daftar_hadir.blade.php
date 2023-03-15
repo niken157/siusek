@@ -26,9 +26,9 @@
                     @foreach($ujian as $p)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $p->nomer_ruangan}}</td>
+                            <td>R-{{ $p->nomer_ruangan}}</td>
                             <td>{{ $p->nama_ruangan}}</td>
-                            <td>{{ $p->no_sesi}}</td>
+                            <td>sesi-{{ $p->no_sesi}}</td>
                             @php
                                 $u = DB::table('peserta')
                                 ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')

@@ -7,7 +7,6 @@ use App\Http\Controllers\UjianController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SignaturePadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +18,6 @@ use App\Http\Controllers\SignaturePadController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('signaturepad', [SignaturePadController::class, 'index']);
-Route::post('signaturepad', [SignaturePadController::class, 'upload'])->name('signaturepad.upload');
 
 Route::get('/ttd', function () {
     return view('ttd');
@@ -49,6 +46,10 @@ Route::post('/ruangan/store', [RuanganController::class, 'store']);
 Route::get('/ruangan/edit/{id}', [RuanganController::class, 'edit']);
 Route::post('/ruangan/update', [RuanganController::class, 'update']);
 Route::get('/ruangan/hapus/{id}', [RuanganController::class, 'hapus']);
+
+Route::get('/cetak_ruangan', [RuanganController::class, 'cetak_ruangan']);
+Route::get('/cetakruangan/{id_ruangan}', [RuanganController::class, 'cetakruangan']);
+Route::get('/cetak_amplop/{id_ruangan}', [RuanganController::class, 'cetak_amplop']);
 //halaman sesi
 Route::get('/sesi', [SesiController::class, 'index']);
 Route::get('/sesi/tambah', [SesiController::class, 'create']);
@@ -72,6 +73,8 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('index');
 //setting
 Route::get('/pengaturan', [SettingController::class, 'index']);
+Route::get('/pengaturan_tambah', [SettingController::class, 'create']);
+Route::post('/pengaturan/store', [SettingController::class, 'store']);
 Route::get('/pengaturan_edit/{id_setting}', [SettingController::class, 'edit']);
 Route::post('/pengaturan/update', [SettingController::class, 'update']);
 ?>

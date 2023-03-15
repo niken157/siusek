@@ -13,21 +13,21 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $setting = DB:: table('setting') ->get();
+        $setting = DB:: table('setting') ->first();
         return view ('pengaturan',['setting'=> $setting]);
     }
-    public function ba()
-    {
-        $setting = DB:: table('setting') ->first();
-        return view ('berita_acara',['setting'=> $setting]);
-    }
+    // public function ba()
+    // {
+    //     $setting = DB:: table('setting') ->first();
+    //     return view ('berita_acara',['setting'=> $setting]);
+    // }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('pengaturan_tambah');
     }
 
     /**
@@ -35,7 +35,18 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-      //
+		DB::table('setting')->insert([
+			'nama_ujian' => $request->nama_ujian,
+			'logo' => $request->logo,
+			'semester' => $request->semester,
+			'tahun_ajaran' => $request->tahun_ajaran,
+			'jumlah_pass' => $request->jumlah_pass,
+			'tipe_pass' => $request->tipe_pass,
+            'tipe_user' => $request->tipe_user,
+            'created_at' => $request->created_at,
+            'updated_at' => $request->updated_at
+		]);
+		return redirect('/pengaturan');
     }
 
     /**

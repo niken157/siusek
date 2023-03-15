@@ -26,9 +26,9 @@
                     @foreach($ujian as $p)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $p->nomer_ruangan}}</td>
+                            <td>R-{{ $p->nomer_ruangan}}</td>
                             <td>{{ $p->nama_ruangan}}</td>
-                            <td>{{ $p->no_sesi}}</td>
+                            <td>sesi-{{ $p->no_sesi}}</td>
                             @php
                                 $u = DB::table('peserta')
                                 ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
@@ -48,7 +48,7 @@
                                     ->where([
                                         ['nomer_ruangan', '=', $p->nomer_ruangan],
                                         ['no_sesi', '=', $p->no_sesi] ])
-                                    ->count()
+                                    ->count();
                                 @endphp
                                 @if ($ba == 0)
                                 <a class="btn btn-outline-success" title="Berita Acara Digital" href="/berita_acara/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button"><i class="fas fa-fw fa-print"> </i>Digital</a>

@@ -21,7 +21,16 @@
                 @endphp
                 <option value="{{ $ujian->id_peserta }}">{{ $ujian->nama_peserta }}</option>
             @foreach($peserta as $p)
-            <option value="{{ $p->id_peserta }}">{{ $p->nama_peserta }}</option>
+            @php
+                    $peserta = DB::table('peserta')->get();
+                    $u = DB::table('peserta')
+                      ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->where('ujian.id_peserta', $p->id_peserta)
+                    ->count();
+                @endphp
+            @if ($u == 0)
+                <option value="{{ $p->id_peserta }}">{{ $p->nama_peserta }}</option>
+            @endif
             @endforeach
             </select>
         </div>
@@ -43,9 +52,9 @@
                 @php
                     $ruangan = DB::table('sesi')->get();
                 @endphp
-                <option value="{{ $ujian->id_sesi }}">{{ $ujian->no_sesi }}</option>
+                <option value="{{ $ujian->id_sesi }}">sesi-{{ $ujian->no_sesi }} Hari {{ $ujian->keterangan }}</option>
             @foreach($ruangan as $p)
-            <option value="{{ $p->id_sesi }}">{{ $p->no_sesi }}</option>
+            <option value="{{ $p->id_sesi }}">sesi-{{ $p->no_sesi }} Hari {{ $p->keterangan }}</option>
             @endforeach
             </select>
         </div>
