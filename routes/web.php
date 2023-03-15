@@ -48,6 +48,8 @@ Route::post('/ruangan/update', [RuanganController::class, 'update']);
 Route::get('/ruangan/hapus/{id}', [RuanganController::class, 'hapus']);
 
 Route::get('/cetak_ruangan', [RuanganController::class, 'cetak_ruangan']);
+Route::get('/cetak_ruangan/pengawas', [RuanganController::class, 'pengawas']);
+Route::get('/cetak_ruangan/panitia', [RuanganController::class, 'panitia']);
 Route::get('/cetakruangan/{id_ruangan}', [RuanganController::class, 'cetakruangan']);
 Route::get('/cetak_amplop/{id_ruangan}', [RuanganController::class, 'cetak_amplop']);
 //halaman sesi

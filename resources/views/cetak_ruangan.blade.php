@@ -10,7 +10,8 @@
             <span style=" font-size: 1cm;">
             CETAK RUANGAN UJIAN
             <span style="float: right">
-            <a class="align-items-center justify-content-between btn btn-primary" href="/ruangan/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
+            <a class="align-items-center justify-content-between btn btn-primary" target="_blank" href="/cetak_ruangan/panitia" role="button"><i class="fas fa-fw fa-print"></i> Panitia</a>
+            <a class="align-items-center justify-content-between btn btn-success" target="_blank" href="/cetak_ruangan/pengawas" role="button"><i class="fas fa-fw fa-print"></i> Pengawas</a>
         </div>
         <div class="card-body">
             <table class="table table-striped table-hover" id="datatablesSimple">

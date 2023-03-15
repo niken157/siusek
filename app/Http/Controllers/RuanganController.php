@@ -27,6 +27,18 @@ class RuanganController extends Controller
         $ruangan = DB:: table('ruangan') ->first();
         return view ('cetakruangan',['ruangan'=> $ruangan,'setting'=> $setting]);
     }
+    public function pengawas()
+    {
+        $setting = DB:: table('setting') ->first();
+        $ruangan = DB:: table('ruangan') ->first();
+        return view ('pengawas',['ruangan'=> $ruangan,'setting'=> $setting]);
+    }
+    public function panitia()
+    {
+        $setting = DB:: table('setting') ->first();
+        $ruangan = DB:: table('ruangan') ->first();
+        return view ('panitia',['ruangan'=> $ruangan,'setting'=> $setting]);
+    }
     public function cetak_amplop($id_ruangan)
     {
         $ruangan = DB:: table('ruangan') ->first();
