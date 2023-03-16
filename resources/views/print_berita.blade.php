@@ -118,6 +118,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                     ->where([
                     ['nomer_ruangan', '=', $nomer_ruangan],
                     ['no_sesi', '=', $no_sesi] ])
+                    ->groupBy('nama')
               ->get();
           @endphp
           @foreach($ba as $b)

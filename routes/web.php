@@ -22,9 +22,12 @@ use App\Http\Controllers\HomeController;
 Route::get('/ttd', function () {
     return view('ttd');
 });
+//berita acara
 Route::get('/berita', [UjianController::class, 'berita']);
 Route::get('/berita_acara/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'berita_acara']);
 Route::post('/berita/store', [UjianController::class, 'store_ba']);
+Route::get('/edit_berita_acara/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'edit_berita_acara']);
+Route::post('/berita/update', [UjianController::class, 'update_ba']);
 Route::get('/berita/hapus_digital/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'hapus_digital']);
 
 Route::get('/cetak_berita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak_berita']);
@@ -32,7 +35,7 @@ Route::get('/cetakberita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'c
 Route::get('/daftar_hadir', [UjianController::class, 'absen']);
 Route::get('/cetak/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak']);
 Route::get('/kartu', [UjianController::class, 'kartu']);
-
+//halaman peserta
 Route::get('/peserta', [PesertaController::class, 'index']);
 Route::get('/peserta/tambah', [PesertaController::class, 'tambah']);
 Route::post('/peserta/store', [PesertaController::class, 'store']);
@@ -60,15 +63,15 @@ Route::get('/sesi/edit/{id_sesi}', [SesiController::class, 'edit']);
 Route::post('/sesi/update', [SesiController::class, 'update']);
 Route::get('/sesi/hapus/{id_sesi}', [SesiController::class, 'hapus']);
 //halaman Ujian
-Route::get('/pembagian', [UjianController::class, 'index']);
-Route::get('/pembagian/tambah', [UjianController::class, 'create']);
-Route::post('/pembagian/store', [UjianController::class, 'store']);
-Route::get('/pembagian/edit/{id_ujian}', [UjianController::class, 'edit']);
-Route::post('/pembagian/update', [UjianController::class, 'update']);
-Route::get('/pembagian/hapus/{id_ujian}', [UjianController::class, 'hapus']);
+Route::get('/kartu_peserta', [UjianController::class, 'index']);
+Route::get('/kartu_peserta/tambah', [UjianController::class, 'create']);
+Route::post('/kartu_peserta/store', [UjianController::class, 'store']);
+Route::get('/kartu_peserta/edit/{id_ujian}', [UjianController::class, 'edit']);
+Route::post('/kartu_peserta/update', [UjianController::class, 'update']);
+Route::get('/kartu_peserta/hapus/{id_ujian}', [UjianController::class, 'hapus']);
 Route::get('/kartu_satuan/{id_ujian}', [UjianController::class, 'print']);
 Route::get('/kartu_detail/{id_ujian}', [UjianController::class, 'detail']);
-Route::get('/pembagian/generate', [UjianController::class, 'generate']);
+Route::get('/kartu_peserta/generate', [UjianController::class, 'generate']);
 
 Auth::routes();
 

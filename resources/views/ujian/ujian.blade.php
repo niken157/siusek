@@ -6,11 +6,11 @@
     <div class="card mb-4">
     <div class="card-header">
         <span style=" font-size: 1cm;">
-            DATA KARTU UJIAN
+            DATA KARTU PESERTA
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-warning" href="/kartu" target="_blank" role="button"><i class="fa-solid fa-print" title="cetak kartu semua peserta"></i> Cetak Kartu</a>
-            <a class="align-items-center justify-content-between btn btn-primary" href="/pembagian/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
-            {{-- <a class="align-items-center justify-content-between btn btn-primary" href="/pembagian/generate" role="button"><i class="fas fa-fw fa-plus"></i> Generate</a> --}}
+            <a class="align-items-center justify-content-between btn btn-primary" href="/kartu_peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
+            {{-- <a class="align-items-center justify-content-between btn btn-primary" href="/kartu_peserta/generate" role="button"><i class="fas fa-fw fa-plus"></i> Generate</a> --}}
 
         </div>
         <div class="card-body">
@@ -89,8 +89,8 @@
         </div>
     </div>
                             <a class="btn btn-outline-warning" target="_blank"  href="/kartu_satuan/{{ $u->id_ujian }}" role="button" title="Cetak Kartu Peserta"><i class="fa-solid fa-print"></i></a>
-                                <a class="btn btn-outline-primary" href="/pembagian/edit/{{ $u->id_ujian }}" role="button" title="Edit Data Kartu"><i class="fas fa-fw fa-edit"></i></a>
-                                <a class="btn btn-outline-danger" href="/pembagian/hapus/{{ $u->id_ujian }}" role="button" title="Hapus Data Kartu"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-outline-primary" href="/kartu_peserta/edit/{{ $u->id_ujian }}" role="button" title="Edit Data Kartu"><i class="fas fa-fw fa-edit"></i></a>
+                                <a class="btn btn-outline-danger" href="/kartu_peserta/hapus/{{ $u->id_ujian }}" role="button" title="Hapus Data Kartu"><i class="fas fa-fw fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

@@ -59,7 +59,7 @@ $bulanList = array(
             Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
 a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
         </p>
-        <form method="post" action="/berita/store">
+        <form method="post" action="/berita/update">
             {{ csrf_field() }}
         <table class="table">
             <tbody>
@@ -104,7 +104,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>:</td>
                 <td>
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control" name="hadir" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                        <input type="number" class="form-control" name="hadir" value="{{ $tabel_berita_acara->hadir }}" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
                         <span class="input-group-text" id="basic-addon2">Orang</span>
                       </div>
                 </td>
@@ -113,7 +113,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>Yang tidak hadir</td>
                 <td>:</td>
                 <td><div class="input-group mb-3">
-                    <input type="number" class="form-control" name="tdk_hadir" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                    <input type="number" class="form-control" name="tdk_hadir" value="{{ $tabel_berita_acara->tdk_hadir }}" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
                     <span class="input-group-text" id="basic-addon2">Orang</span>
                   </div>, yakni :</td>
               </tr>
@@ -139,7 +139,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
         b. Catatan selama pelaksanaan {{ $setting->nama_ujian}} {{ $setting->semester}} <br>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Catatan:</label>
-            <textarea name="catatan" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea name="catatan" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $tabel_berita_acara->catatan }}</textarea>
           </div>
 </p>
 <p>
@@ -180,7 +180,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>:</td>
                 <td>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="pengawas" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                        <input type="text" value="{{ $tabel_berita_acara->pengawas }}" class="form-control" name="pengawas" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
                       </div>
                 </td>
               </tr>
@@ -189,7 +189,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                 <td>:</td>
                 <td>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="nip" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                        <input type="text" value="{{ $tabel_berita_acara->nip }}" class="form-control" name="nip" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
                       </div>
                 </td>
               </tr>
@@ -206,7 +206,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
 
           <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
-          <input type="submit" name="btnOk" value="Simpan" class="btn btn-outline-primary"  />
+          <input type="submit" name="btnOk" value="Ubah Riwayat" class="btn btn-outline-primary"  />
           {{-- <a class="btn btn-outline-primary" title="cetak berita acara " href="/cetak_berita/{{ $nomer_ruangan }}/{{ $no_sesi }}" target="_blank" role="button"><i class="fas fa-fw fa-print"> </i></a> --}}
         </form>
 

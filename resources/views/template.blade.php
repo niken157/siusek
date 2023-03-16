@@ -107,9 +107,9 @@
                                 Data Sesi
                             </a>
                             <div class="sb-sidenav-menu-heading">Data Administrasi</div>
-                            <a class="nav-link" href="/pembagian">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Pembagian
+                            <a class="nav-link" href="/kartu_peserta">
+                                <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
+                                Kartu Peserta
                             </a>
                             <a class="nav-link" href="/berita">
                                 <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>

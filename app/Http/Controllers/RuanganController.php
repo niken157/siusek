@@ -18,13 +18,16 @@ class RuanganController extends Controller
     }
     public function cetak_ruangan()
     {
-        $ruangan = DB:: table('ruangan') ->get();
+        $ruangan = DB:: table('ruangan')
+         ->get();
         return view ('cetak_ruangan',['ruangan'=> $ruangan]);
     }
     public function cetakruangan($id_ruangan)
     {
         $setting = DB:: table('setting') ->first();
-        $ruangan = DB:: table('ruangan') ->first();
+        $ruangan = DB:: table('ruangan')
+        ->where('id_ruangan', $id_ruangan)
+        ->first();
         return view ('cetakruangan',['ruangan'=> $ruangan,'setting'=> $setting]);
     }
     public function pengawas()
@@ -41,6 +44,13 @@ class RuanganController extends Controller
     }
     public function cetak_amplop($id_ruangan)
     {
+        // $ujian = DB::table('peserta')
+        //              ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+        //              ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+        //              ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+        //              ->where('id_ruangan', $id_ruangan)
+        //              ->groupBy('ruangan.nama_ruangan')
+        //             ->first();
         $ruangan = DB:: table('ruangan') ->first();
         return view ('cetak_amplop',['ruangan'=> $ruangan]);
     }

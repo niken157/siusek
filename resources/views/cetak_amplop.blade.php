@@ -27,7 +27,17 @@
           </div><br>
           <div class="card text-center">
             <div class="card-body">
-                <b><p class="sedang">TINGKAT   </p></b>
+                @php
+                $ujian = DB::table('peserta')
+                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                     //->where('nomer_ruangan', 'nomer_ruangan')
+                     ->groupBy('ruangan.nama_ruangan')
+                    ->first();
+                    $tingkat =substr($ujian->kelas, 0, 2);
+                @endphp
+                <b><p class="sedang">TINGKAT {{ $tingkat}}  </p></b>
             </div>
           </div>
           <br><br>

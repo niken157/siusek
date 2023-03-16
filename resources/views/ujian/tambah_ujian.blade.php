@@ -18,7 +18,7 @@ $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
         <h3>FORM TAMBAH DATA UJIAN</h3>
       </div>
     <div class="card-body">
-    <form action="/pembagian/store" method="post">
+    <form action="/kartu_peserta/store" method="post">
         {{ csrf_field() }}
         <div class="mb-3">
             <label for="id_peserta">Nama Peserta Didik :</label>

@@ -84,6 +84,23 @@ class UjianController extends Controller
             $tabel_berita_acara = DB:: table('tabel_berita_acara') ->first();
             return view('berita_acara',['ujian' => $ujian, 'nomer_ruangan' => $nomer_ruangan, 'no_sesi' => $no_sesi,'setting' => $setting,'sesi'=>$sesi,'tabel_berita_acara'=>$tabel_berita_acara]);//variabel passing
     }
+    public function edit_berita_acara($nomer_ruangan,$no_sesi)
+    {
+            $ujian = DB::table('peserta')
+                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
+                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
+                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
+                    //  ->where('ruangan.nomer_ruangan', $nomer_ruangan)
+                     ->where([
+                        ['ruangan.nomer_ruangan', '=', $nomer_ruangan],
+                        ['sesi.no_sesi', '=', $no_sesi] ])
+                     ->orderBy('nomor_pc', 'asc')
+                    ->get();
+            $setting = DB:: table('setting') ->first();
+            $sesi = DB:: table('sesi') ->first();
+            $tabel_berita_acara = DB:: table('tabel_berita_acara') ->first();
+            return view('edit_berita_acara',['ujian' => $ujian, 'nomer_ruangan' => $nomer_ruangan, 'no_sesi' => $no_sesi,'setting' => $setting,'sesi'=>$sesi,'tabel_berita_acara'=>$tabel_berita_acara]);//variabel passing
+    }
     public function store_ba(Request $request)
     {
         // $folderPath = public_path('upload/');
@@ -106,6 +123,40 @@ class UjianController extends Controller
         foreach ($request->nama as $row => $val) {
         DB::table('tabel_berita_acara')->insert([
             'id_ba' => $request->id_ba,
+            'nomer_ruangan' => $request->nomer_ruangan,
+            'no_sesi' => $request->no_sesi,
+            'hadir' => $request->hadir,
+            'tdk_hadir' => $request->tdk_hadir,
+            'nama' => $request->nama[$row],
+            'catatan' => $request->catatan,
+             'ttd' => $signature,
+            'pengawas' => $request->pengawas,
+            'nip' => $request->nip,
+            'created_at' => $request->created_at,
+            'updated_at' => $request->updated_at
+        ]);
+    }
+        return redirect('/berita');
+    }
+    public function update_ba(Request $request)
+    {
+
+        $folderPath = public_path('upload/');
+        $image_parts = explode(";base64,", $request->signed);
+        $image_type_aux = explode("image/", $image_parts[0]);
+        $image_type = $image_type_aux[1];
+        $image_base64 = base64_decode($image_parts[1]);
+        $signature = uniqid() . '.'.$image_type;
+        $file = $folderPath . $signature;
+        file_put_contents($file, $image_base64);
+
+        foreach ($request->nama as $row => $val) {
+        DB::table('tabel_berita_acara')
+        ->where([
+            ['nomer_ruangan', '=', $request->nomer_ruangan],
+            ['no_sesi', '=', $request->no_sesi] ])
+        ->update([
+
             'nomer_ruangan' => $request->nomer_ruangan,
             'no_sesi' => $request->no_sesi,
             'hadir' => $request->hadir,
@@ -210,7 +261,7 @@ class UjianController extends Controller
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);
-        return redirect('/pembagian');
+        return redirect('/kartu_peserta');
     }
     //generator
     public function generate(Request $request)
@@ -229,7 +280,7 @@ class UjianController extends Controller
             ]);
            }
 
-        return redirect('/pembagian');
+        return redirect('/kartu_peserta');
     }
 
     // public function show($id_peminjam)
@@ -296,14 +347,14 @@ class UjianController extends Controller
             'updated_at' => $request->updated_at
         ]);
         //alihkan ke halaman home
-        return redirect('/pembagian');
+        return redirect('/kartu_peserta');
     }
 
     public function hapus($id_ujian)
     {
         //menghapus data peminjaman berdasarkan id
             DB::table('ujian')->where('id_ujian', $id_ujian)->delete();
-            return redirect('/pembagian');
+            return redirect('/kartu_peserta');
     }
     public function hapus_digital($nomer_ruangan,$no_sesi)
     {

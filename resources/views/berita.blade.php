@@ -55,6 +55,7 @@
 
                                 @else
                                 <a class="btn btn-outline-warning" title="Cetak Berita Acara Digital " href="/cetak_berita/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button" target="_blank"><i class="fas fa-fw fa-print"> </i>Cetak</a>
+                                <a class="btn btn-outline-success" title="Edit Riwayat Berita Acara " href="/edit_berita_acara/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button"><i class="fas fa-fw fa-edit"> </i>Digital</a>
                                 <a class="btn btn-outline-danger" title="Hapus Riwayat Berita Acara " href="/berita/hapus_digital/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" role="button"><i class="fas fa-fw fa-trash"> </i>Hapus</a>
                                 @endif
 

@@ -10,7 +10,7 @@
       <?php
         $date= date('d F Y, h:i:s A');
         ?>
-    <form action="/pembagian/update" method="post">
+    <form action="/kartu_peserta/update" method="post">
         {{ csrf_field() }}
         <input type="hidden" name="id_ujian" value="{{ $ujian->id_ujian }}">
         <div class="mb-3">
