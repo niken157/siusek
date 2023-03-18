@@ -60,8 +60,8 @@
     <div class="col">
         <div class="mb-3">
             <label for="formFile" class="form-label">Logo</label><br>
-            {{-- <img src="/image/{{ $setting->logo}}" style="width: 120px;float: left;margin-bottom: 5px;"> --}}
-            <input name="logo" required="reqired" class="form-control" type="file" id="formFile" value="{{ $setting->logo }}">
+            <img src="/image/{{ $setting->logo}}" style="width: 120px;float: left;margin-bottom: 5px;">
+            <input name="logo" class="form-control" type="file" id="formFile" value="{{ $setting->logo }}">
           </div>
         </div>
     </div>
@@ -70,7 +70,6 @@
         <select name="tipe_user" required="reqired" class="form-select" id="tipe_user">
         <option value="{{ $setting->tipe_user }}">{{ $setting->tipe_user }}</option>
         <option value="nis">nis</option>
-        <option value="manual">manual</option>
         <option value="random">random</option>
         </select>
     </div>

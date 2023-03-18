@@ -17,6 +17,16 @@ class PesertaController extends Controller
 		return view('peserta.peserta',['peserta' => $peserta]);//variabel passing
 
 	}
+    public function upas()
+	{
+
+		$upas = DB::table('peserta')
+        ->join('upas', 'peserta.id_peserta', '=', 'upas.id_peserta')
+        ->get();//menangkap
+
+		return view('upas.userpass',['upas' => $upas]);//variabel passing
+
+	}
 
 	// method untuk menampilkan view form tambah peserta
 	public function tambah()
@@ -24,6 +34,13 @@ class PesertaController extends Controller
 
 		// memanggil view tambah
 		return view('peserta.tambah_peserta');
+
+	}
+    public function tambah_up()
+	{
+        $setting = DB:: table('setting') ->first();
+		// memanggil view tambah
+		return view('upas.tambah_upas',['setting' => $setting]);
 
 	}
 
@@ -58,7 +75,59 @@ class PesertaController extends Controller
 		return redirect('/peserta');
 
 	}
-
+    public function store_up(Request $request)
+    {
+        DB::table('upas')->insert([
+            'id_peserta' => $request->id_peserta,
+            'username' => $request->username,
+            'pass' => $request->pass,
+            'created_at' => $request->created_at,
+            'updated_at' => $request->updated_at
+        ]);
+        return redirect('/userpass');
+    }
+    public function generate(Request $request)
+    {
+        $setting = DB:: table('setting') ->first();
+        $u = DB::table('peserta')
+            ->get();
+            $peserta = DB::table('peserta')
+                    //   ->join('upas', 'peserta.id_peserta', '=', 'upas.id_peserta')
+                     ->where('id_peserta', 'id_peserta')
+                    ->get();
+                    foreach ($peserta as $key => $value) {
+                        $id_peserta= $key->id_peserta;
+                    }
+                if ($setting->tipe_user == 'random') {
+                    $user = 'abcdefghijklmnopqrstuvwxyz123456789';
+                    $usern  = substr(str_shuffle($user), 0, $setting->jumlah_pass);
+                }else{
+                    $usern='nis';
+                }
+                if ($setting->tipe_pass == 'Angka') {
+                    $ps = '123456789';
+                } else if ($setting->tipe_pass == 'Kombinasi') {
+                    $ps = 'abcdefghijklmnopqrstuvwxyz123456789';
+                } else {
+                    $ps = 'abcdefghijklmnopqrstuvwxyz';
+                }
+                $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
+                $created_at=date('Y-m-d h:i:s');
+                $updated_at=date('Y-m-d h:i:s');
+                $no=1;
+            for ($x = 0; $x <= count($u); $x++) {
+        //foreach ($u as $key => $value) {
+        DB::table('upas')->insert([
+            'id_peserta' => $no++,
+            'username' => $usern,
+            'pass' => $pss,
+            'created_at' => $created_at,
+            'updated_at' => $updated_at
+        ]);
+    }
+        return redirect('/userpass')
+        ->with('success','Post updated successfully');
+    }
 	// method untuk edit data peserta
 	public function edit($id_peserta)
 	{
@@ -66,6 +135,19 @@ class PesertaController extends Controller
 		$peserta = DB::table('peserta')->where('id_peserta',$id_peserta)->first();
 		// passing data peserta yang didapat ke view edit.blade.php
 		return view('peserta.edit_peserta',['peserta' => $peserta]);
+
+	}
+    public function edit_up($id_kartu)
+	{
+        $setting = DB:: table('setting') ->first();
+		// mengambil data peserta berdasarkan id yang dipilih
+        $upas = DB::table('peserta')
+        ->join('upas', 'peserta.id_peserta', '=', 'upas.id_peserta')
+        ->where('id_kartu',$id_kartu)
+        ->first();
+		// $upas = DB::table('upas')->where('id_kartu',$id_kartu)->first();
+		// passing data peserta yang didapat ke view edit.blade.php
+		return view('upas.edit_upas',['upas' => $upas,'setting' => $setting]);
 
 	}
 
@@ -86,6 +168,19 @@ class PesertaController extends Controller
 		// alihkan halaman ke halaman peserta
 		return redirect('/peserta');
 	}
+    public function update_up(Request $request)
+	{
+		// update data peserta
+		DB::table('upas')->where('id_kartu',$request->id_kartu)->update([
+            'id_peserta' => $request->id_peserta,
+            'username' => $request->username,
+            'pass' => $request->pass,
+            'created_at' => $request->created_at,
+            'updated_at' => $request->updated_at
+		]);
+		// alihkan halaman ke halaman peserta
+		return redirect('/userpass');
+	}
 
 	// method untuk hapus data peserta
 	public function hapus($id_peserta)
@@ -96,4 +191,13 @@ class PesertaController extends Controller
 		// alihkan halaman ke halaman peserta
 		return redirect('/peserta');
 	}
+    public function hapus_up($id_kartu)
+	{
+		// menghapus data peserta berdasarkan id yang dipilih
+		DB::table('upas')->where('id_kartu',$id_kartu)->delete();
+
+		// alihkan halaman ke halaman peserta
+		return redirect('/userpass');
+	}
 }
+?>

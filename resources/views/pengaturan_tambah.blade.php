@@ -65,7 +65,6 @@
         <label for="keterangan">Tipe username</label>
         <select name="tipe_user" required="reqired" class="form-select" id="tipe_user">
         <option value="nis">nis</option>
-        <option value="manual">manual</option>
         <option value="random">random</option>
         </select>
     </div>

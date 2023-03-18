@@ -17,7 +17,9 @@
             <label for="id_peserta">Nama Peserta :</label>
             <select class="selectpicker" data-live-search="true" name="id_peserta" class="form-select" id="id_peserta">
                 @php
-                    $peserta = DB::table('peserta')->get();
+                    $peserta = DB::table('peserta')
+                ->join('upas', 'peserta.id_peserta', '=', 'upas.id_peserta')
+                ->get();
                 @endphp
                 <option value="{{ $ujian->id_peserta }}">{{ $ujian->nama_peserta }}</option>
             @foreach($peserta as $p)

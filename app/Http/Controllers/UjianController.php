@@ -14,7 +14,7 @@ class UjianController extends Controller
                      ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
                      ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
-                     ->join('tabel_kartu', 'tabel_kartu.id_peserta', '=', 'peserta.id_peserta')
+                     ->join('upas', 'upas.id_peserta', '=', 'peserta.id_peserta')
                      ->groupBy('peserta.id_peserta')
                     //  ->join('tabel_berita_acara', 'tabel_berita_acara.id_ruangan', '=', 'ruangan.id_ruangan' 'tabel_berita_acara.id_sesi', '=', 'sesi.id_sesi')
                     ->get();
@@ -217,7 +217,7 @@ class UjianController extends Controller
                      ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
                      ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
-                     ->join('tabel_kartu', 'tabel_kartu.id_peserta', '=', 'peserta.id_peserta')
+                     ->join('upas', 'upas.id_peserta', '=', 'peserta.id_peserta')
                      ->groupBy('peserta.id_peserta')
                     ->get();
             $setting = DB:: table('setting') ->first();
@@ -250,14 +250,6 @@ class UjianController extends Controller
             'id_ruangan' => $request->id_ruangan,
             'id_sesi' => $request->id_sesi,
             'nomor_pc' => $request->nomor_pc,
-            'created_at' => $request->created_at,
-            'updated_at' => $request->updated_at
-        ]);
-        DB::table('tabel_kartu')->insert([
-            'id_kartu' => $request->id_kartu,
-            'id_peserta' => $request->id_peserta,
-            'username' => $request->username,
-            'pass' => $request->pass,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);
@@ -313,8 +305,9 @@ class UjianController extends Controller
                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
-                    ->join('tabel_kartu', 'tabel_kartu.id_peserta', '=', 'peserta.id_peserta')
+                    ->join('upas', 'upas.id_peserta', '=', 'peserta.id_peserta')
                     ->where('id_ujian', $id_ujian)
+                    ->groupBy('peserta.id_peserta')
                     ->get();
         $setting = DB:: table('setting') ->first();
         // passing data peminjaman yang didapat ke view/pages edit.blade.php
@@ -327,7 +320,7 @@ class UjianController extends Controller
                     ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
                     ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                     ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
-                    ->join('tabel_kartu', 'tabel_kartu.id_peserta', '=', 'peserta.id_peserta')
+                    ->join('upas', 'upas.id_peserta', '=', 'peserta.id_peserta')
                     ->where('id_ujian', $id_ujian)
                     ->get();
         $setting = DB:: table('setting') ->first();

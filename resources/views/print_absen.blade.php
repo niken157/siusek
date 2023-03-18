@@ -92,7 +92,7 @@
             <table class="table table-bordered huruf" style="border: 1px solid black;">
                 <thead>
                     <tr>
-                        <th>NO</th>
+                        <th style="witdh: 1cm">NO</th>
                         <th>NO UJIAN</th>
                         <th>NAMA PESERTA UJIAN</th>
                         <th  style=" width: 3cm">KELAS</th>
@@ -103,7 +103,7 @@
                     @php $no = 1; $ttd = 1; @endphp
                     @foreach($ujian as $p)
                         <tr>
-                            <td>{{ $p->nomor_pc }}.</td>
+                            <td class="text-center">{{ $p->nomor_pc }}.</td>
                             <td class="text-center">{{ $p->nis }}</td>
                             <td>{{ $p->nama_peserta }}</td>
                             <td>{{ $p->kelas }}</td>
