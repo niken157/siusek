@@ -11,6 +11,7 @@
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-primary" href="/userpass/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
             <a class="align-items-center justify-content-between btn btn-secondary" href="/userpass/generate" role="button"><i class="fas fa-fw fa-gear"></i> Generate</a>
+            <a class="align-items-center justify-content-between btn btn-danger" href="/userpass/hapus_semua" role="button"><i class="fas fa-fw fa-trash"></i> Semua</a>
         </div>
         <div class="card-body">
             <table class="table table-striped table-hover" id="datatablesSimple">

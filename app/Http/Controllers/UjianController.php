@@ -16,7 +16,9 @@ class UjianController extends Controller
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
                      ->join('upas', 'upas.id_peserta', '=', 'peserta.id_peserta')
                      ->groupBy('peserta.id_peserta')
-                    //  ->join('tabel_berita_acara', 'tabel_berita_acara.id_ruangan', '=', 'ruangan.id_ruangan' 'tabel_berita_acara.id_sesi', '=', 'sesi.id_sesi')
+                     ->orderBy('peserta.nama_peserta', 'ASC')
+                     ->orderBy('ruangan.nomer_ruangan', 'ASC')
+                     ->orderBy('ujian.nomor_pc', 'ASC')
                     ->get();
                     $setting = DB:: table('setting') ->first();
             //tampilkan view barang dan kirim ujiannya ke view tersebut

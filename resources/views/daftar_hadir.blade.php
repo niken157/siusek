@@ -13,12 +13,12 @@
             <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th width="50%">Nomer Ruangan</th>
-                        <th>Ruangan</th>
-                        <th>Sesi</th>
-                        <th>Jumlah Peserta</th>
-                        <th>Aksi</th>
+                        <th>NO</th>
+                        <th width="50%">NAMA RUANGAN</th>
+                        <th>KETERANGAN</th>
+                        <th>NAMA SESI</th>
+                        <th>JUMLAH PESERTA</th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,7 +28,7 @@
                             <td>{{ $no++ }}</td>
                             <td>R-{{ $p->nomer_ruangan}}</td>
                             <td>{{ $p->nama_ruangan}}</td>
-                            <td>sesi-{{ $p->no_sesi}}</td>
+                            <td>SESI-{{ $p->no_sesi}}</td>
                             @php
                                 $u = DB::table('peserta')
                                 ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')

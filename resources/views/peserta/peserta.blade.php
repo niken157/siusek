@@ -15,6 +15,7 @@
             DATA PESERTA UJIAN
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-primary" href="/peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
+            <a class="align-items-center justify-content-between btn btn-danger" href="/peserta/hapus_semua" role="button"><i class="fas fa-fw fa-trash"></i> Semua</a>
         </div>
         <div class="card-body">
             <table class="table table-striped table-hover" id="datatablesSimple">

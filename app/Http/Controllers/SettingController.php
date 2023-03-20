@@ -74,8 +74,21 @@ class SettingController extends Controller
      */
     public function update(Request $request)
     {
-
-        DB::table('setting')->where('id_setting', $request->id_setting)->update([
+        if ($request-> logo) {
+            DB::table('setting')->where('id_setting', $request->id_setting)->update([
+                'id_setting' => $request-> id_setting,
+                'nama_ujian' => $request-> nama_ujian,
+                'logo' => $request-> logo,
+                'semester' => $request->semester,
+                'tahun_ajaran' => $request->tahun_ajaran,
+                'jumlah_pass' => $request->jumlah_pass,
+                'tipe_pass' => $request->tipe_pass,
+                'tipe_user' => $request->tipe_user,
+                'created_at' => $request->created_at,
+                'updated_at' => $request->updated_at
+        ]);
+        }else{
+            DB::table('setting')->where('id_setting', $request->id_setting)->update([
             'id_setting' => $request-> id_setting,
             'nama_ujian' => $request-> nama_ujian,
             //'logo' => $request-> logo,
@@ -87,6 +100,8 @@ class SettingController extends Controller
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
     ]);
+        }
+
     //alihkan ke halaman home
     return redirect('/pengaturan');
     }

@@ -71,7 +71,6 @@ class PesertaController extends Controller
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
 		]);
-		// alihkan halaman ke halaman peserta
 		return redirect('/peserta');
 
 	}
@@ -91,7 +90,9 @@ class PesertaController extends Controller
         $setting = DB:: table('setting') ->first();
         $u = DB::table('peserta')
             ->get();
-            $peserta = DB::table('peserta')
+        $no=1;
+            for ($x = 0; $x <= count($u); $x++) {
+                $peserta = DB::table('peserta')
                     //   ->join('upas', 'peserta.id_peserta', '=', 'upas.id_peserta')
                      ->where('id_peserta', 'id_peserta')
                     ->get();
@@ -111,13 +112,13 @@ class PesertaController extends Controller
                 } else {
                     $ps = 'abcdefghijklmnopqrstuvwxyz';
                 }
-                $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
+
                 $created_at=date('Y-m-d h:i:s');
                 $updated_at=date('Y-m-d h:i:s');
-                $no=1;
-            for ($x = 0; $x <= count($u); $x++) {
+                $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
         //foreach ($u as $key => $value) {
         DB::table('upas')->insert([
+            // 'id_peserta' => $u->id_peserta,
             'id_peserta' => $no++,
             'username' => $usern,
             'pass' => $pss,
@@ -165,7 +166,6 @@ class PesertaController extends Controller
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
 		]);
-		// alihkan halaman ke halaman peserta
 		return redirect('/peserta');
 	}
     public function update_up(Request $request)
@@ -178,25 +178,32 @@ class PesertaController extends Controller
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
 		]);
-		// alihkan halaman ke halaman peserta
 		return redirect('/userpass');
 	}
 
 	// method untuk hapus data peserta
 	public function hapus($id_peserta)
 	{
-		// menghapus data peserta berdasarkan id yang dipilih
 		DB::table('peserta')->where('id_peserta',$id_peserta)->delete();
 
-		// alihkan halaman ke halaman peserta
 		return redirect('/peserta');
 	}
     public function hapus_up($id_kartu)
 	{
-		// menghapus data peserta berdasarkan id yang dipilih
 		DB::table('upas')->where('id_kartu',$id_kartu)->delete();
 
-		// alihkan halaman ke halaman peserta
+		return redirect('/userpass');
+	}
+    public function hapus_s()
+	{
+		DB::table('peserta')->truncate();
+
+		return redirect('/peserta');
+	}
+    public function hapus_all()
+	{
+		DB::table('upas')->truncate();
+
 		return redirect('/userpass');
 	}
 }

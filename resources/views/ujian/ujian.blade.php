@@ -2,6 +2,9 @@
 @extends('template')
 
 @section('content')
+<style>
+    .upper { text-transform: uppercase; }
+</style>
 <br>
     <div class="card mb-4">
     <div class="card-header">
@@ -17,12 +20,12 @@
             <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Nama Peserta</th>
-                        <th>Ruangan</th>
-                        <th>Sesi</th>
-                        <th>No PC</th>
-                        <th>Aksi</th>
+                        <th>NO</th>
+                        <th>NAMA PESERTA</th>
+                        <th>RUANGAN</th>
+                        <th>NAMA SESI</th>
+                        <th>NO PC</th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,10 +33,10 @@
                     @foreach($ujian as $u)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $u->nama_peserta}}</td>
-                            <td>{{ $u->nama_ruangan}}</td>
-                            <td>sesi-{{ $u->no_sesi}}</td>
-                            <td>pc-{{ $u->nomor_pc}}</td>
+                            <td class="upper">{{ $u->nama_peserta}}</td>
+                            <td>R-{{ $u->nomer_ruangan}}</td>
+                            <td>SESI-{{ $u->no_sesi}}</td>
+                            <td>PC-{{ $u->nomor_pc}}</td>
                             <td>
         <a href="" class="btn btn-outline-success" data-toggle="modal" title="Detail Kartu Peserta"
         data-target="#modal<?php echo $u->id_ujian; ?>"><i class="fa-solid fa-search"></i></a>
