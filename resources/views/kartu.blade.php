@@ -31,15 +31,21 @@
     .upper { text-transform: uppercase; }
     .kotak1 {
 
-        border-top: 1px solid black ;
-        border-left: 1px solid black ;
-        border-right: 1px solid black ;
-    }
-    .kotak2 {
-        border-bottom: 1px solid black ;
-        border-left: 1px solid black ;
-        border-right: 1px solid black ;
-    }
+border-top: 1px solid black ;
+border-left: 1px solid black ;
+border-right: 1px solid black ;
+
+}
+.kotak2 {
+border-left: 1px solid black ;
+border-right: 1px solid black ;
+
+}
+.kotak3 {
+border-left: 1px solid black ;
+border-right: 1px solid black ;
+border-bottom:1px solid black ;
+}
 </style>
 @php $no = 1; @endphp
 
@@ -54,29 +60,28 @@
                 <p>TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</p>
             </td>
         </tr>
-        <tr class="kotak1">
+        <tr  class="kotak1">
             <td><p>NAMA PESERTA </p></td>
             <td colspan="6"><p>:&nbsp&nbsp{{ $u->nama_peserta}}</p></td>
         </tr>
         <tr class="kotak2">
             <td><p>KELAS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
             <td colspan="6"><p>:&nbsp&nbsp{{ $u->kelas }}</p></td>
-        </tr>
-        <tr class="kotak1">
+        <tr class="kotak2">
+            <td><p><b>Username</p></td>
+            @if ($u->username == 'nis')
+            <td><p><b>:&nbsp&nbsp{{ $u->nis}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+            @else
+            <td><p><b>:&nbsp&nbsp{{ $u->username}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+            @endif
+            <td><p><b>Password</p></td>
+            <td><p><b>:&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+            <tr class="kotak3">
             <td><p>Ruang / Sesi</p></td>
             <td><p>:&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
             <td><p>No. Komputer</p></td>
             <td><p>:&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
         </tr>
-        <tr class="kotak2">
-            <td><p>Username</p></td>
-            @if ($u->username == 'nis')
-            <td><p>:&nbsp&nbsp{{ $u->nis}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-            @else
-            <td><p>:&nbsp&nbsp{{ $u->username}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-            @endif
-            <td><p>Password</p></td>
-            <td><p>:&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
         </tr>
     </table>
       @endforeach

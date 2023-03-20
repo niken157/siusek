@@ -14,7 +14,7 @@
         {{ csrf_field() }}
         <input type="hidden" name="id_ruangan" value="{{ $ruangan->id_ruangan}}">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nomor Ruangan</label>
+            <label for="exampleFormControlInput1" class="form-label">Nama Ruangan</label>
             <input name="nomer_ruangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->nomer_ruangan }}"required>
             {{-- @error('nomer_ruangan')
                 <span class="invalid-feedback" role="alert">
@@ -23,7 +23,7 @@
             @enderror --}}
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nama Ruangan </label>
+            <label for="exampleFormControlInput1" class="form-label"> Keterangan </label>
             <input name="nama_ruangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->nama_ruangan }}"required>
             {{-- @error('nama_ruangan')
                 <span class="invalid-feedback" role="alert">

@@ -11,7 +11,7 @@
     <form action="/ruangan/store" method="post">
         {{ csrf_field() }}
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nomor Ruangan</label>
+            <label for="exampleFormControlInput1" class="form-label">Nama Ruangan</label>
             <input name="nomer_ruangan" value="{{ old('nomer_ruangan') }}" type="text" class="form-control @error('nomer_ruangan') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Nomor Ruangan"required>
             @error('nomer_ruangan')
                 <span class="invalid-feedback" role="alert">
@@ -20,7 +20,7 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nama Ruangan</label>
+            <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
             <input name="nama_ruangan" value="{{ old('nama_ruangan') }}" type="text" class="form-control @error('nama_ruangan') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Nama Ruangan"required>
             @error('nama_ruangan')
                 <span class="invalid-feedback" role="alert">

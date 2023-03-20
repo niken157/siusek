@@ -17,8 +17,8 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nomor Ruangan</th>
                         <th>Nama Ruangan</th>
+                        <th>Keterangan</th>
                         <th>Jumlah PC</th>
                         <th>Cadangan PC</th>
                         <th>Aksi</th>
