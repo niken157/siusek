@@ -16,27 +16,59 @@
     <body class="sb-nav-fixed">
 <style>
 
-div {
+p{
+        font-size: 20px;
+        line-height: 70%;
+    }
+
+    .tb {
+        margin-left: 15px;
+         height: 4cm;
+        width: 7cm;
+        margin-bottom: 20px;
+    }
+
+    .tr {
+        margin-left: 15px;
+         height: 2cm;
+        width: 7cm;
+        margin-bottom: 20px;
+    }
+
+.tb {
   border: 5px solid orange;
+ }
+
+ .tr {
+  border: 5px solid orange;
+ }
+
+    .upper { text-transform: uppercase; 
+     font-size: 5cm; 
+   font-size: 3cm;
 }
 
-    .upper { text-transform: uppercase; }
-    .besar { font-size: 3cm; }
-    .sedang { font-size: 1cm; }
+td {
+    padding: 5px;
+    }
 </style>
-<span style="float">
-<div class="card" style="width: 7cm;">
-<div class="card" style="right-left: 4cm;">
-        <div class="card">
-            <!-- <div class="card-header text-center"> -->
-            <div class="panel-body post-body text-center">
-            <!-- <div class="card-body text-center"> -->
-                <b><p class="upper sedang">Ruang</p></b>
-                <b><p class="sedang">{{ $ruangan->nomer_ruangan}}</p></b>
-            </div>
-          </div><br>
-          <div class="card text-center">
-            <div class="card-body">
+
+        <table class="tb";>
+        <td class="card-text-center">
+               <p class="text-center"><b>Ruang</b></p>
+           <b><p class="text-center">{{ $ruangan->nomer_ruangan}}</p></b>
+
+           </td>
+
+<!-- </tr> -->
+<tr>
+        <th style="width:10%"></th>
+     
+    </tr 
+</td>
+<table class="tr">
+          <tr class="panel-body post-body table-text-center">
+            <td class="table-body post-body">
                 @php
                 $ujian = DB::table('peserta')
                      ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
@@ -47,11 +79,11 @@ div {
                     ->first();
                     $tingkat =substr($ujian->kelas, 0, 2);
                 @endphp
-                <b><p class="sedang">TINGKAT {{ $tingkat}}  </p></b>
-            </div>
-          </div>
-          <br><br>
-    </body>
+             <td><b><p class="text-center" >TINGKAT {{ $tingkat}} </p></b></td>
+</td>
+</td>
+>
+</tr>
 </html>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('admin/js/scripts.js')}}"></script>
