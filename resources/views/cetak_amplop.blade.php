@@ -20,13 +20,6 @@ div {
   border: 5px solid orange;
 }
 
-.div {
-        margin-left: 15px;
-        /* height: 10cm; */
-        width: 6cm;
-        margin-bottom: 20px;
-    }
-
     .upper { text-transform: uppercase; }
     .besar { font-size: 3cm; }
     .sedang { font-size: 1cm; }
