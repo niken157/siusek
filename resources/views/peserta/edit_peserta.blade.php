@@ -32,6 +32,7 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Kelas Peserta</label>
             <input name="kelas" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $peserta->kelas }}" required>
+            <i class="form-label">Contoh : 12-RPL-1</i>
         </div>
     </div>
     <div class="col">
