@@ -15,12 +15,22 @@
     </head>
     <body class="sb-nav-fixed">
 <style>
+
+div {
+  border: 5px solid orange;
+}
+
     .upper { text-transform: uppercase; }
-    .besar { font-size: 5cm; }
-    .sedang { font-size: 2cm; }
+    .besar { font-size: 3cm; }
+    .sedang { font-size: 1cm; }
 </style>
+<span style="float">
+<div class="card" style="width: 7cm;">
+<div class="card" style="right-left: 4cm;">
         <div class="card">
-            <div class="card-body text-center">
+            <!-- <div class="card-header text-center"> -->
+            <div class="panel-body post-body text-center">
+            <!-- <div class="card-body text-center"> -->
                 <b><p class="upper sedang">Ruang</p></b>
                 <b><p class="sedang">{{ $ruangan->nomer_ruangan}}</p></b>
             </div>
