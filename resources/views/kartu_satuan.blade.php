@@ -17,75 +17,46 @@
 <style>
     p{
         font-size: 7px;
-        line-height: 70%;
     }
     .div {
         margin-left: 15px;
-        /* height: 10cm; */
-        width: 6cm;
+        width: 9,83;
+        height: 6;
         margin-bottom: 20px;
     }
     td {
     padding: 3px;
     }
     .upper { text-transform: uppercase; }
-    .kotak1 {
 
+    .kotak1 {
         border-top: 1px solid black ;
         border-left: 1px solid black ;
-        border-right: 1px solid black ;
+        border-right: 1px solid black ; 
+        border-bottom:1px solid black ;
       
     }
-    .kotak2 {
-        border-left: 1px solid black ;
-        border-right: 1px solid black ;
-     
-    }
-    .kotak3 {
-        border-left: 1px solid black ;
-        border-right: 1px solid black ;
-        border-bottom:1px solid black ;
-    }
+
 </style>
 @php $no = 1; @endphp
 
 <br>
-<div class="row row-cols-1 row-cols-md-3 g-4">
+
     @foreach($ujian as $u)
     <table class="div">
         <tr style="border: 1px solid black ;">
-            <td><img src="/image/{{ $setting->logo}}" class="rounded" height="40" width="40" alt="..."></td>
+            <td><img src="/image/{{ $setting->logo}}" class="rounded" height="50" width="50" alt="..."></td>
             <td colspan="4">
-                <p class="upper"><b>KARTU PESERTA SEMESTER {{ $setting->semester}}</b></p>
-                <p>TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</p>
+                <p class="upper"><b>KARTU PESERTA SEMESTER {{ $setting->semester}} <br>&nbsp&nbspTAHUN PELAJARAN {{ $setting->tahun_ajaran}}</b></p>
             </td>
         </tr>
-        <tr class="kotak1">
-            <td><p>NAMA PESERTA </p></td>
-            <td colspan="6"><p>:&nbsp&nbsp{{ $u->nama_peserta}}</p></td>
-        </tr>
-        <tr class="kotak2">
-            <td><p>KELAS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-            <td colspan="6"><p>:&nbsp&nbsp{{ $u->kelas }}</p></td>
-        <tr class="kotak2">
-            <td><p><b>Username</p></td>
-            @if ($u->username == 'nis')
-            <td><p><b>:&nbsp&nbsp{{ $u->nis}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-            @else
-            <td><p><b>:&nbsp&nbsp{{ $u->username}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-            @endif
-            <td><p><b>Password</p></td>
-            <td><p><b>:&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-            <tr class="kotak3">
-            <td><p>Ruang / Sesi</p></td>
-            <td><p>:&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
-            <td><p>No. Komputer</p></td>
-            <td><p>:&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
-        </tr>
+        <tr class="kotak1" >
+            <td><p>NAMA PESERTA <br> KELAS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br> <b>Username</b><br><b>Password</b><br>Ruang / Sesi<br>No. Komputer</p></td>
+            <td colspan="6"><p>:&nbsp&nbsp{{ $u->nama_peserta}} <br> :&nbsp&nbsp{{ $u->kelas }} <br><b> @if ($u->username == 'nis'):&nbsp&nbsp{{ $u->nis}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @else :&nbsp&nbsp{{ $u->username}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @endif </b><br><b>:&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </b><br>:&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br>:&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
         </tr>
     </table>
       @endforeach
-  </div>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="{{ asset('admin/js/scripts.js')}}"></script>

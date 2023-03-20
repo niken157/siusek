@@ -38,6 +38,7 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Kelas Peserta</label>
             <input name="kelas" type="text" class="form-control @error('kelas') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan kelas" autofocus value="{{ old('kelas') }}" required>
+            <i>Contoh : 12-RPL-1</i>
             @error('kelas')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
