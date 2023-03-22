@@ -19,9 +19,13 @@
         font-size: 7px;
     }
     .div {
-        margin-left: 15px;
+        /* margin-left: 15px;
         width: 9,83;
         height: 6;
+        margin-bottom: 20px; */
+        margin-left: 15px;
+        /* height: 10cm; */
+        width: 6cm;
         margin-bottom: 20px;
     }
     td {
@@ -36,6 +40,10 @@
         border-bottom:1px solid black ;
       
     }
+    h1 {
+  font-size: 10px;
+  text-align: center; 
+}
 
 </style>
 @php $no = 1; @endphp
@@ -46,8 +54,7 @@
     <table class="div">
         <tr style="border: 1px solid black ;">
             <td><img src="/image/{{ $setting->logo}}" class="rounded" height="50" width="50" alt="..."></td>
-            <td colspan="4">
-                <p class="upper"><b>KARTU PESERTA SEMESTER {{ $setting->semester}} <br>&nbsp&nbspTAHUN PELAJARAN {{ $setting->tahun_ajaran}}</b></p>
+            <td><h1><b>KARTU PESERTA <br>UJIAN SEMESTER {{ $setting->semester}} <br>&nbsp&nbspTAHUN PELAJARAN {{ $setting->tahun_ajaran}}</b>
             </td>
         </tr>
         <tr class="kotak1" >
