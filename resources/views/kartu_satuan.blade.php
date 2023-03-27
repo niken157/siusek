@@ -36,13 +36,13 @@
     .kotak1 {
         border-top: 1px solid black ;
         border-left: 1px solid black ;
-        border-right: 1px solid black ; 
+        border-right: 1px solid black ;
         border-bottom:1px solid black ;
-      
+
     }
     h1 {
   font-size: 10px;
-  text-align: center; 
+  text-align: center;
 }
 
 </style>
@@ -54,7 +54,7 @@
     <table class="div">
         <tr style="border: 1px solid black ;">
             <td><img src="/image/{{ $setting->logo}}" class="rounded" height="50" width="50" alt="..."></td>
-            <td><h1><b>KARTU PESERTA <br>UJIAN SEMESTER {{ $setting->semester}} <br>&nbsp&nbspTAHUN PELAJARAN {{ $setting->tahun_ajaran}}</b>
+            <td><h1 class="upper"><b>KARTU PESERTA <br> {{ $setting->nama_ujian}} <br>&nbsp&nbspTAHUN PELAJARAN {{ $setting->tahun_ajaran}}</b>
             </td>
         </tr>
         <tr class="kotak1" >
@@ -63,7 +63,7 @@
         </tr>
     </table>
       @endforeach
-  
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="{{ asset('admin/js/scripts.js')}}"></script>

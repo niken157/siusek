@@ -19,7 +19,7 @@
     .besar { font-size: 3cm; }
     .sedang { font-size: 2cm; }
 </style>
-        <h1 class="text-center upper">{{ $setting->nama_ujian}} {{ $setting->semester}}</h1>
+        <h1 class="text-center upper">{{ $setting->nama_ujian}}</h1>
         <h1 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h1>
         <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="200" width="200" alt="..."><br><br>
         <div class="card">

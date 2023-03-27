@@ -17,10 +17,10 @@
             <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Nomor Ruangan</th>
-                        <th>Nama Ruangan</th>
-                        <th>Aksi</th>
+                        <th>NO</th>
+                        <th>NAMA RUANGAN</th>
+                        <th>KETERANGAN</th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -38,7 +38,6 @@ class SettingController extends Controller
 		DB::table('setting')->insert([
 			'nama_ujian' => $request->nama_ujian,
 			'logo' => $request->logo,
-			'semester' => $request->semester,
 			'tahun_ajaran' => $request->tahun_ajaran,
 			'jumlah_pass' => $request->jumlah_pass,
 			'tipe_pass' => $request->tipe_pass,
@@ -79,7 +78,6 @@ class SettingController extends Controller
                 'id_setting' => $request-> id_setting,
                 'nama_ujian' => $request-> nama_ujian,
                 'logo' => $request-> logo,
-                'semester' => $request->semester,
                 'tahun_ajaran' => $request->tahun_ajaran,
                 'jumlah_pass' => $request->jumlah_pass,
                 'tipe_pass' => $request->tipe_pass,
@@ -92,7 +90,6 @@ class SettingController extends Controller
             'id_setting' => $request-> id_setting,
             'nama_ujian' => $request-> nama_ujian,
             //'logo' => $request-> logo,
-            'semester' => $request->semester,
             'tahun_ajaran' => $request->tahun_ajaran,
             'jumlah_pass' => $request->jumlah_pass,
             'tipe_pass' => $request->tipe_pass,

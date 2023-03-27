@@ -11,7 +11,11 @@ class PesertaController extends Controller
 	public function index()
 	{
     	// mengambil data dari table peserta
-		$peserta = DB::table('peserta')->get();//menangkap
+		$peserta = DB::table('peserta')
+        ->orderBy('nama_peserta', 'ASC')
+        ->limit(10)
+        ->offset(5)
+        ->get();//menangkap
 
     	// mengirim data peserta ke view index
 		return view('peserta.peserta',['peserta' => $peserta]);//variabel passing
@@ -22,9 +26,10 @@ class PesertaController extends Controller
 
 		$upas = DB::table('peserta')
         ->join('upas', 'peserta.id_peserta', '=', 'upas.id_peserta')
+        ->orderBy('peserta.nama_peserta', 'ASC')
         ->get();//menangkap
 
-		return view('upas.userpass',['upas' => $upas]);//variabel passing
+		return view('upas.akun_peserta',['upas' => $upas]);//variabel passing
 
 	}
 
@@ -83,17 +88,19 @@ class PesertaController extends Controller
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);
-        return redirect('/userpass');
+        return redirect('/akun_peserta');
     }
     public function generate(Request $request)
     {
+        DB::table('upas')->truncate();
         $setting = DB:: table('setting') ->first();
         $u = DB::table('peserta')
-            ->get();
+        ->orderBy('id_peserta', 'desc')
+            ->first();
         $no=1;
-            for ($x = 0; $x <= count($u); $x++) {
+        //Kodingan kok RA OLEH Bahasa Indo WKWKWK
+            for ($x = 0; $x <= $u->id_peserta; $x++) {
                 $peserta = DB::table('peserta')
-                    //   ->join('upas', 'peserta.id_peserta', '=', 'upas.id_peserta')
                      ->where('id_peserta', 'id_peserta')
                     ->get();
                     foreach ($peserta as $key => $value) {
@@ -112,13 +119,11 @@ class PesertaController extends Controller
                 } else {
                     $ps = 'abcdefghijklmnopqrstuvwxyz';
                 }
-
+                $peserta = DB::table('peserta')->get();
                 $created_at=date('Y-m-d h:i:s');
                 $updated_at=date('Y-m-d h:i:s');
                 $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
-        //foreach ($u as $key => $value) {
         DB::table('upas')->insert([
-            // 'id_peserta' => $u->id_peserta,
             'id_peserta' => $no++,
             'username' => $usern,
             'pass' => $pss,
@@ -126,7 +131,7 @@ class PesertaController extends Controller
             'updated_at' => $updated_at
         ]);
     }
-        return redirect('/userpass')
+        return redirect('/akun_peserta')
         ->with('success','Post updated successfully');
     }
 	// method untuk edit data peserta
@@ -178,7 +183,7 @@ class PesertaController extends Controller
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
 		]);
-		return redirect('/userpass');
+		return redirect('/akun_peserta');
 	}
 
 	// method untuk hapus data peserta
@@ -192,7 +197,7 @@ class PesertaController extends Controller
 	{
 		DB::table('upas')->where('id_kartu',$id_kartu)->delete();
 
-		return redirect('/userpass');
+		return redirect('/akun_peserta');
 	}
     public function hapus_s()
 	{
@@ -204,7 +209,7 @@ class PesertaController extends Controller
 	{
 		DB::table('upas')->truncate();
 
-		return redirect('/userpass');
+		return redirect('/akun_peserta');
 	}
 }
 ?>

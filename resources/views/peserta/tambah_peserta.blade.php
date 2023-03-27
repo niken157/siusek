@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">NIS Peserta</label>
+            <label for="exampleFormControlInput1" class="form-label">NIS PESERTA</label>
             <input name="nis" type="text" class="form-control @error('nis') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan nis" autofocus value="{{ old('nis') }}" required>
             @error('nis')
                 <span class="invalid-feedback" role="alert">
@@ -23,7 +23,7 @@
     </div>
     <div class="col">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nama Peserta</label>
+            <label for="exampleFormControlInput1" class="form-label">NAMA PESERTA</label>
             <input name="nama_peserta" type="text" class="form-control @error('nama_peserta') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan nama peserta " value="{{ old('nama_peserta') }}" required>
             @error('nama_peserta')
                 <span class="invalid-feedback" role="alert">
@@ -36,9 +36,9 @@
         <div class="row">
             <div class="col">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Kelas Peserta</label>
+            <label for="exampleFormControlInput1" class="form-label">KELAS PESERTA</label>
             <input name="kelas" type="text" class="form-control @error('kelas') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan kelas" autofocus value="{{ old('kelas') }}" required>
-            <i>Contoh : 12-RPL-1</i>
+            <i class="form-label">Contoh : 12-RPL-1</i>
             @error('kelas')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
@@ -48,7 +48,7 @@
     </div>
     <div class="col">
         <div class="mb-3">
-            <label for="keterangan">Jurusan:</label>
+            <label for="keterangan">JURUSAN:</label>
             <select name="jurusan" required="reqired" class="form-select" id="jurusan">
             <option value="RPL">RPL</option>
             <option value="TKJ">TKJ</option>
@@ -65,7 +65,7 @@
         <div class="row">
             <div class="col">
         <div class="mb-3">
-            <label for="keterangan">Jenis Kelamin:</label>
+            <label for="keterangan">JENIS KELAMIN:</label>
             <select name="jenis_kelamin" required="reqired" class="form-select" id="jenis_kelamin">
             <option value="Perempuan">Perempuan</option>
             <option value="Laki-Laki">Laki-Laki</option>
@@ -74,7 +74,7 @@
     </div>
     <div class="col">
         <div class="mb-3">
-            <label for="keterangan">Agama:</label>
+            <label for="keterangan">AGAMA:</label>
             <select name="agama" required="reqired" class="form-select" id="agama">
             <option value="Islam">Islam</option>
             <option value="Kristen">Kristen</option>
@@ -88,7 +88,7 @@
         </div>
         <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
-        <input type="submit" value="Simpan Data" class="btn btn-primary">
+        <input type="submit" value="SIMPAN DATA" class="btn btn-primary">
     </form>
     </div>
 </div>

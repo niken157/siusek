@@ -51,13 +51,13 @@ $bulanList = array(
 
         <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
         <h4 class="text-center"><b>BERITA ACARA</b></h4>
-        <h6 class="text-center upper">{{ $setting->nama_ujian}} {{ $setting->semester}}</h6>
+        <h6 class="text-center upper">{{ $setting->nama_ujian}}</h6>
         <h6 class="text-center">SMK PGRI WLINGI</h6>
         <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
        <hr class="border border-dark opacity-75">
         <p>
             Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
-a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
+a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
         </p>
         <form method="post" action="/berita/update">
             {{ csrf_field() }}
@@ -136,7 +136,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                             </tbody>
                             </table>
         <p>
-        b. Catatan selama pelaksanaan {{ $setting->nama_ujian}} {{ $setting->semester}} <br>
+        b. Catatan selama pelaksanaan {{ $setting->nama_ujian}} <br>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Catatan:</label>
             <textarea name="catatan" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $tabel_berita_acara->catatan }}</textarea>

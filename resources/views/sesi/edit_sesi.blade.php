@@ -14,20 +14,23 @@
         {{ csrf_field() }}
         <input type="hidden" name="id_sesi" value="{{ $sesi->id_sesi}}">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nama Sesi </label>
-            <input name="no_sesi" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->no_sesi }}"required>
+            <label for="exampleFormControlInput1" class="form-label">NAMA SESI </label>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">SESI-</span>
+            <input name="no_sesi" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->no_sesi }}"required>
+            </div>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Jam Sesi</label>
+            <label for="exampleFormControlInput1" class="form-label">JAM SESI</label>
             <input name="jam_sesi" required="reqired" type="time" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->jam_sesi }}"required>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Keterangan</label>
+            <label for="exampleFormControlInput1" class="form-label">KETERANGAN</label>
             <input name="keterangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->keterangan }}"required>
         </div>
         <input type="hidden" name="created_at" value="{{ $sesi->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
-        <input type="submit" value="Simpan Data">
+        <input type="submit" value="SIMPAN DATA" class="btn btn-primary">
     </form>
 
     </div>

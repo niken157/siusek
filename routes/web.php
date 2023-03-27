@@ -42,16 +42,16 @@ Route::post('/peserta/store', [PesertaController::class, 'store']);
 Route::get('/peserta/edit/{id_peserta}', [PesertaController::class, 'edit']);
 Route::post('/peserta/update', [PesertaController::class, 'update']);
 Route::get('/peserta/hapus/{id_peserta}', [PesertaController::class, 'hapus']);
-Route::get('/userpass/hapus_semua', [PesertaController::class, 'hapus_s']);
-//halaman UserPass
-Route::get('/userpass', [PesertaController::class, 'upas']);
-Route::get('/userpass/tambah', [PesertaController::class, 'tambah_up']);
-Route::post('/upas/store', [PesertaController::class, 'store_up']);
-Route::get('/userpass/generate', [PesertaController::class, 'generate']);
-Route::get('/userpass/edit/{id_kartu}', [PesertaController::class, 'edit_up']);
-Route::post('/userpass/update', [PesertaController::class, 'update_up']);
-Route::get('/userpass/hapus_semua', [PesertaController::class, 'hapus_all']);
-Route::get('/userpass/hapus/{id_kartu}', [PesertaController::class, 'hapus_up']);
+Route::get('/peserta/hapus_semua', [PesertaController::class, 'hapus_s']);
+//halaman Akun Peserta
+Route::get('/akun_peserta', [PesertaController::class, 'upas']);
+Route::get('/akun_peserta/tambah', [PesertaController::class, 'tambah_up']);
+Route::post('/akun_peserta/store', [PesertaController::class, 'store_up']);
+Route::get('/akun_peserta/generate', [PesertaController::class, 'generate']);
+Route::get('/akun_peserta/edit/{id_kartu}', [PesertaController::class, 'edit_up']);
+Route::post('/akun_peserta/update', [PesertaController::class, 'update_up']);
+Route::get('/akun_peserta/hapus_semua', [PesertaController::class, 'hapus_all']);
+Route::get('/akun_peserta/hapus/{id_kartu}', [PesertaController::class, 'hapus_up']);
 //halaman Ruangan
 Route::get('/ruangan', [RuanganController::class, 'index']);
 Route::get('/ruangan/tambah', [RuanganController::class, 'create']);

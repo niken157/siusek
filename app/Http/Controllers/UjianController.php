@@ -260,19 +260,38 @@ class UjianController extends Controller
     //generator
     public function generate(Request $request)
     {
-        $peserta = DB:: table('peserta') ->get();
-        $jml_dipilih=count($peserta);
-        for ($x = 0; $x <= $jml_dipilih; $x++) {
+        DB::table('ujian')->truncate();
+        $setting = DB:: table('setting') ->first();
+        $ruangan = DB::table('ruangan')
+            ->count();
+        $no=1;
+            for ($x = 0; $x <= $ruangan->id_ruangan; $x++) {
+                $peserta = DB::table('peserta')
+                    //   ->join('upas', 'peserta.id_peserta', '=', 'upas.id_peserta')
+                     ->where('id_peserta', 'id_peserta')
+                    ->get();
+                    foreach ($peserta as $key => $value) {
+                        $id_peserta= $key->id_peserta;
+                    }
+                $peserta = DB::table('peserta')->get();
+                // foreach ($peserta as $key => $value) {
+                    // $ky = DB::table('peserta')
+                    //         ->join('upas', 'peserta.id_peserta', '=', 'upas.id_peserta')
+                    //         ->where('upas.id_peserta', 'peserta.id_peserta')
+                    //         ->get();
+                //}
+                $created_at=date('Y-m-d h:i:s');
+                $updated_at=date('Y-m-d h:i:s');
             DB::table('ujian')->insert([
-                    'id_ujian' => $request->id_ujian[$x],
-                    'id_peserta' => $request->id_peserta[$x],
-                    'id_ruangan' => $request->id_ruangan[$x],
-                    'id_sesi' => $request->id_sesi[$x],
-                    'nomor_pc' => $request->nomor_pc[$x],
-                    'created_at' => $request->created_at[$x],
-                    'updated_at' => $request->updated_at[$x]
+                'id_ujian' => $request->id_ujian,
+                'id_peserta' => $request->id_peserta,
+                'id_ruangan' => $request->id_ruangan,
+                'id_sesi' => $request->id_sesi,
+                'nomor_pc' => $request->nomor_pc,
+                'created_at' => $request->created_at,
+                'updated_at' => $request->updated_at
             ]);
-           }
+    }
 
         return redirect('/kartu_peserta');
     }

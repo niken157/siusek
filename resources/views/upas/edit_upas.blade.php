@@ -15,14 +15,14 @@ $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
 <br>
 <div class="card">
     <div class="card-header">
-        <h3>FORM EDIT DATA USERPASS</h3>
+        <h3>FORM EDIT DATA AKUN PESERTA</h3>
       </div>
     <div class="card-body">
-    <form action="/userpass/update" method="post">
+    <form action="/akun_peserta/update" method="post">
         {{ csrf_field() }}
         <input type="hidden" name="id_kartu" value="{{ $upas->id_kartu }}">
         <div class="mb-3">
-            <label for="id_peserta">Nama Peserta :</label>
+            <label for="id_peserta">NAMA PESERTA :</label>
             <select class="selectpicker" data-live-search="true" name="id_peserta" class="form-select" id="id_peserta">
                 @php
                     $peserta = DB::table('peserta')
@@ -49,12 +49,20 @@ $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
             $user = 'abcdefghijklmnopqrstuvwxyz123456789';
             $usern  = substr(str_shuffle($user), 0, $setting->jumlah_pass);
         @endphp
-        <input type="hidden" name="username" value="<?php echo $usern; ?>">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">USERNAME</label>
+            <input name="username" value="{{ $upas->username}}" type="text" class="form-control" id="exampleFormControlInput1" placeholder=""required>
+        </div>
+        {{-- <input type="hidden" name="username" value="<?php echo $usern; ?>"> --}}
         @else
-        <input type="hidden" name="username" value="nis">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">USERNAME</label>
+            <input name="username" value="{{ $upas->nis}}" type="text" class="form-control" id="exampleFormControlInput1" placeholder=""required>
+        </div>
+        {{-- <input type="hidden" name="username" value="nis"> --}}
         @endif
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">PassWord</label>
+            <label for="exampleFormControlInput1" class="form-label">PASSWORD</label>
             <input name="pass" value="{{ $upas->pass}}" type="text" class="form-control" id="exampleFormControlInput1" placeholder=""required>
         </div>
         {{-- <input type="hidden" name="pass" value="<?php echo $pss; ?>"> --}}

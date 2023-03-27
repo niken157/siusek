@@ -43,8 +43,8 @@ p{
   border: 5px solid orange;
  }
 
-    .upper { text-transform: uppercase; 
-     font-size: 5cm; 
+    .upper { text-transform: uppercase;
+     font-size: 5cm;
    font-size: 3cm;
 }
 
@@ -55,16 +55,16 @@ td {
 
         <table class="tb";>
         <td class="card-text-center">
-               <p class="text-center"><b>Ruang</b></p>
-           <b><p class="text-center">{{ $ruangan->nomer_ruangan}}</p></b>
+               <h3 class="text-center"><b>RUANG</b></h3>
+           <b><h3 class="text-center">{{ $ruangan->nomer_ruangan}}</h3></b>
 
            </td>
 
 <!-- </tr> -->
 <tr>
         <th style="width:10%"></th>
-     
-    </tr 
+
+    </tr
 </td>
 <table class="tr">
           <tr class="panel-body post-body table-text-center">

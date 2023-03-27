@@ -42,7 +42,7 @@
                             @endphp
                             <td>{{ $u->count()}}</td>
                             <td>
-                                <a class="btn btn-outline-primary" title="cetak absen persesi" href="/cetak/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" target="_blank" role="button"><i class="fas fa-fw fa-print"> </i></a>
+                                <a class="btn btn-outline-primary" title="cetak absen persesi" href="/cetak/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" target="_blank" role="button"><i class="fas fa-fw fa-print"> </i> Absensi</a>
                             </td>
                         </tr>
                         @endforeach

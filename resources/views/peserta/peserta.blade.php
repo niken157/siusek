@@ -6,6 +6,7 @@
     td {
         font-size: 13px;
     }
+    .upper { text-transform: uppercase; }
 </style>
 <br>
     <div class="card mb-4">
@@ -15,18 +16,19 @@
             DATA PESERTA UJIAN
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-primary" href="/peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
+            <a class="align-items-center justify-content-between btn btn-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Semua Data?')" href="/peserta/hapus_semua" role="button"><i class="fas fa-fw fa-trash"></i> Semua</a>
         </div>
         <div class="card-body">
             <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th class="col-xs-1">Nama Peserta</th>
-                        <th>Nis</th>
-                        <th>Kelas</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Agama</th>
-                        <th class="col-xs-1">Aksi</th>
+                        <th>NO</th>
+                        <th class="col-xs-1">NAMA PESERTA</th>
+                        <th>NIS</th>
+                        <th>KELAS</th>
+                        <th>JENIS KELAMIN</th>
+                        <th>AGAMA</th>
+                        <th class="col-xs-1">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +36,7 @@
                     @foreach($peserta as $p)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $p->nama_peserta }}</td>
+                            <td><p class="upper">{{ $p->nama_peserta }}</p></td>
                             <td>{{ $p->nis }}</td>
                             <td>{{ $p->kelas }}</td>
                             <td>{{ $p->jenis_kelamin }}</td>
@@ -42,7 +44,7 @@
                             <td>
                                 <a class="btn btn-outline-primary" href="/peserta/edit/{{ $p->id_peserta }}" role="button" title="Edit Data Peserta"><i class="fas fa-fw fa-edit"></i></a>
 
-                                <a class="btn btn-outline-danger" href="/peserta/hapus/{{ $p->id_peserta }}" role="button" title="Hapus Data Peserta"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-outline-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Data Ini?')" href="/peserta/hapus/{{ $p->id_peserta }}" role="button" title="Hapus Data Peserta"><i class="fas fa-fw fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

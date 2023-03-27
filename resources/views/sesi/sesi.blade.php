@@ -14,11 +14,11 @@
             <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Nama Sesi</th>
-                        <th>Jam Sesi</th>
-                        <th>Keterangan</th>
-                        <th>Aksi</th>
+                        <th>NO</th>
+                        <th>NAMA SESI</th>
+                        <th>JAM SESI</th>
+                        <th>KETERANGAN</th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,13 +26,13 @@
                     @foreach($sesi as $p)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>sesi-{{ $p->no_sesi}}</td>
+                            <td>SESI-{{ $p->no_sesi}}</td>
                             <td>{{ $p->jam_sesi}}</td>
                             <td>{{ $p->keterangan}}</td>
                             <td>
                                 <a class="btn btn-outline-primary" href="/sesi/edit/{{ $p->id_sesi }}" role="button"title="Edit Data Sesi"><i class="fas fa-fw fa-edit"></i></a>
 
-                                <a class="btn btn-outline-danger" href="/sesi/hapus/{{ $p->id_sesi }}" role="button"title="Hapus Data Sesi"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-outline-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Data Ini?')" href="/sesi/hapus/{{ $p->id_sesi }}" role="button"title="Hapus Data Sesi"><i class="fas fa-fw fa-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

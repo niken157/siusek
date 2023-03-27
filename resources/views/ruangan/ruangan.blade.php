@@ -16,12 +16,12 @@
             <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Nama Ruangan</th>
-                        <th>Keterangan</th>
-                        <th>Jumlah PC</th>
-                        <th>Cadangan PC</th>
-                        <th>Aksi</th>
+                        <th>NO</th>
+                        <th>NAMA RUANGAN</th>
+                        <th>KETERANGAN</th>
+                        <th>JUMLAH PC</th>
+                        <th>CADANGAN PC</th>
+                        <th>AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@
                             <td>
                                 <a class="btn btn-outline-primary" href="/ruangan/edit/{{ $p->id_ruangan }}" role="button"title="Edit Data Ruangan"><i class="fas fa-fw fa-edit"></i></a>
 
-                                <a class="btn btn-outline-danger"  href="/ruangan/hapus/{{ $p->id_ruangan }}" role="button" title="Hapus Data Ruangan"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-outline-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Data Ini?')" href="/ruangan/hapus/{{ $p->id_ruangan }}" role="button" title="Hapus Data Ruangan"><i class="fas fa-fw fa-trash"></i></a>
                             </td></td>
                         </tr>
                         @endforeach

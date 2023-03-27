@@ -2,6 +2,9 @@
 @extends('template')
 
 @section('content')
+<style>
+    .upper { text-transform: uppercase; }
+</style>
     <h1 class="mt-4">SISTEM ADMINISTRASI UJIAN SEKOLAH</h1>
     <br>
     {{-- <ol class="breadcrumb mb-4">
@@ -39,7 +42,7 @@
             <div class="card bg-danger text-white mb-4">
                 <div class="card-body">Jumlah PC <span style="float: right"><h2><b><p>{{$ruangan->sum('jumlah_PC')}}</h2></b></div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="/pembagian">Lihat Detail</a>
+                    <a class="small text-white stretched-link" href="/ruangan">Lihat Detail</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
@@ -63,15 +66,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
                     @php $no = 1; @endphp
                     @foreach($ujian as $u)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $u->nama_peserta}}</td>
+                            <td><p class="upper">{{ $u->nama_peserta }}</p></td>
                             <td>{{ $u->kelas}}</td>
-                            <td>R-{{$u->nomer_ruangan}}</td>
-                            <td>{{ $u->no_sesi}}</td>
+                            <td>R-{{ $u->nomer_ruangan}}</td>
+                            <td>SESI-{{ $u->no_sesi}}</td>
                             <td>{{ $u->nomor_pc}}</td>
                         </tr>
                     @endforeach

@@ -13,7 +13,7 @@
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-warning" href="/kartu" target="_blank" role="button"><i class="fa-solid fa-print" title="cetak kartu semua peserta"></i> Cetak Kartu</a>
             <a class="align-items-center justify-content-between btn btn-primary" href="/kartu_peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
-            {{-- <a class="align-items-center justify-content-between btn btn-primary" href="/kartu_peserta/generate" role="button"><i class="fas fa-fw fa-plus"></i> Generate</a> --}}
+            <a class="align-items-center justify-content-between btn btn-secondary" onclick="return confirm('Apakah Anda Yakin Mengenerate Semua Data? Mengenerate Data Mengakibatkan Data Yang Sudah Ada Terhapus!')" href="/kartu_peserta/generate" role="button"><i class="fas fa-fw fa-gear"></i> Generate</a>
 
         </div>
         <div class="card-body">
@@ -33,7 +33,7 @@
                     @foreach($ujian as $u)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td class="upper">{{ $u->nama_peserta}}</td>
+                            <td><p class="upper">{{ $u->nama_peserta }}</p></td>
                             <td>R-{{ $u->nomer_ruangan}}</td>
                             <td>SESI-{{ $u->no_sesi}}</td>
                             <td>PC-{{ $u->nomor_pc}}</td>
@@ -93,7 +93,7 @@
     </div>
                             <a class="btn btn-outline-warning" target="_blank"  href="/kartu_satuan/{{ $u->id_ujian }}" role="button" title="Cetak Kartu Peserta"><i class="fa-solid fa-print"></i></a>
                                 <a class="btn btn-outline-primary" href="/kartu_peserta/edit/{{ $u->id_ujian }}" role="button" title="Edit Data Kartu"><i class="fas fa-fw fa-edit"></i></a>
-                                <a class="btn btn-outline-danger" href="/kartu_peserta/hapus/{{ $u->id_ujian }}" role="button" title="Hapus Data Kartu"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-outline-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Data Ini?')" href="/kartu_peserta/hapus/{{ $u->id_ujian }}" role="button" title="Hapus Data Kartu"><i class="fas fa-fw fa-trash"></i></a>
                             </td>
                         </tr>
                     @endforeach

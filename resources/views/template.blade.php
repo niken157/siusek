@@ -63,6 +63,7 @@
                         </li>
                     @endif
                 @else
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
@@ -107,9 +108,9 @@
                                 Data Sesi
                             </a>
                             <div class="sb-sidenav-menu-heading">Data Administrasi</div>
-                            <a class="nav-link" href="/userpass">
+                            <a class="nav-link" href="/akun_peserta">
                                 <div class="sb-nav-link-icon"><i class="fas fa-gear"></i></div>
-                                UserPass
+                                Akun Peserta
                             </a>
                             <a class="nav-link" href="/kartu_peserta">
                                 <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>

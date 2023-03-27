@@ -25,13 +25,6 @@ $bulanList = array(
     'November' => 'November',
     'December' => 'Desember'
 );
-
-// $catatan = $_GET['catatan'];
-// $jumlah_hadir = $_GET['jumlah_hadir'];
-// $tdk_hadir = $_GET['tdk_hadir'];
-// $tdk_masuk = $_GET['tdk_masuk'];
-// $nama_pengawas = $_GET['nama_pengawas'];
-// $nip_pengawas = $_GET['nip_pengawas'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,13 +48,13 @@ $bulanList = array(
 
         <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
         <h4 class="text-center"><b>BERITA ACARA</b></h4>
-        <h6 class="text-center upper">{{ $setting->nama_ujian}} {{ $setting->semester}}</h6>
+        <h6 class="text-center upper">{{ $setting->nama_ujian}}</h6>
         <h6 class="text-center">SMK PGRI WLINGI</h6>
         <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
        <hr class="border border-dark opacity-75">
         <p>
             Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
-a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
+a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
         </p>
         <table class="table">
             <tbody>
@@ -131,7 +124,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} {{ $setting->semester}} dari 
                             </tbody>
                             </table>
         <p>
-        b. Catatan selama pelaksanaan {{ $setting->nama_ujian}} {{ $setting->semester}} <br>
+        b. Catatan selama pelaksanaan {{ $setting->nama_ujian}}<br>
 
         {{ $tabel_berita_acara->catatan}}
 

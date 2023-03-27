@@ -17,6 +17,7 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nama Ujian </label>
             <input name="nama_ujian" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" placeholder="nama ujian" required>
+            <i class="form-label">Contoh : ujian tengah semester genap</i>
         </div>
     </div>
     <div class="col">
@@ -29,12 +30,13 @@
           <div class="row">
             <div class="col">
                 <div class="mb-3">
-                    <label for="keterangan">Semester</label>
-                    <select name="semester" required="reqired" class="form-select" id="semester">
-                    <option value="Ganjil">Ganjil</option>
-                    <option value="Genap">Genap</option>
-                    </select>
-                </div>
+            <label for="keterangan">Tipe Password</label>
+            <select name="tipe_pass" required="reqired" class="form-select" id="tipe_pass">
+            <option value="Kombinasi">Kombinasi</option>
+            <option value="Angka">Angka</option>
+            <option value="Huruf">Huruf</option>
+            </select>
+        </div>
             </div>
             <div class="col">
                 <div class="mb-3">
@@ -46,28 +48,21 @@
           <div class="row">
             <div class="col">
           <div class="mb-3">
-            <label for="keterangan">Tipe Password</label>
-            <select name="tipe_pass" required="reqired" class="form-select" id="tipe_pass">
-            <option value="Kombinasi">Kombinasi</option>
-            <option value="Angka">Angka</option>
-            <option value="Huruf">Huruf</option>
-            </select>
-        </div>
-    </div>
-    <div class="col">
-        <div class="mb-3">
             <label for="formFile" class="form-label">Logo</label><br>
             <input name="logo" required="reqired" class="form-control" type="file" id="formFile">
           </div>
-        </div>
     </div>
-    <div class="mb-3">
+    <div class="col">
+         <div class="mb-3">
         <label for="keterangan">Tipe username</label>
         <select name="tipe_user" required="reqired" class="form-select" id="tipe_user">
         <option value="nis">nis</option>
         <option value="random">random</option>
         </select>
     </div>
+        </div>
+    </div>
+
         <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input class="btn btn-primary" type="submit" value="Simpan Data">

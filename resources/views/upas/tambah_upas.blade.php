@@ -15,10 +15,10 @@ $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
 <br>
 <div class="card">
     <div class="card-header">
-        <h3>FORM TAMBAH DATA USERPASS</h3>
+        <h3>FORM TAMBAH DATA AKUN PESERTA</h3>
       </div>
     <div class="card-body">
-    <form action="/upas/store" method="post">
+    <form action="/akun_peserta/store" method="post">
         {{ csrf_field() }}
         <div class="mb-3">
             <label for="id_peserta">Nama Peserta Didik :</label>

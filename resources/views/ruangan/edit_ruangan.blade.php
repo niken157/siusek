@@ -14,7 +14,9 @@
         {{ csrf_field() }}
         <input type="hidden" name="id_ruangan" value="{{ $ruangan->id_ruangan}}">
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Nama Ruangan</label>
+            <label for="exampleFormControlInput1" class="form-label">NAMA RUANGAN</label>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">R-</span>
             <input name="nomer_ruangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->nomer_ruangan }}"required>
             {{-- @error('nomer_ruangan')
                 <span class="invalid-feedback" role="alert">
@@ -22,8 +24,9 @@
                 </span>
             @enderror --}}
         </div>
+        </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label"> Keterangan </label>
+            <label for="exampleFormControlInput1" class="form-label">KETERANGAN</label>
             <input name="nama_ruangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->nama_ruangan }}"required>
             {{-- @error('nama_ruangan')
                 <span class="invalid-feedback" role="alert">
@@ -32,7 +35,7 @@
             @enderror --}}
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Jumlah PC</label>
+            <label for="exampleFormControlInput1" class="form-label">JUMLAH PC</label>
             <input name="jumlah_PC" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->jumlah_PC }}"required>
             {{-- @error('jumlah_PC')
                 <span class="invalid-feedback" role="alert">
@@ -41,7 +44,7 @@
             @enderror --}}
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Cadangan PC</label>
+            <label for="exampleFormControlInput1" class="form-label">CADANGAN PC</label>
             <input name="cadangan_pc" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->cadangan_pc }}"required>
             {{-- @error('cadangan_pc')
                 <span class="invalid-feedback" role="alert">
@@ -51,7 +54,7 @@
         </div>
         <input type="hidden" name="created_at" value="{{ $ruangan->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
-        <input type="submit" value="Simpan Data">
+        <input type="submit" value="SIMPAN DATA" class="btn btn-primary">
     </form>
 
     </div>

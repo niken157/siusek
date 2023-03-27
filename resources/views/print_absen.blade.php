@@ -43,7 +43,7 @@
               </div>
               <div class="col-6">
                 <h4 class="text-center"><b> D A F T A R  &nbsp&nbsp  H A D I R</b></h4>
-                <h6 class="text-center upper">PESERTA {{ $setting->nama_ujian}} {{ $setting->semester}}</h6>
+                <h6 class="text-center upper">PESERTA {{ $setting->nama_ujian}}</h6>
                 <h6 class="text-center">SMK PGRI WLINGI</h6>
                 <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
               </div>
