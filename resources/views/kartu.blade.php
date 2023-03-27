@@ -23,13 +23,13 @@
         /* height: 10cm; */
         width: 6cm;
         /* margin-bottom: 0px; */
+        border: 3px solid black;
     }
     td {
     padding: 3px;
     }
     .upper { text-transform: uppercase; }
     .kotak1 {
-
 border-top: 1px solid black ;
 border-left: 1px solid black ;
 border-right: 1px solid black ;
@@ -39,21 +39,25 @@ h1 {
   font-size: 10px;
   text-align: center;
 }
+h2 {
+  font-size: 10px;
+  line-height:16px;
+}
+
 </style>
 @php $no = 1; @endphp
-
 <br>
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach($ujian as $u)
-    <table class="div">
+    <table class="div" >
         <tr style="border: 1px solid black ;">
-            <td><img src="/image/{{ $setting->logo}}" class="rounded" height="50" width="50" alt="..."></td>
+            <td><img src="/image/{{ $setting->logo}}" class="rounded" height="70" width="70" alt="..."></td>
             <td><h1 class="upper"><b>KARTU PESERTA <br>{{ $setting->nama_ujian}} <br>&nbsp&nbspTAHUN PELAJARAN {{ $setting->tahun_ajaran}}</b>
             </td>
         </tr>
         <tr class="kotak1" >
-            <td><p>NAMA PESERTA <br> KELAS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br> <b>Username</b><br><b>Password</b><br>Ruang / Sesi<br>No. Komputer</p></td>
-            <td colspan="6"><p>:&nbsp&nbsp{{ $u->nama_peserta}} <br> :&nbsp&nbsp{{ $u->kelas }} <br><b> @if ($u->username == 'nis'):&nbsp&nbsp{{ $u->nis}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @else :&nbsp&nbsp{{ $u->username}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @endif </b><br><b>:&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </b><br>:&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br>:&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
+            <td><p><h2>NAMA PESERTA <br> KELAS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br> <b>Username</b><br><b>Password</b><br>Ruang / Sesi<br>No. Komputer</p></td>
+            <td colspan="6"><p><h2>:&nbsp&nbsp{{ $u->nama_peserta}} <br> :&nbsp&nbsp{{ $u->kelas }} <br><b> @if ($u->username == 'nis'):&nbsp&nbsp{{ $u->nis}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @else :&nbsp&nbsp{{ $u->username}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @endif </b><br><b>:&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </b><br>:&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br>:&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
         </tr>
     </table>
       @endforeach
