@@ -72,8 +72,8 @@
                             <td>{{ $no++ }}</td>
                             <td><p class="upper">{{ $u->nama_peserta }}</p></td>
                             <td>{{ $u->kelas}}</td>
-                            <td>R-{{ $u->nomer_ruangan}}</td>
-                            <td>SESI-{{ $u->no_sesi}}</td>
+                            <td>{{ $u->nama_ruangan}}</td>
+                            <td>{{ $u->nama_sesi}}</td>
                             <td>{{ $u->nomor_pc}}</td>
                         </tr>
                     @endforeach

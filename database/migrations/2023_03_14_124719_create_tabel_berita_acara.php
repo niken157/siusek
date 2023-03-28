@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('tabel_berita_acara', function (Blueprint $table) {
             $table->Increments('id_ba');
-            $table->integer('nomer_ruangan');
-            $table->integer('no_sesi');
+            $table->string('nama_ruangan');
+            $table->string('nama_sesi');
             $table->integer('hadir');
             $table->integer('tdk_hadir');
-            $table->integer('nama');
-            $table->string('cacatan');
+            $table->string('nama');
+            $table->string('catatan');
             $table->string('ttd');
             $table->string('pengawas');
             $table->string('nip');

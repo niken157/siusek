@@ -34,7 +34,7 @@ class HomeController extends Controller
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
                      ->groupBy('peserta.id_peserta')
                      ->orderBy('peserta.nama_peserta', 'ASC')
-                     ->orderBy('ruangan.nomer_ruangan', 'ASC')
+                     ->orderBy('ruangan.nama_ruangan', 'ASC')
                      ->orderBy('ujian.nomor_pc', 'ASC')
                     // ->where('keterangan', 'pinjam')
                     ->get();

@@ -18,10 +18,10 @@
                     <tr>
                         <th>NO</th>
                         <th>NAMA RUANGAN</th>
-                        <th>KETERANGAN RUANGAN</th>
-                        <th>KETERANGAN </th>
+                        <th>RUANGAN</th>
                         <th>JUMLAH PC</th>
-                        <th>CADANGAN PC</th>
+                        <th>CADANGAN</th>
+                        <th>KETERANGAN</th>
                         <th>AKSI</th>
                     </tr>
                 </thead>
@@ -30,11 +30,11 @@
                     @foreach($ruangan as $p)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>R-{{ $p->nomer_ruangan}}</td>
                             <td>{{ $p->nama_ruangan}}</td>
-                            <td>{{ $p->keterangan}}</td>
+                            <td>{{ $p->keterangan_ruangan}}</td>
                             <td>{{ $p->jumlah_PC}}</td>
                             <td>{{ $p->cadangan_pc}}</td>
+                            <td>{{ $p->keterangan}}</td>
                             <td>
                                 <a class="btn btn-outline-primary" href="/ruangan/edit/{{ $p->id_ruangan }}" role="button"title="Edit Data Ruangan"><i class="fas fa-fw fa-edit"></i></a>
 

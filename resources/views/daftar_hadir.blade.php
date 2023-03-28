@@ -26,23 +26,23 @@
                     @foreach($ujian as $p)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>R-{{ $p->nomer_ruangan}}</td>
                             <td>{{ $p->nama_ruangan}}</td>
-                            <td>SESI-{{ $p->no_sesi}}</td>
+                            <td>{{ $p->keterangan_ruangan}}</td>
+                            <td>{{ $p->nama_sesi}}</td>
                             @php
                                 $u = DB::table('peserta')
                                 ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
                                 ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                                 ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
                                 ->where([
-                                    ['ruangan.nomer_ruangan', '=', $p->nomer_ruangan],
-                                    ['sesi.no_sesi', '=', $p->no_sesi] ])
+                                    ['ruangan.nama_ruangan', '=', $p->nama_ruangan],
+                                    ['sesi.nama_sesi', '=', $p->nama_sesi] ])
                                 ->orderBy('nomor_pc', 'asc')
                                 ->get();
                             @endphp
                             <td>{{ $u->count()}}</td>
                             <td>
-                                <a class="btn btn-outline-primary" title="cetak absen persesi" href="/cetak/{{ $p->nomer_ruangan }}/{{ $p->no_sesi }}" target="_blank" role="button"><i class="fas fa-fw fa-print"> </i> Absensi</a>
+                                <a class="btn btn-outline-primary" title="cetak absen persesi" href="/cetak/{{ $p->nama_ruangan }}/{{ $p->nama_sesi }}" target="_blank" role="button"><i class="fas fa-fw fa-print"> </i> Absensi</a>
                             </td>
                         </tr>
                         @endforeach

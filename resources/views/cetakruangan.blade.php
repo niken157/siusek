@@ -16,7 +16,7 @@
     <body class="sb-nav-fixed">
 <style>
     .upper { text-transform: uppercase; }
-    .besar { font-size: 5cm; }
+    .besar { font-size: 4cm; }
     .sedang { font-size: 3cm;
     color: #ff0000; }
 </style>
@@ -25,10 +25,10 @@
         <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="200" width="200" alt="..."><br><br>
         <div class="card">
             <div class="card-body text-center">
-              <b><p class="besar">R:{{ $ruangan->nomer_ruangan}}</p></b>
+              <b><p class="besar">{{ $ruangan->nama_ruangan}}</p></b>
               <div class="card text-center">
                 <div class="card-body">
-                    <b><p class="sedang">{{ $ruangan->nama_ruangan}}</p></b>
+                    <b><p class="sedang">{{ $ruangan->keterangan_ruangan}}</p></b>
                 </div>
               </div>
             </div>

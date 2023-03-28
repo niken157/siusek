@@ -56,7 +56,7 @@ td {
         <table class="tb";>
         <td class="card-text-center">
                <h3 class="text-center"><b>RUANG</b></h3>
-           <b><h3 class="text-center">{{ $ruangan->nomer_ruangan}}</h3></b>
+           <b><h3 class="text-center">{{ $ruangan->nama_ruangan}}</h3></b>
 
            </td>
 
@@ -74,8 +74,8 @@ td {
                      ->join('ujian', 'peserta.id_peserta', '=', 'ujian.id_peserta')
                      ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
-                     //->where('nomer_ruangan', 'nomer_ruangan')
-                     ->groupBy('ruangan.nama_ruangan')
+                     //->where('nama_ruangan', 'nama_ruangan')
+                     ->groupBy('ruangan.keterangan_ruangan')
                     ->first();
                     $tingkat =substr($ujian->kelas, 0, 2);
                 @endphp

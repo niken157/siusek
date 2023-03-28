@@ -49,7 +49,7 @@ class RuanganController extends Controller
         //              ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
         //              ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
         //              ->where('id_ruangan', $id_ruangan)
-        //              ->groupBy('ruangan.nama_ruangan')
+        //              ->groupBy('ruangan.keterangan_ruangan')
         //             ->first();
         $ruangan = DB:: table('ruangan') ->first();
         return view ('cetak_amplop',['ruangan'=> $ruangan]);
@@ -69,11 +69,11 @@ class RuanganController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'keterangan_ruangan' => 'required|unique:ruangan|max:50',
             'nama_ruangan' => 'required|unique:ruangan|max:50',
-            'nomer_ruangan' => 'required|unique:ruangan|max:50',
-            'keterangan' => 'required',
             'jumlah_PC' => 'required',
             'cadangan_pc' => 'required',
+            'keterangan' => 'required',
             'created_at' => 'required',
             'updated_at' => 'required',
         ]);
@@ -81,11 +81,11 @@ class RuanganController extends Controller
             return back()->withInput($request->all())->withErrors($validator);
         }
         DB::table('ruangan')->insert([
+            'keterangan_ruangan' => $request-> keterangan_ruangan,
             'nama_ruangan' => $request-> nama_ruangan,
-            'nomer_ruangan' => $request-> nomer_ruangan,
-            'keterangan' => $request-> keterangan,
             'jumlah_PC' => $request-> jumlah_PC,
             'cadangan_pc' => $request-> cadangan_pc,
+            'keterangan' => $request-> keterangan,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);
@@ -118,8 +118,8 @@ class RuanganController extends Controller
     public function update(Request $request)
     {
         // $validator = Validator::make($request->all(), [
+        //     'keterangan_ruangan' => 'required|unique:ruangan|max:50',
         //     'nama_ruangan' => 'required|unique:ruangan|max:50',
-        //     'nomer_ruangan' => 'required|unique:ruangan|max:50',
         //     'jumlah_PC' => 'required',
         //     'created_at' => 'required',
         //     'updated_at' => 'required',
@@ -130,11 +130,11 @@ class RuanganController extends Controller
        //update data ruangan berdasarkan id
        DB::table('ruangan')->where('id_ruangan', $request->id_ruangan)->update([
             // 'id_ruangan' => $request-> id_ruangan,
+            'keterangan_ruangan' => $request-> keterangan_ruangan,
             'nama_ruangan' => $request-> nama_ruangan,
-            'nomer_ruangan' => $request-> nomer_ruangan,
-            'keterangan' => $request-> keterangan,
             'jumlah_PC' => $request-> jumlah_PC,
             'cadangan_pc' => $request-> cadangan_pc,
+            'keterangan' => $request-> keterangan,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
 

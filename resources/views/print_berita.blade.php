@@ -71,12 +71,12 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
               <tr>
                 <td>Grup / Sesi</td>
                 <td>:</td>
-                <td>{{ $no_sesi}}</td>
+                <td>{{ $nama_sesi}}</td>
               </tr>
               <tr>
                 <td>Ruang</td>
                 <td>:</td>
-                <td>{{ $nomer_ruangan}}</td>
+                <td>{{ $nama_ruangan}}</td>
               </tr>
               @php
               $u = DB::table('peserta')
@@ -84,8 +84,8 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
               ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
               ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
               ->where([
-                  ['ruangan.nomer_ruangan', '=', $nomer_ruangan],
-                  ['sesi.no_sesi', '=', $no_sesi] ])
+                  ['ruangan.nama_ruangan', '=', $nama_ruangan],
+                  ['sesi.nama_sesi', '=', $nama_sesi] ])
               ->orderBy('nomor_pc', 'asc')
               ->get();
           @endphp
@@ -109,8 +109,8 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
                     @php
               $ba = DB::table('tabel_berita_acara')
                     ->where([
-                    ['nomer_ruangan', '=', $nomer_ruangan],
-                    ['no_sesi', '=', $no_sesi] ])
+                    ['nama_ruangan', '=', $nama_ruangan],
+                    ['nama_sesi', '=', $nama_sesi] ])
                     ->groupBy('nama')
               ->get();
           @endphp
@@ -138,7 +138,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
                 <td>1. Tanda Tangan </td>
                 <td>:</td>
                 <td>
-                    <img src="/upload/{{ $tabel_berita_acara->ttd}}" style="width: 130px; height: 130px; float: left;margin-bottom: 5px;">
+                    <img src="/upload/{{ $tabel_berita_acara->ttd}}" style="width: 100px; height: 100px; float: left;margin-bottom: 5px;">
                 </td>
               </tr>
               <tr>

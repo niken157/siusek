@@ -26,7 +26,7 @@
                     @foreach($sesi as $p)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>SESI-{{ $p->no_sesi}}</td>
+                            <td>{{ $p->nama_sesi}}</td>
                             <td>{{ $p->jam_sesi}}</td>
                             <td>{{ $p->keterangan}}</td>
                             <td>

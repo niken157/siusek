@@ -24,16 +24,16 @@ Route::get('/ttd', function () {
 });
 //berita acara
 Route::get('/berita', [UjianController::class, 'berita']);
-Route::get('/berita_acara/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'berita_acara']);
+Route::get('/berita_acara/{nama_ruangan}/{nama_sesi}', [UjianController::class, 'berita_acara']);
 Route::post('/berita/store', [UjianController::class, 'store_ba']);
-Route::get('/edit_berita_acara/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'edit_berita_acara']);
+Route::get('/edit_berita_acara/{nama_ruangan}/{nama_sesi}', [UjianController::class, 'edit_berita_acara']);
 Route::post('/berita/update', [UjianController::class, 'update_ba']);
-Route::get('/berita/hapus_digital/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'hapus_digital']);
+Route::get('/berita/hapus_digital/{nama_ruangan}/{nama_sesi}', [UjianController::class, 'hapus_digital']);
 
-Route::get('/cetak_berita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak_berita']);
-Route::get('/cetakberita/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak_berita2']);
+Route::get('/cetak_berita/{nama_ruangan}/{nama_sesi}', [UjianController::class, 'cetak_berita']);
+Route::get('/cetakberita/{nama_ruangan}/{nama_sesi}', [UjianController::class, 'cetak_berita2']);
 Route::get('/daftar_hadir', [UjianController::class, 'absen']);
-Route::get('/cetak/{nomer_ruangan}/{no_sesi}', [UjianController::class, 'cetak']);
+Route::get('/cetak/{nama_ruangan}/{nama_sesi}', [UjianController::class, 'cetak']);
 Route::get('/kartu', [UjianController::class, 'kartu']);
 //halaman peserta
 Route::get('/peserta', [PesertaController::class, 'index']);
@@ -82,6 +82,7 @@ Route::get('/kartu_peserta/hapus/{id_ujian}', [UjianController::class, 'hapus'])
 Route::get('/kartu_satuan/{id_ujian}', [UjianController::class, 'print']);
 Route::get('/kartu_detail/{id_ujian}', [UjianController::class, 'detail']);
 Route::get('/kartu_peserta/generate', [UjianController::class, 'generate']);
+Route::get('/kartu_peserta/hapus_semua', [UjianController::class, 'hapus_all']);
 
 Auth::routes();
 

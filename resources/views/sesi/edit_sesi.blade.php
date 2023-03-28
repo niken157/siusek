@@ -16,9 +16,9 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">NAMA SESI </label>
             <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">SESI-</span>
-            <input name="no_sesi" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->no_sesi }}"required>
-            </div>
+            <input name="nama_sesi" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->nama_sesi }}"required>
+            <i class="form-label">Contoh : SESI-1</i>
+        </div>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">JAM SESI</label>

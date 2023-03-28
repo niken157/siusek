@@ -13,6 +13,7 @@
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-warning" href="/kartu" target="_blank" role="button"><i class="fa-solid fa-print" title="cetak kartu semua peserta"></i> Cetak Kartu</a>
             <a class="align-items-center justify-content-between btn btn-primary" href="/kartu_peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
+            <a class="align-items-center justify-content-between btn btn-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Semua Data?')" href="/kartu_peserta/hapus_semua" role="button"><i class="fas fa-fw fa-trash"></i> Semua</a>
             <a class="align-items-center justify-content-between btn btn-secondary" onclick="return confirm('Apakah Anda Yakin Mengenerate Semua Data? Mengenerate Data Mengakibatkan Data Yang Sudah Ada Terhapus!')" href="/kartu_peserta/generate" role="button"><i class="fas fa-fw fa-gear"></i> Generate</a>
 
         </div>
@@ -34,8 +35,8 @@
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td><p class="upper">{{ $u->nama_peserta }}</p></td>
-                            <td>R-{{ $u->nomer_ruangan}}</td>
-                            <td>SESI-{{ $u->no_sesi}}</td>
+                            <td>{{ $u->nama_ruangan}}</td>
+                            <td>{{ $u->nama_sesi}}</td>
                             <td>PC-{{ $u->nomor_pc}}</td>
                             <td>
         <a href="" class="btn btn-outline-success" data-toggle="modal" title="Detail Kartu Peserta"
@@ -72,7 +73,7 @@
                         </tr>
                         <tr class="kotak1">
                             <td><p>Ruang / Sesi</p></td>
-                            <td><p>:&nbsp&nbsp{{ $u->nomer_ruangan }} / {{ $u->no_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
+                            <td><p>:&nbsp&nbsp{{ $u->nama_ruangan }} / {{ $u->nama_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p></td>
                             <td><p>No. Komputer</p></td>
                             <td><p>:&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
                         </tr>

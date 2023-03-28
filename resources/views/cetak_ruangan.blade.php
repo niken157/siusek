@@ -28,8 +28,8 @@
                     @foreach($ruangan as $p)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>R-{{ $p->nomer_ruangan}}</td>
                             <td>{{ $p->nama_ruangan}}</td>
+                            <td>{{ $p->keterangan_ruangan}}</td>
                             <td>
                                 <a class="btn btn-outline-primary" target="_blank" href="/cetakruangan/{{ $p->id_ruangan }}" role="button"title="Cetak Ruangan"><i class="fas fa-fw fa-print"></i></a>
 

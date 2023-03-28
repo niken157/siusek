@@ -32,7 +32,7 @@ class SesiController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'no_sesi' => 'required',
+            'nama_sesi' => 'required',
             'jam_sesi' => 'required',
             'keterangan' => 'required',
             'created_at' => 'required',
@@ -42,7 +42,7 @@ class SesiController extends Controller
             return back()->withInput($request->all())->withErrors($validator);
         }
         DB::table('sesi')->insert([
-            'no_sesi' => $request-> no_sesi,
+            'nama_sesi' => $request-> nama_sesi,
             'jam_sesi' => $request-> jam_sesi,
             'keterangan' => $request-> keterangan,
             'created_at' => $request->created_at,
@@ -78,7 +78,7 @@ class SesiController extends Controller
        //update data sesi berdasarkan id
        DB::table('sesi')->where('id_sesi', $request->id_sesi)->update([
             'id_sesi' => $request-> id_sesi,
-            'no_sesi' => $request-> no_sesi,
+            'nama_sesi' => $request-> nama_sesi,
             'jam_sesi' => $request-> jam_sesi,
             'keterangan' => $request-> keterangan,
             'created_at' => $request->created_at,

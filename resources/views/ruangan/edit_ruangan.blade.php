@@ -16,35 +16,24 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">NAMA RUANGAN</label>
             <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">R-</span>
-            <input name="nomer_ruangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->nomer_ruangan }}"required>
-            {{-- @error('nomer_ruangan')
-                <span class="invalid-feedback" role="alert">
-                <strong>{{$message}}</strong>
-                </span>
-            @enderror --}}
-        </div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">KETERANGAN RUANGAN </label>
             <input name="nama_ruangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->nama_ruangan }}"required>
             {{-- @error('nama_ruangan')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
                 </span>
             @enderror --}}
+            <br><i class="form-label">Contoh : R.1</i>
         </div>
-        <div class="row">
-            <div class="col">
+        </div>
         <div class="mb-3">
-            <label for="keterangan">KETERANGAN:</label>
-            <select name="keterangan" required="reqired" class="form-select" id="keterangan">
-            <option value="{{ $ruangan->keterangan }}">{{ $ruangan->keterangan }}</option>
-            <option value="Ruangan Di Pakai">Ruangan Di Pakai</option>
-            <option value="Ruangan Tidak Di Pakai">Ruangan Tidak Di Pakai</option>
-            </select>
+            <label for="exampleFormControlInput1" class="form-label">KETERANGAN</label>
+            <input name="keterangan_ruangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->keterangan_ruangan }}"required>
+            {{-- @error('keterangan_ruangan')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{$message}}</strong>
+                </span>
+            @enderror --}}
         </div>
-    </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">JUMLAH PC</label>
             <input name="jumlah_PC" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->jumlah_PC }}"required>
@@ -62,6 +51,13 @@
                 <strong>{{$message}}</strong>
                 </span>
             @enderror --}}
+        </div>
+        <div class="mb-3">
+            <label for="keterangan">KETERANGAN:</label>
+            <select name="keterangan" required="reqired" class="form-select" id="keterangan">
+            <option value="ya" @if ($ruangan->keterangan=="ya") selected @endif>Ruangan Di Pakai</option>
+            <option value="tidak" @if ($ruangan->keterangan=="tidak") selected @endif>Ruangan Tidak Di Pakai</option>
+            </select>
         </div>
         <input type="hidden" name="created_at" value="{{ $ruangan->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">

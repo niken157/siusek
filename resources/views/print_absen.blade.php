@@ -37,7 +37,7 @@
                         <td><h6 class="text-center">GRUP/SESI</h6></td>
                     </tr>
                     <tr>
-                        <td><h3 class="text-center">{{ $no_sesi}}</h3></td>
+                        <td><h3 class="text-center">{{ $nama_sesi}}</h3></td>
                     </tr>
                 </table>
               </div>
@@ -53,7 +53,7 @@
                         <td><h6 class="text-center">RUANG/LAB</h6></td>
                     </tr>
                     <tr>
-                        <td><h3 class="text-center">{{ $nomer_ruangan}}</h3></td>
+                        <td><h3 class="text-center">{{ $nama_ruangan}}</h3></td>
                     </tr>
                 </table>
               </div>
@@ -105,12 +105,12 @@
                         <tr>
                             <td class="text-center">{{ $p->nomor_pc }}.</td>
                             <td class="text-center">{{ $p->nis }}</td>
-                            <td>{{ $p->nama_peserta }}</td>
+                            <td class="upper huruf">{{ $p->nama_peserta }}</td>
                             <td>{{ $p->kelas }}</td>
                             @if ($ttd % 2 == 0)
-                                <td class="text-center">{{ $ttd++ }}</td>
+                                <td class="text-center">{{ $ttd++ }}.</td>
                             @else
-                                <td>{{ $ttd++ }}</td>
+                                <td>{{ $ttd++ }}.</td>
                             @endif
                         </tr>
                         @endforeach
@@ -121,10 +121,7 @@
                     <tr>
                         <td><p>Blitar, ....................... <br>
                             Pengawas
-                            </p></td>
-                    </tr>
-                    <tr>
-                        <td><h6>_______________________</h6></td>
+                            </p><br><br><h6>_______________________</h6></td>
                     </tr>
                 </table>
               </div>

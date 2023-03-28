@@ -76,12 +76,12 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
               <tr>
                 <td>Grup / Sesi</td>
                 <td>:</td>
-                <td>{{ $no_sesi}}</td>
+                <td>{{ $nama_sesi}}</td>
               </tr>
               <tr>
                 <td>Ruang</td>
                 <td>:</td>
-                <td>{{ $nomer_ruangan}}</td>
+                <td>{{ $nama_ruangan}}</td>
               </tr>
               @php
               $u = DB::table('peserta')
@@ -89,8 +89,8 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
               ->join('ruangan', 'ujian.id_ruangan', '=', 'ruangan.id_ruangan')
               ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
               ->where([
-                  ['ruangan.nomer_ruangan', '=', $nomer_ruangan],
-                  ['sesi.no_sesi', '=', $no_sesi] ])
+                  ['ruangan.nama_ruangan', '=', $nama_ruangan],
+                  ['sesi.nama_sesi', '=', $nama_sesi] ])
               ->orderBy('nomor_pc', 'asc')
               ->get();
           @endphp
@@ -201,13 +201,13 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
 </p>
             </tbody>
           </table>
-          <input type="hidden" name="nomer_ruangan" value="{{ $nomer_ruangan}}">
-        <input type="hidden" name="no_sesi" value="{{ $no_sesi}}">
+          <input type="hidden" name="nama_ruangan" value="{{ $nama_ruangan}}">
+        <input type="hidden" name="nama_sesi" value="{{ $nama_sesi}}">
 
           <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
           <input type="submit" name="btnOk" value="Ubah Riwayat" class="btn btn-outline-primary"  />
-          {{-- <a class="btn btn-outline-primary" title="cetak berita acara " href="/cetak_berita/{{ $nomer_ruangan }}/{{ $no_sesi }}" target="_blank" role="button"><i class="fas fa-fw fa-print"> </i></a> --}}
+          {{-- <a class="btn btn-outline-primary" title="cetak berita acara " href="/cetak_berita/{{ $nama_ruangan }}/{{ $nama_sesi }}" target="_blank" role="button"><i class="fas fa-fw fa-print"> </i></a> --}}
         </form>
 
     </div>

@@ -41,7 +41,7 @@
                     $ruangan = DB::table('ruangan')->get();
                 @endphp
             @foreach($ruangan as $p)
-            <option value="{{ $p->id_ruangan }}">R-{{ $p->nomer_ruangan }}</option>
+            <option value="{{ $p->id_ruangan }}">{{ $p->nama_ruangan }}</option>
             @endforeach
             </select>
         </div>
@@ -52,7 +52,7 @@
                     $ruangan = DB::table('sesi')->get();
                 @endphp
             @foreach($ruangan as $p)
-            <option value="{{ $p->id_sesi }}">SESI-{{ $p->no_sesi }} Hari {{ $p->keterangan }}</option>
+            <option value="{{ $p->id_sesi }}">{{ $p->nama_sesi }} Hari {{ $p->keterangan }}</option>
             @endforeach
             </select>
         </div>

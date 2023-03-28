@@ -13,8 +13,8 @@ class PesertaController extends Controller
     	// mengambil data dari table peserta
 		$peserta = DB::table('peserta')
         ->orderBy('nama_peserta', 'ASC')
-        ->limit(10)
-        ->offset(5)
+        // ->limit(10)
+        // ->offset(5)
         ->get();//menangkap
 
     	// mengirim data peserta ke view index

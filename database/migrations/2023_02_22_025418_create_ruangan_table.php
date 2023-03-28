@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('ruangan', function (Blueprint $table) {
             $table->Increments('id_ruangan');
-            $table->string('nama_ruangan');
-            $table->string('nomer_ruangan',50)->unique();
-            $table->enum('keterangan',[ 'Ruangan Di Pakai','Ruangan Tidak Di Pakai']);
-            $table->string('jumlah_PC');
-            $table->string('cadangan_pc');
+            $table->string('keterangan_ruangan');
+            $table->string('nama_ruangan',50)->unique();
+            $table->integer('jumlah_PC');
+            $table->integer('cadangan_pc');
+            $table->enum('keterangan', ['ya','tidak']);
             $table->timestamps();
         });
     }

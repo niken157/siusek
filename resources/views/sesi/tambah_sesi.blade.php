@@ -12,9 +12,9 @@
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">NAMA SESI</label>
             <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">SESI-</span>
-            <input name="no_sesi" type="text" class="form-control @error('no_sesi') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Nama Sesi"required>
-            @error('no_sesi')
+            <input name="nama_sesi" type="text" class="form-control @error('nama_sesi') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Nama Sesi"required>
+            <i class="form-label">Contoh : SESI-1</i>
+            @error('nama_sesi')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
                 </span>
@@ -32,7 +32,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">KETERANGAN</label>
-            <input name="keterangan" type="text" class="form-control @error('keterangan') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Keterangan"required>
+            <input name="keterangan" type="text" class="form-control @error('keterangan') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Keterangan/hari"required>
             @error('keterangan')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
