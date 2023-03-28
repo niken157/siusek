@@ -18,7 +18,8 @@
                     <tr>
                         <th>NO</th>
                         <th>NAMA RUANGAN</th>
-                        <th>KETERANGAN</th>
+                        <th>KETERANGAN RUANGAN</th>
+                        <th>KETERANGAN </th>
                         <th>JUMLAH PC</th>
                         <th>CADANGAN PC</th>
                         <th>AKSI</th>
@@ -31,6 +32,7 @@
                             <td>{{ $no++ }}</td>
                             <td>R-{{ $p->nomer_ruangan}}</td>
                             <td>{{ $p->nama_ruangan}}</td>
+                            <td>{{ $p->keterangan}}</td>
                             <td>{{ $p->jumlah_PC}}</td>
                             <td>{{ $p->cadangan_pc}}</td>
                             <td>

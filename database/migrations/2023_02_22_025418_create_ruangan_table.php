@@ -15,6 +15,7 @@ return new class extends Migration
             $table->Increments('id_ruangan');
             $table->string('nama_ruangan');
             $table->string('nomer_ruangan',50)->unique();
+            $table->enum('keterangan',[ 'Ruangan Di Pakai','Ruangan Tidak Di Pakai']);
             $table->string('jumlah_PC');
             $table->string('cadangan_pc');
             $table->timestamps();

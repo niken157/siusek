@@ -71,6 +71,7 @@ class RuanganController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_ruangan' => 'required|unique:ruangan|max:50',
             'nomer_ruangan' => 'required|unique:ruangan|max:50',
+            'keterangan' => 'required',
             'jumlah_PC' => 'required',
             'cadangan_pc' => 'required',
             'created_at' => 'required',
@@ -82,6 +83,7 @@ class RuanganController extends Controller
         DB::table('ruangan')->insert([
             'nama_ruangan' => $request-> nama_ruangan,
             'nomer_ruangan' => $request-> nomer_ruangan,
+            'keterangan' => $request-> keterangan,
             'jumlah_PC' => $request-> jumlah_PC,
             'cadangan_pc' => $request-> cadangan_pc,
             'created_at' => $request->created_at,
@@ -130,6 +132,7 @@ class RuanganController extends Controller
             // 'id_ruangan' => $request-> id_ruangan,
             'nama_ruangan' => $request-> nama_ruangan,
             'nomer_ruangan' => $request-> nomer_ruangan,
+            'keterangan' => $request-> keterangan,
             'jumlah_PC' => $request-> jumlah_PC,
             'cadangan_pc' => $request-> cadangan_pc,
             'created_at' => $request->created_at,

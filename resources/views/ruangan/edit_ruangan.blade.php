@@ -26,7 +26,7 @@
         </div>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">KETERANGAN</label>
+            <label for="exampleFormControlInput1" class="form-label">KETERANGAN RUANGAN </label>
             <input name="nama_ruangan" required="reqired" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->nama_ruangan }}"required>
             {{-- @error('nama_ruangan')
                 <span class="invalid-feedback" role="alert">
@@ -34,6 +34,17 @@
                 </span>
             @enderror --}}
         </div>
+        <div class="row">
+            <div class="col">
+        <div class="mb-3">
+            <label for="keterangan">KETERANGAN:</label>
+            <select name="keterangan" required="reqired" class="form-select" id="keterangan">
+            <option value="{{ $ruangan->keterangan }}">{{ $ruangan->keterangan }}</option>
+            <option value="Ruangan Di Pakai">Ruangan Di Pakai</option>
+            <option value="Ruangan Tidak Di Pakai">Ruangan Tidak Di Pakai</option>
+            </select>
+        </div>
+    </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">JUMLAH PC</label>
             <input name="jumlah_PC" required="reqired" type="number" class="form-control" id="exampleFormControlInput1" value="{{ $ruangan->jumlah_PC }}"required>
