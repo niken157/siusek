@@ -4,7 +4,7 @@
 @section('content')
 <style>
     td {
-        font-size: 13px;
+        font-size: 14px;
     }
     .upper { text-transform: uppercase; }
 </style>
@@ -18,7 +18,7 @@
             <a class="align-items-center justify-content-between btn btn-primary" href="/peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
             <a class="align-items-center justify-content-between btn btn-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Semua Data?')" href="/peserta/hapus_semua" role="button"><i class="fas fa-fw fa-trash"></i> Semua</a>
         </div>
-        <div class="card-body">
+        <div class="card-body table-responsive">
             <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>

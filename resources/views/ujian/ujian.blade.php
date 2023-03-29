@@ -17,8 +17,8 @@
             <a class="align-items-center justify-content-between btn btn-secondary" onclick="return confirm('Apakah Anda Yakin Mengenerate Semua Data? Mengenerate Data Mengakibatkan Data Yang Sudah Ada Terhapus!')" href="/kartu_peserta/generate" role="button"><i class="fas fa-fw fa-gear"></i> Generate</a>
 
         </div>
-        <div class="card-body">
-            <table class="table table-striped table-hover" id="datatablesSimple">
+        <div class="card-body table-responsive">
+            <table class="table table-striped table-hover mb-0" id="datatablesSimple">
                 <thead>
                     <tr>
                         <th>NO</th>
