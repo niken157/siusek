@@ -268,7 +268,9 @@ class UjianController extends Controller
             ->get();
             for ($j=1; $j <= count($ruangan) ; $j++) { //banyaknya ruangan yang di pakai
                 //echo "ruangan $j ";
+                $off=1;
                 foreach ($pc as $r) {//perulangan memanggil banyak pc per ruangan
+
                 for ($k=1; $k <= $r->jumlah_PC ; $k++) {//jumlah pc per ruangan
                     //echo "pc $k ";
                     $created_at=date('Y-m-d h:i:s');
@@ -284,7 +286,7 @@ class UjianController extends Controller
                 $pc = DB::table('ruangan')
             ->where('keterangan', '=', 'ya')
             ->limit(1)
-            ->offset(1)
+            ->offset($j)
             ->get();
                 }
             }
@@ -304,7 +306,6 @@ class UjianController extends Controller
     //     $ru = DB::table('ruangan')
     //     ->where('keterangan', '=', 'ya')
     //     ->limit(1)
-    //     //->offset(1)
     //     ->get();
     //     echo "sesi $i ";
     //     for ($j=1; $j <= count($ruangan) ; $j++) { //banyaknya ruangan yang di pakai ya
@@ -315,7 +316,7 @@ class UjianController extends Controller
     //             $ru = DB::table('ruangan')
     //         ->where('keterangan', '=', 'ya')
     //         ->limit(1)
-    //         ->offset(1)
+    //         ->offset($j)
     //         ->get();
 
     //         }
