@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use App\Exports\PesertaExport;
+use App\Imports\PesertaImport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Peserta;
 
 class PesertaController extends Controller
 {
@@ -21,6 +25,15 @@ class PesertaController extends Controller
 		return view('peserta.peserta',['peserta' => $peserta]);//variabel passing
 
 	}
+    public function import()
+    {
+        Excel::import(new PesertaImport,request()->file('file'));
+        return back();
+    }
+    public function export()
+    {
+        return Excel::download(new PesertaExport, 'peserta.xlsx');
+    }
     public function upas()
 	{
 
@@ -56,7 +69,6 @@ class PesertaController extends Controller
             'nis' => 'required|unique:peserta|integer',
             'nama_peserta' => 'required|unique:peserta|max:50',
             'kelas' => 'required',
-			'jurusan' => 'required',
 			'jenis_kelamin' => 'required',
 			'agama' => 'required',
             'created_at' => 'required',
@@ -70,7 +82,6 @@ class PesertaController extends Controller
 			'nis' => $request->nis,
 			'nama_peserta' => $request->nama_peserta,
 			'kelas' => $request->kelas,
-			'jurusan' => $request->jurusan,
 			'jenis_kelamin' => $request->jenis_kelamin,
 			'agama' => $request->agama,
             'created_at' => $request->created_at,
@@ -165,7 +176,6 @@ class PesertaController extends Controller
 			'nis' => $request->nis,
 			'nama_peserta' => $request->nama_peserta,
 			'kelas' => $request->kelas,
-			'jurusan' => $request->jurusan,
 			'jenis_kelamin' => $request->jenis_kelamin,
 			'agama' => $request->agama,
             'created_at' => $request->created_at,

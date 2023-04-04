@@ -40,11 +40,12 @@ class HomeController extends Controller
                     ->get();
                     $peserta = DB::table('peserta')->get();
                     $ruangan = DB::table('ruangan')->get();
+                    $ruangan_ya = DB::table('ruangan')->where('keterangan', '=', 'ya')->get();
                     $sesi = DB::table('sesi')->get();
                     $uji = DB::table('ujian')->get();
                     $setting = DB:: table('setting') ->first();
             //tampilkan view barang dan kirim ujiannya ke view tersebut
-            return view('index',['ujian' => $ujian,'peserta' => $peserta,'ruangan' => $ruangan, 'sesi' => $sesi,'uji' => $uji,'setting' => $setting]);
+            return view('index',['ujian' => $ujian,'peserta' => $peserta,'ruangan' => $ruangan, 'sesi' => $sesi,'uji' => $uji,'setting' => $setting,'ruangan_ya' => $ruangan_ya]);
 
     }
 }

@@ -35,45 +35,31 @@
         </div>
         <div class="row">
             <div class="col">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">KELAS PESERTA</label>
-            <input name="kelas" type="text" class="form-control @error('kelas') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan kelas" autofocus value="{{ old('kelas') }}" required>
-            <i class="form-label">Contoh : 12-RPL-1</i>
-            @error('kelas')
-                <span class="invalid-feedback" role="alert">
-                <strong>{{$message}}</strong>
-                </span>
-            @enderror
-        </div>
+                <div class="mb-3">
+                    <label for="kelas">KELAS PESERTA</label><br>
+                    <select class="selectpicker" data-live-search="true" name="kelas" class="form-select" id="kelas" visibleOptions="true">
+                        @php
+                        $kelas = DB::table('kelas')->get();
+                        @endphp
+                    @foreach($kelas as $p)
+                        <option value="{{ $p->nama_kelas }}">{{ $p->nama_kelas }}</option>
+                    @endforeach
+                    </select>
+                </div>
     </div>
     <div class="col">
-        <div class="mb-3">
-            <label for="keterangan">JURUSAN:</label>
-            <select name="jurusan" required="reqired" class="form-select" id="jurusan">
-            <option value="RPL">RPL</option>
-            <option value="TKJ">TKJ</option>
-            <option value="TIPTL">TIPTL</option>
-            <option value="TKRO">TKRO</option>
-            <option value="TPM">TPM</option>
-            <option value="DKV">DKV</option>
-            <option value="TAB">TAB</option>
-            <option value="TKKR">TKKR</option>
-            </select>
-        </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-        <div class="mb-3">
+         <div class="mb-3">
             <label for="keterangan">JENIS KELAMIN:</label>
             <select name="jenis_kelamin" required="reqired" class="form-select" id="jenis_kelamin">
             <option value="Perempuan">Perempuan</option>
             <option value="Laki-Laki">Laki-Laki</option>
             </select>
         </div>
-    </div>
-    <div class="col">
-        <div class="mb-3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+<div class="mb-3">
             <label for="keterangan">AGAMA:</label>
             <select name="agama" required="reqired" class="form-select" id="agama">
             <option value="Islam">Islam</option>
@@ -84,6 +70,9 @@
             <option value="Konghucu">Konghucu</option>
             </select>
         </div>
+    </div>
+    <div class="col">
+
         </div>
         </div>
         <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">

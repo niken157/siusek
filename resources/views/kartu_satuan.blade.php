@@ -14,54 +14,58 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body>
-<style>
-    p{
-        font-size: 7px;
-    }
-    .div {
-        /* margin-left: 15px;
-        width: 9,83;
-        height: 6;
-        margin-bottom: 20px; */
-        margin-left: 15px;
-        /* height: 10cm; */
-        width: 6cm;
-        margin-bottom: 20px;
-    }
-    td {
-    padding: 3px;
-    }
-    .upper { text-transform: uppercase; }
 
-    .kotak1 {
-        border-top: 1px solid black ;
-        border-left: 1px solid black ;
-        border-right: 1px solid black ;
-        border-bottom:1px solid black ;
 
-    }
-    h1 {
-  font-size: 10px;
-  text-align: center;
-}
-
-</style>
 @php $no = 1; @endphp
 
 <br>
 
     @foreach($ujian as $u)
-    <table class="div">
-        <tr style="border: 1px solid black ;">
-            <td><img src="/image/{{ $setting->logo}}" class="rounded" height="50" width="50" alt="..."></td>
-            <td><h1 class="upper"><b>KARTU PESERTA <br> {{ $setting->nama_ujian}} <br>&nbsp&nbspTAHUN PELAJARAN {{ $setting->tahun_ajaran}}</b>
-            </td>
-        </tr>
-        <tr class="kotak1" >
-            <td><p>NAMA PESERTA <br> KELAS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br> <b>Username</b><br><b>Password</b><br>Ruang / Sesi<br>No. Komputer</p></td>
-            <td colspan="6"><p>:&nbsp&nbsp{{ $u->nama_peserta}} <br> :&nbsp&nbsp{{ $u->kelas }} <br><b> @if ($u->username == 'nis'):&nbsp&nbsp{{ $u->nis}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @else :&nbsp&nbsp{{ $u->username}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp @endif </b><br><b>:&nbsp&nbsp{{ $u->pass}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </b><br>:&nbsp&nbsp{{ $u->nama_ruangan }} / {{ $u->nama_sesi }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <br>:&nbsp&nbsp{{ $u->nomor_pc}}</p></td>
-        </tr>
-    </table>
+  <style type="text/css">
+   .kotak {
+      border-style: solid;
+      width: 10.5cm;
+      height: 8cm;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .logo-kartu{
+        width: 70px;
+      height: 70px;
+    }
+  </style>
+
+  <div class="kotak">
+   <img class="float-start logo-kartu" src ="/image/smk.png"><h6 class = "text-center mt-2">KARTU PESERTA<br> UJIAN AKHIR SEMESTER GENAP<br> TAHUN PELAJARAN 2022/2023<hr></h6>
+   <table class="table table-sm table-borderless">
+  <tbody>
+    <tr>
+      <th scope="row"> NAMA PESERTA</th>
+      <td> : {{ $u->nama_peserta}}</td>
+    </tr>
+    <tr>
+      <th scope="row">KELAS </th>
+      <td>: {{ $u->kelas }} {{ $u->jurusan }}</td>
+    </tr>
+    <tr>
+      <th scope="row">  Username </th>
+      <td>: {{ $u->nis}}</td>
+    </tr>
+    <tr>
+      <th scope="row"> Password </th>
+      <td>: {{ $u->pass}} </td>
+    </tr>
+    <tr>
+      <th scope="row">  Ruang / Sesi</th>
+      <td>: {{ $u->nama_ruangan }} / {{ $u->nama_sesi }}</td>
+    </tr>
+    <tr>
+      <th scope="row">  Nomor PC</th>
+      <td>: {{ $u->nomor_pc}}</td>
+    </tr>
+  </tbody>
+</table>
+
       @endforeach
 
 

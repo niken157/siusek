@@ -22,9 +22,18 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">JAM SESI</label>
-            <input name="jam_sesi" type="time" class="form-control @error('jam_sesi') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Jam Sesi"required>
-            @error('jam_sesi')
+            <label for="exampleFormControlInput1" class="form-label">JAM AWAL</label>
+            <input name="jam_awal" type="time" class="form-control @error('jam_awal') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Jam Sesi"required>
+            @error('jam_awal')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{$message}}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">JAM BERAKHIR</label>
+            <input name="jam_berakhir" type="time" class="form-control @error('jam_berakhir') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Jam Sesi"required>
+            @error('jam_berakhir')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
                 </span>

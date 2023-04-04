@@ -33,7 +33,8 @@ class SesiController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama_sesi' => 'required',
-            'jam_sesi' => 'required',
+            'jam_awal' => 'required',
+            'jam_berakhir' => 'required',
             'keterangan' => 'required',
             'created_at' => 'required',
             'updated_at' => 'required',
@@ -43,7 +44,8 @@ class SesiController extends Controller
         }
         DB::table('sesi')->insert([
             'nama_sesi' => $request-> nama_sesi,
-            'jam_sesi' => $request-> jam_sesi,
+            'jam_awal' => $request-> jam_awal,
+            'jam_berakhir' => $request-> jam_berakhir,
             'keterangan' => $request-> keterangan,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at,
@@ -79,7 +81,8 @@ class SesiController extends Controller
        DB::table('sesi')->where('id_sesi', $request->id_sesi)->update([
             'id_sesi' => $request-> id_sesi,
             'nama_sesi' => $request-> nama_sesi,
-            'jam_sesi' => $request-> jam_sesi,
+            'jam_awal' => $request-> jam_awal,
+            'jam_berakhir' => $request-> jam_berakhir,
             'keterangan' => $request-> keterangan,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at

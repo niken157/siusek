@@ -11,6 +11,8 @@
             DATA RUANGAN UJIAN
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-primary" href="/ruangan/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
+            <a class="align-items-center justify-content-between btn btn-warning" target="_blank" href="/cetak_ruangan/panitia" role="button"><i class="fas fa-fw fa-print"></i> Panitia</a>
+            <a class="align-items-center justify-content-between btn btn-success" target="_blank" href="/cetak_ruangan/pengawas" role="button"><i class="fas fa-fw fa-print"></i> Pengawas</a>
         </div>
         <div class="card-body">
             <table class="table table-striped table-hover" id="datatablesSimple">
@@ -37,7 +39,8 @@
                             <td>{{ $p->keterangan}}</td>
                             <td>
                                 <a class="btn btn-outline-primary" href="/ruangan/edit/{{ $p->id_ruangan }}" role="button"title="Edit Data Ruangan"><i class="fas fa-fw fa-edit"></i></a>
-
+                                <a class="btn btn-outline-warning" target="_blank" href="/cetakruangan/{{ $p->id_ruangan }}" role="button"title="Cetak Ruangan"><i class="fas fa-fw fa-print"></i></a>
+                                <a class="btn btn-outline-success" target="_blank" href="/cetak_amplop/{{ $p->id_ruangan }}" role="button" title="Cetak Amplop Ruangan"><i class="fas fa-fw fa-envelope"></i></a>
                                 <a class="btn btn-outline-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Data Ini?')" href="/ruangan/hapus/{{ $p->id_ruangan }}" role="button" title="Hapus Data Ruangan"><i class="fas fa-fw fa-trash"></i></a>
                             </td></td>
                         </tr>

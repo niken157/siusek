@@ -16,9 +16,10 @@ class UjianController extends Controller
                      ->join('sesi', 'ujian.id_sesi', '=', 'sesi.id_sesi')
                      ->join('upas', 'upas.id_peserta', '=', 'peserta.id_peserta')
                      ->groupBy('peserta.id_peserta')
-                     ->orderBy('peserta.nama_peserta', 'ASC')
-                     ->orderBy('ruangan.nama_ruangan', 'ASC')
-                     ->orderBy('ujian.nomor_pc', 'ASC')
+                    //  ->orderBy('peserta.nama_peserta', 'ASC')
+                //     ->orderBy('sesi.nama_sesi', 'ASC')
+                //      ->orderBy('ruangan.nama_ruangan', 'ASC')
+                //   ->orderBy('ujian.nomor_pc', 'ASC')
                     ->get();
                     $setting = DB:: table('setting') ->first();
             //tampilkan view barang dan kirim ujiannya ke view tersebut
@@ -283,13 +284,13 @@ class UjianController extends Controller
                     'created_at' => $created_at,
                     'updated_at' => $updated_at
                 ]);
-                $pc = DB::table('ruangan')
+
+                }
+            }$pc = DB::table('ruangan')
             ->where('keterangan', '=', 'ya')
             ->limit(1)
             ->offset($j)
             ->get();
-                }
-            }
             }
         }
         return redirect('/kartu_peserta');

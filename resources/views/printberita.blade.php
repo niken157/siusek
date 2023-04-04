@@ -44,6 +44,7 @@ $bulanList = array(
     <body class="sb-nav-fixed">
     <style>
             .upper { text-transform: uppercase; }
+            .capitalize { text-transform: capitalize; }
             body {
         width: 100%;
         height: 100%;
@@ -59,7 +60,7 @@ $bulanList = array(
         <h3 class="text-center">SMK PGRI WLINGI</h3>
         <h3 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h3>
        <hr class="border border-dark opacity-75">
-        <p>
+        <p class="capitalize">
             Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
 a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
         </p>
@@ -127,7 +128,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
         ...........................................................................................................................................................................................................................................................................................................................
         ...........................................................................................................................................................................................................................................................................................................................
         ...........................................................................................................................................................................................................................................................................................................................
-        <br><br><br>
+        <br>
 
     </p>
 <p>
@@ -138,7 +139,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
               <tr>
                 <td>1. Tanda Tangan </td>
                 <td>:</td>
-                <td>....................................</td>
+                <td><br><br><br><br><br>....................................</td>
               </tr>
               <tr>
                 <td>&nbsp;Nama</td>

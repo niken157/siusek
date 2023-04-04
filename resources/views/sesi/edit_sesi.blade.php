@@ -21,8 +21,12 @@
         </div>
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">JAM SESI</label>
-            <input name="jam_sesi" required="reqired" type="time" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->jam_sesi }}"required>
+            <label for="exampleFormControlInput1" class="form-label">JAM AWAL</label>
+            <input name="jam_awal" required="reqired" type="time" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->jam_sesi }}"required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">JAM BERAKHIR</label>
+            <input name="jam_berakhir" required="reqired" type="time" class="form-control" id="exampleFormControlInput1" value="{{ $sesi->jam_sesi }}"required>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">KETERANGAN</label>

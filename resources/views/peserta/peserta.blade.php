@@ -16,9 +16,16 @@
             DATA PESERTA UJIAN
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-primary" href="/peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
+            <a class="btn btn-secondary" href="{{ route('peserta.export') }}"><i class="fas fa-fw fa-download"></i>Export Data Peserta</a>
             <a class="align-items-center justify-content-between btn btn-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Semua Data?')" href="/peserta/hapus_semua" role="button"><i class="fas fa-fw fa-trash"></i> Semua</a>
         </div>
         <div class="card-body table-responsive">
+            <form action="{{ route('peserta.import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" class="form-control">
+                <br>
+                <button class="btn btn-primary"><i class="fas fa-fw fa-file"></i>Import Data User</button>
+            </form>
             <table class="table table-striped table-hover" id="datatablesSimple">
                 <thead>
                     <tr>

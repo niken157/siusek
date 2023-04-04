@@ -43,9 +43,11 @@ Route::get('/peserta/edit/{id_peserta}', [PesertaController::class, 'edit']);
 Route::post('/peserta/update', [PesertaController::class, 'update']);
 Route::get('/peserta/hapus/{id_peserta}', [PesertaController::class, 'hapus']);
 Route::get('/peserta/hapus_semua', [PesertaController::class, 'hapus_s']);
+Route::post('/peserta/import', [PesertaController::class, 'import'])->name('peserta.import');
+Route::get('/peserta/export', [PesertaController::class, 'export'])->name('peserta.export');
 //halaman Akun Peserta
 Route::get('/akun_peserta', [PesertaController::class, 'upas']);
-Route::get('/akun_peserta/tambah', [PesertaController::class, 'tambah_up']);
+// Route::get('/akun_peserta/tambah', [PesertaController::class, 'tambah_up']);
 Route::post('/akun_peserta/store', [PesertaController::class, 'store_up']);
 Route::get('/akun_peserta/generate', [PesertaController::class, 'generate']);
 Route::get('/akun_peserta/edit/{id_kartu}', [PesertaController::class, 'edit_up']);

@@ -127,7 +127,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
                                 $peserta = DB::table('peserta')->get();
                             @endphp
                         @foreach($peserta as $p)
-                        <option value="{{ $p->nama_peserta }}">{{ $p->nama_peserta }}</option>
+                        <option value="{{ $p->nama_peserta }}({{ $p->kelas }})">{{ $p->nama_peserta }}({{ $p->kelas }})</option>
                         @endforeach
                         </select>
                     </div>
@@ -207,7 +207,6 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
           <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
           <input type="submit" name="btnOk" value="Simpan" class="btn btn-outline-primary"  />
-          {{-- <a class="btn btn-outline-primary" title="cetak berita acara " href="/cetak_berita/{{ $nama_ruangan }}/{{ $nama_sesi }}" target="_blank" role="button"><i class="fas fa-fw fa-print"> </i></a> --}}
         </form>
 
     </div>

@@ -44,6 +44,7 @@ $bulanList = array(
     <body class="sb-nav-fixed">
     <style>
             .upper { text-transform: uppercase; }
+            .capitalize { text-transform: capitalize; }
         </style>
 
         <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
@@ -52,7 +53,7 @@ $bulanList = array(
         <h6 class="text-center">SMK PGRI WLINGI</h6>
         <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
        <hr class="border border-dark opacity-75">
-        <p>
+        <p class="capitalize">
             Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
 a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
         </p>
@@ -137,7 +138,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
               <tr>
                 <td>1. Tanda Tangan </td>
                 <td>:</td>
-                <td>
+                <td><br>
                     <img src="/upload/{{ $tabel_berita_acara->ttd}}" style="width: 100px; height: 100px; float: left;margin-bottom: 5px;">
                 </td>
               </tr>

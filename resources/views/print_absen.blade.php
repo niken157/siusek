@@ -28,8 +28,11 @@
         border-top: 1px solid black ;
         margin-bottom: -10px;
     }
+    .mar {
+        margin-top: -3px;
+    }
 </style>
-<div class="container-fluid">
+<div class="container-fluid mar">
             <div class="row border-top-0">
               <div class="col-3">
                 <table class="table table-bordered" style="border: 1px solid black;" >
@@ -69,7 +72,7 @@
                     <tr>
                         <td><p><b>WAKTU</b> </p></td>
                         <td><p>&nbsp&nbsp:</p></td>
-                        <td><p>&nbsp&nbsp&nbsp_______________________________</p></td>
+                        <td><p>&nbsp&nbsp&nbsp__________________________________</p></td>
                     </tr>
                 </table>
               </div>
@@ -83,7 +86,7 @@
                     <tr>
                         <td></td>
                         <td></td>
-                        <td><p>&nbsp2.&nbsp____________________________</p></td>
+                        <td><p>&nbsp2.&nbsp___________________________</p></td>
                     </tr>
                 </table>
               </div>

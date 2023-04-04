@@ -30,6 +30,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
 
+
     <link rel="stylesheet" type="text/css" href="http://keith-wood.name/css/jquery.signature.css">
     </head>
     <body class="sb-nav-fixed">
@@ -124,9 +125,13 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
                                 Daftar Hadir
                             </a>
-                            <a class="nav-link" href="/cetak_ruangan">
+                            {{-- <a class="nav-link" href="/cetak_ruangan">
                                 <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
                                 Cetak Ruangan
+                            </a> --}}
+                            <a class="nav-link" href="/cetak_ruangan">
+                                <div class="sb-nav-link-icon"><i class="fas fa-download"></i></div>
+                                Backup DataBase
                             </a>
                             <div class="sb-sidenav-menu-heading">Setting</div>
                             <a class="nav-link" href="/pengaturan">
@@ -136,7 +141,7 @@
                         </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        {{ Auth::user()->name }}
                     </div>
                 </nav>
             </div>

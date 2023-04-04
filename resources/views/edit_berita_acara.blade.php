@@ -127,7 +127,7 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
                                 $peserta = DB::table('peserta')->get();
                             @endphp
                         @foreach($peserta as $p)
-                        <option value="{{ $p->nama_peserta }}">{{ $p->nama_peserta }}</option>
+                        <option value="{{ $p->nama_peserta }}({{ $p->kelas }})">{{ $p->nama_peserta }}({{ $p->kelas }})</option>
                         @endforeach
                         </select>
                     </div>
