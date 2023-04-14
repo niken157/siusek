@@ -1,5 +1,5 @@
 <?php
-$tanggal = date('y-m-d');
+$tanggal = $tabel_berita_acara->tanggal;
 $day = date('D', strtotime($tanggal));
 $dayList = array(
     'Sun' => 'Minggu',
@@ -25,6 +25,11 @@ $bulanList = array(
     'November' => 'November',
     'December' => 'Desember'
 );
+$tgl =substr($tabel_berita_acara->tanggal, 8, 10);
+$tahun =substr($tabel_berita_acara->tanggal, 0, 4);
+$bln =substr($tabel_berita_acara->tanggal, 5, -3);
+$awal =substr($sesi->jam_awal, 0, 5);
+$akhir =substr($sesi->jam_berakhir, 0, 5);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,8 +59,8 @@ $bulanList = array(
         <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
        <hr class="border border-dark opacity-75">
         <p class="capitalize">
-            Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
-a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
+            Pada hari ini {{ $tabel_berita_acara->hari}} Tanggal {{ $tgl}} Bulan  {{ $bln}} Tahun {{ $tahun}} <br >
+a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $awal}} sampai dengan {{ $akhir}}
         </p>
         <table class="table">
             <tbody>
@@ -135,11 +140,12 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
       <b>Pengawas</b> <br>
       <table>
             <tbody>
-              <tr>
-                <td>1. Tanda Tangan </td>
-                <td>:</td>
-                <td><br>
-                    <img src="/upload/{{ $tabel_berita_acara->ttd}}" style="width: 100px; height: 100px; float: left;margin-bottom: 5px;">
+                <tr>
+                    <td>1. Tanda Tangan :</td>
+                </tr>
+              <tr cellpadding="10">
+                <td style="border: 1px solid black;">
+                    <img src="/upload/{{ $tabel_berita_acara->ttd}}" style="width: 150px; height: 100px; float: left;margin-bottom: 5px;">
                 </td>
               </tr>
               <tr>

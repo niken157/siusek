@@ -64,7 +64,7 @@ td {
 <tr>
         <th style="width:10%"></th>
 
-    </tr
+</tr>
 </td>
 <table class="tr">
           <tr class="panel-body post-body table-text-center">
@@ -82,7 +82,6 @@ td {
              <td><b><p class="text-center" >TINGKAT {{ $tingkat}} </p></b></td>
 </td>
 </td>
->
 </tr>
 </html>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

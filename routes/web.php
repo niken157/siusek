@@ -22,6 +22,12 @@ use App\Http\Controllers\HomeController;
 Route::get('/ttd', function () {
     return view('ttd');
 });
+Route::get('/download-backup', function () {
+    $folderPath = public_path('upload/');
+    $signature = uniqid();
+    $file = $folderPath . $signature;
+    return response()->download($file);
+})->name('download-backup');
 //berita acara
 Route::get('/berita', [UjianController::class, 'berita']);
 Route::get('/berita_acara/{nama_ruangan}/{nama_sesi}', [UjianController::class, 'berita_acara']);

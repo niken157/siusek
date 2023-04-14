@@ -9,7 +9,7 @@
     <div class="card mb-4">
     <div class="card-header">
         <span style=" font-size: 1cm;">
-            DATA KARTU PESERTA
+            PEMBAGIAN KARTU PESERTA
             <span style="float: right">
             <a class="align-items-center justify-content-between btn btn-warning" href="/kartu" target="_blank" role="button"><i class="fa-solid fa-print" title="cetak kartu semua peserta"></i> Cetak Kartu</a>
             <a class="align-items-center justify-content-between btn btn-primary" href="/kartu_peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>

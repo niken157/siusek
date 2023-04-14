@@ -52,6 +52,11 @@ $bulanList = array(
         padding: 0;
         font-size: 18pt;
     }
+    .box1{
+width:250px;
+height:150px;
+border:solid 3px black;
+}
         </style>
 
         <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="150" width="150" alt="...">
@@ -61,8 +66,8 @@ $bulanList = array(
         <h3 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h3>
        <hr class="border border-dark opacity-75">
         <p class="capitalize">
-            Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
-a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
+            Pada hari ini ............ Tanggal ....... Bulan  ........... Tahun .........<br >
+a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul ...... : ...... sampai dengan ...... : ......
         </p>
         <table class="table">
             <tbody>
@@ -128,18 +133,19 @@ a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi
         ...........................................................................................................................................................................................................................................................................................................................
         ...........................................................................................................................................................................................................................................................................................................................
         ...........................................................................................................................................................................................................................................................................................................................
-        <br>
+
 
     </p>
 <p>
         Berita acara ini dibuat dengan sesungguhnya.<br>
-      <b>Pengawas</b> <br>
+      <b>Pengawas</b>
       <table>
             <tbody>
+                <tr>
+                    <td>1. Tanda Tangan :</td>
+                </tr>
               <tr>
-                <td>1. Tanda Tangan </td>
-                <td>:</td>
-                <td><br><br><br><br><br>....................................</td>
+                <td><div class="box1"></div></td>
               </tr>
               <tr>
                 <td>&nbsp;Nama</td>

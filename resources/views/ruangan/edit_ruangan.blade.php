@@ -22,8 +22,8 @@
                 <strong>{{$message}}</strong>
                 </span>
             @enderror --}}
-            <br><i class="form-label">Contoh : R.1</i>
         </div>
+        <i class="form-label">Contoh : R.1</i>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">KETERANGAN</label>
@@ -54,11 +54,14 @@
         </div>
         <div class="mb-3">
             <label for="keterangan">KETERANGAN:</label>
+            <div class="input-group">
             <select name="keterangan" required="reqired" class="form-select" id="keterangan">
             <option value="ya" @if ($ruangan->keterangan=="ya") selected @endif>Ruangan Di Pakai</option>
             <option value="tidak" @if ($ruangan->keterangan=="tidak") selected @endif>Ruangan Tidak Di Pakai</option>
             </select>
         </div>
+        <i class="form-label">*jika ruangan tidak dipakai pilih "ruangan tidak dipakai". jika memilih "ruangan tidak dipakai" maka pc diruangan ini tidak akan tersedia</i>
+    </div>
         <input type="hidden" name="created_at" value="{{ $ruangan->created_at }}">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="submit" value="SIMPAN DATA" class="btn btn-primary">

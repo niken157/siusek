@@ -25,6 +25,8 @@ $bulanList = array(
     'November' => 'November',
     'December' => 'Desember'
 );
+$awal =substr($sesi->jam_awal, 0, 5);
+$akhir =substr($sesi->jam_berakhir, 0, 5);
 ?>
 
 
@@ -48,7 +50,8 @@ $bulanList = array(
                 height: auto;
             }
         </style>
-
+ <form method="post" action="/berita/update">
+            {{ csrf_field() }}
         <img src="/image/{{ $setting->logo}}" class="rounded mx-auto d-block" height="100" width="100" alt="...">
         <h4 class="text-center"><b>BERITA ACARA</b></h4>
         <h6 class="text-center upper">{{ $setting->nama_ujian}}</h6>
@@ -56,11 +59,18 @@ $bulanList = array(
         <h6 class="text-center">TAHUN PELAJARAN {{ $setting->tahun_ajaran}}</h6>
        <hr class="border border-dark opacity-75">
         <p>
-            Pada hari ini <?php echo $dayList[$day] ?> Tanggal <?php echo date('d '); ?> Bulan  <?php echo $bulanList[$bulan] ?> Tahun <?php echo date('Y '); ?><br >
-a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $sesi->jam_sesi}} sampai dengan ...... : ......
+            Pada hari ini
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="hari" value="{{ $tabel_berita_acara->hari }}" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+            </div>
+               Tanggal
+               <div class="input-group mb-3">
+                <input type="date" class="form-control" name="tanggal" value="{{ $tabel_berita_acara->tanggal }}" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+              </div>
+              <br>
+a.	Telah diselenggarakan {{ $setting->nama_ujian}} dari pukul {{ $awal}} sampai dengan {{ $akhir}}
         </p>
-        <form method="post" action="/berita/update">
-            {{ csrf_field() }}
+
         <table class="table">
             <tbody>
               <tr>

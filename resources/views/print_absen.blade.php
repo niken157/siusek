@@ -32,7 +32,7 @@
         margin-top: -3px;
     }
 </style>
-<div class="container-fluid mar">
+<div class="container-fluid ">
             <div class="row border-top-0">
               <div class="col-3">
                 <table class="table table-bordered" style="border: 1px solid black;" >
@@ -95,11 +95,11 @@
             <table class="table table-bordered huruf" style="border: 1px solid black;">
                 <thead>
                     <tr>
-                        <th style="witdh: 1cm">NO</th>
-                        <th>NO UJIAN</th>
-                        <th>NAMA PESERTA UJIAN</th>
-                        <th  style=" width: 3cm">KELAS</th>
-                        <th>TANDA TANGAN</th>
+                        <th class="text-center" style="witdh: 1cm">NO</th>
+                        <th class="text-center">NO UJIAN</th>
+                        <th class="text-center">NAMA PESERTA UJIAN</th>
+                        <th class="text-center"  style=" width: 3cm">KELAS</th>
+                        <th class="text-center">TANDA TANGAN</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -109,7 +109,7 @@
                             <td class="text-center">{{ $p->nomor_pc }}.</td>
                             <td class="text-center">{{ $p->nis }}</td>
                             <td class="upper huruf">{{ $p->nama_peserta }}</td>
-                            <td>{{ $p->kelas }}</td>
+                            <td class="text-center">{{ $p->kelas }}</td>
                             @if ($ttd % 2 == 0)
                                 <td class="text-center">{{ $ttd++ }}.</td>
                             @else

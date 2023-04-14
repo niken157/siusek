@@ -14,14 +14,14 @@
             <label for="exampleFormControlInput1" class="form-label">NAMA RUANGAN</label>
             <div class="input-group">
             <input name="nama_ruangan" value="{{ old('nama_ruangan') }}" type="text" class="form-control @error('nama_ruangan') is-invalid @enderror" id="exampleFormControlInput1" placeholder="Masukkan Nama Ruangan"required>
-            <i class="form-label">Contoh : R.1</i>
+
             @error('nama_ruangan')
                 <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
                 </span>
             @enderror
             </div>
-
+<i class="form-label">Contoh : R.1</i>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">KETERANGAN</label>
@@ -52,11 +52,14 @@
         </div>
         <div class="mb-3">
             <label for="keterangan">KETERANGAN:</label>
+            <div class="input-group">
             <select name="keterangan" required="reqired" class="form-select" id="keterangan">
             <option value="ya">Ruangan Di Pakai</option>
             <option value="tidak">Ruangan Tidak Di Pakai</option>
             </select>
         </div>
+        <i class="form-label">*jika ruangan tidak dipakai pilih "ruangan tidak dipakai". jika memilih "ruangan tidak dipakai" maka pc diruangan ini tidak akan tersedia</i>
+    </div>
         <input type="hidden" name="created_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="hidden" name="updated_at" value="<?php echo date('Y-m-d h:i:s'); ?>">
         <input type="submit" value="SIMPAN DATA" class="btn btn-primary">

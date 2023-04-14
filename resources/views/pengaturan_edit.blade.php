@@ -4,7 +4,7 @@
 <br>
 <div class="card">
     <div class="card-header">
-      <h3>PENGATURAN WEB</h3>
+      <h3>PENGATURAN UJIAN</h3>
     </div>
     <div class="card-body">
       <?php

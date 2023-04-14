@@ -126,6 +126,8 @@ class UjianController extends Controller
              'ttd' => $signature,
             'pengawas' => $request->pengawas,
             'nip' => $request->nip,
+            'hari' => $request->hari,
+            'tanggal' => $request->tanggal,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);
@@ -157,9 +159,11 @@ class UjianController extends Controller
             'tdk_hadir' => $request->tdk_hadir,
             'nama' => $request->nama[$row],
             'catatan' => $request->catatan,
-             'ttd' => $signature,
+            'ttd' => $signature,
             'pengawas' => $request->pengawas,
             'nip' => $request->nip,
+            'hari' => $request->hari,
+            'tanggal' => $request->tanggal,
             'created_at' => $request->created_at,
             'updated_at' => $request->updated_at
         ]);
