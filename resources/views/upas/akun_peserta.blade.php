@@ -2,6 +2,8 @@
 @extends('template')
 
 @section('content')
+@include('sweetalert::alert')
+
 <style>
     .upper { text-transform: uppercase; }
 </style>
@@ -12,7 +14,7 @@
             <span style=" font-size: 1cm;">
             DATA AKUN PESERTA
             <span style="float: right">
-            <a class="align-items-center justify-content-between btn btn-secondary" onclick="return confirm('Apakah Anda Yakin Mengenerate Semua Data? Mengenerate Data Mengakibatkan Data Yang Sudah Ada Terhapus!')" href="/akun_peserta/generate" role="button"><i class="fas fa-fw fa-gear"></i> Generate</a>
+            <a class="align-items-center justify-content-between btn btn-secondary" onclick="return confirm('Apakah Anda Yakin Mengenerate Semua Data?')" href="/akun_peserta/generate" role="button"><i class="fas fa-fw fa-gear"></i> Generate</a>
             <a class="align-items-center justify-content-between btn btn-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Semua Data?')" href="/akun_peserta/hapus_semua" role="button"><i class="fas fa-fw fa-trash"></i> Semua</a>
         </div>
         <div class="card-body">

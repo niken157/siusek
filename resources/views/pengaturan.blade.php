@@ -2,6 +2,7 @@
 
 @section('content')
 <br>
+@include('sweetalert::alert')
 <div class="card">
     <div class="card-header">
       <h3>PENGATURAN UJIAN</h3>

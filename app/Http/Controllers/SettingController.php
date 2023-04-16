@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SettingController extends Controller
 {
@@ -100,6 +101,7 @@ class SettingController extends Controller
         }
 
     //alihkan ke halaman home
+    alert()->success('Perubahan Berhasil','Pengaturan Berhasil di Ubah.');
     return redirect('/pengaturan');
     }
 

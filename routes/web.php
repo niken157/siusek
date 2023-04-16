@@ -7,6 +7,7 @@ use App\Http\Controllers\UjianController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BackupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,11 +24,14 @@ Route::get('/ttd', function () {
     return view('ttd');
 });
 Route::get('/download-backup', function () {
-    $folderPath = public_path('upload/');
-    $signature = uniqid();
-    $file = $folderPath . $signature;
+    $file = storage_path('app/laravel-backup/' . config('backup.backup.name'));
+
     return response()->download($file);
 })->name('download-backup');
+Route::get('/backup', [BackupController::class, 'index']);
+// Route::get('/backup/create', 'BackupController@create');
+// Route::get('/backup/download/{file_name}', 'BackupController@download');
+// Route::get('/backup/delete/{file_name}', 'BackupController@delete');
 //berita acara
 Route::get('/berita', [UjianController::class, 'berita']);
 Route::get('/berita_acara/{nama_ruangan}/{nama_sesi}', [UjianController::class, 'berita_acara']);

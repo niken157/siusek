@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('ttd');
             $table->string('pengawas');
             $table->string('nip');
+            $table->string('hari');
+            $table->date('tanggal');
             $table->timestamps();
         });
     }

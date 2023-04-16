@@ -9,6 +9,7 @@ use App\Exports\PesertaExport;
 use App\Imports\PesertaImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Peserta;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PesertaController extends Controller
 {
@@ -103,20 +104,59 @@ class PesertaController extends Controller
     }
     public function generate(Request $request)
     {
-        DB::table('upas')->truncate();
+    //     DB::table('upas')->truncate();
+    //     $setting = DB:: table('setting') ->first();
+    //     $u = DB::table('peserta')
+    //     ->orderBy('id_peserta', 'desc')
+    //         ->first();
+    //     $no=1;
+    //     $peserta=DB::table('peserta')
+    //             ->leftJoin('upas','upas.id_peserta','=','peserta.id_peserta')
+    //             ->select('peserta.id_peserta AS id_peserta_upas','peserta.id_peserta')
+    //             ->whereNull('upas.id_peserta')
+    //             ->get();
+    //         for ($x = 0; $x <= $u->id_peserta; $x++) {
+    //             $peserta = DB::table('peserta')
+    //                  ->where('id_peserta', 'id_peserta')
+    //                 ->get();
+    //                 foreach ($peserta as $key) {
+    //                     $id_peserta= $key->id_peserta;
+    //                 }
+    //             if ($setting->tipe_user == 'random') {
+    //                 $user = 'abcdefghijklmnopqrstuvwxyz123456789';
+    //                 $usern  = substr(str_shuffle($user), 0, $setting->jumlah_pass);
+    //             }else{
+    //                 $usern='nis';
+    //             }
+    //             if ($setting->tipe_pass == 'Angka') {
+    //                 $ps = '123456789';
+    //             } else if ($setting->tipe_pass == 'Kombinasi') {
+    //                 $ps = 'abcdefghijklmnopqrstuvwxyz123456789';
+    //             } else {
+    //                 $ps = 'abcdefghijklmnopqrstuvwxyz';
+    //             }
+    //             $peserta = DB::table('peserta')->get();
+    //             $created_at=date('Y-m-d h:i:s');
+    //             $updated_at=date('Y-m-d h:i:s');
+    //             $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
+    //     DB::table('upas')->insert([
+    //         'id_peserta' => $no++,
+    //         'username' => $usern,
+    //         'pass' => $pss,
+    //         'created_at' => $created_at,
+    //         'updated_at' => $updated_at
+    //     ]);
+    // }
+    //     return redirect('/akun_peserta')
+    //     ->with('success','Post updated successfully');
         $setting = DB:: table('setting') ->first();
-        $u = DB::table('peserta')
-        ->orderBy('id_peserta', 'desc')
-            ->first();
-        $no=1;
-        //Kodingan kok RA OLEH Bahasa Indo WKWKWK
-            for ($x = 0; $x <= $u->id_peserta; $x++) {
-                $peserta = DB::table('peserta')
-                     ->where('id_peserta', 'id_peserta')
-                    ->get();
-                    foreach ($peserta as $key => $value) {
-                        $id_peserta= $key->id_peserta;
-                    }
+        $peserta=DB::table('peserta')
+                ->leftJoin('upas','upas.id_peserta','=','peserta.id_peserta')
+                ->select('peserta.id_peserta AS id_peserta_upas','peserta.id_peserta')
+                ->whereNull('upas.id_peserta')
+                ->get();
+                    foreach ($peserta as $p) {
+
                 if ($setting->tipe_user == 'random') {
                     $user = 'abcdefghijklmnopqrstuvwxyz123456789';
                     $usern  = substr(str_shuffle($user), 0, $setting->jumlah_pass);
@@ -130,20 +170,26 @@ class PesertaController extends Controller
                 } else {
                     $ps = 'abcdefghijklmnopqrstuvwxyz';
                 }
-                $peserta = DB::table('peserta')->get();
+
                 $created_at=date('Y-m-d h:i:s');
                 $updated_at=date('Y-m-d h:i:s');
                 $pss  = substr(str_shuffle($ps), 0, $setting->jumlah_pass);
-        DB::table('upas')->insert([
-            'id_peserta' => $no++,
+                $data[]=[
+                    'id_peserta' => $p->id_peserta,
             'username' => $usern,
             'pass' => $pss,
             'created_at' => $created_at,
             'updated_at' => $updated_at
-        ]);
+                ];
     }
-        return redirect('/akun_peserta')
-        ->with('success','Post updated successfully');
+
+    if ($peserta->isEmpty()) {
+        Alert::warning('Tidak Ada Proses', 'Semua Peserta Sudah Tergenerate');
+    } else{
+        DB::table('upas')->insert($data);
+        alert()->success('Proses Berhasil','Semua Akun Peserta Telah Digenerate.');
+    }
+        return redirect('/akun_peserta');
     }
 	// method untuk edit data peserta
 	public function edit($id_peserta)
@@ -212,13 +258,13 @@ class PesertaController extends Controller
     public function hapus_s()
 	{
 		DB::table('peserta')->truncate();
-
+        alert()->info('Berhasil Menghapus','Data Semua Peserta Telah Berhasil Dihapus');
 		return redirect('/peserta');
 	}
     public function hapus_all()
 	{
 		DB::table('upas')->truncate();
-
+        alert()->info('Berhasil Menghapus','Data Semua Akun Peserta Telah Berhasil Dihapus');
 		return redirect('/akun_peserta');
 	}
 }

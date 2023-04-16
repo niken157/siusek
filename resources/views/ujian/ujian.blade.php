@@ -2,6 +2,7 @@
 @extends('template')
 
 @section('content')
+@include('sweetalert::alert')
 <style>
     .upper { text-transform: uppercase; }
 </style>
@@ -14,7 +15,7 @@
             <a class="align-items-center justify-content-between btn btn-warning" href="/kartu" target="_blank" role="button"><i class="fa-solid fa-print" title="cetak kartu semua peserta"></i> Cetak Kartu</a>
             <a class="align-items-center justify-content-between btn btn-primary" href="/kartu_peserta/tambah" role="button"><i class="fas fa-fw fa-plus"></i> Tambah Data</a>
             <a class="align-items-center justify-content-between btn btn-danger" onclick="return confirm('Apakah Anda Yakin Menghapus Semua Data?')" href="/kartu_peserta/hapus_semua" role="button"><i class="fas fa-fw fa-trash"></i> Semua</a>
-            <a class="align-items-center justify-content-between btn btn-secondary" onclick="return confirm('Apakah Anda Yakin Mengenerate Semua Data? Mengenerate Data Mengakibatkan Data Yang Sudah Ada Terhapus!')" href="/kartu_peserta/generate" role="button"><i class="fas fa-fw fa-gear"></i> Generate</a>
+            <a class="align-items-center justify-content-between btn btn-secondary" onclick="return confirm('Apakah Anda Yakin Mengenerate Semua Data?')" href="/kartu_peserta/generate" role="button"><i class="fas fa-fw fa-gear"></i> Generate</a>
 
         </div>
         <div class="card-body table-responsive">

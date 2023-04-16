@@ -129,7 +129,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
                                 Cetak Ruangan
                             </a> --}}
-                            <a class="nav-link" href="{{ route('download-backup') }}">
+                            <a class="nav-link" href="/backup">
                                 <div class="sb-nav-link-icon"><i class="fas fa-download"></i></div>
                                 Backup DataBase
 
