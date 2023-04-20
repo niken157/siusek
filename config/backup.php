@@ -105,21 +105,20 @@ return [
          */
         'database_dump_file_extension' => '',
 
-         'destination' => 'local',
-        //[
+        'destination' => [
 
-        //     /*
-        //      * The filename prefix used for the backup zip file.
-        //      */
-        //     'filename_prefix' => '',
+            /*
+             * The filename prefix used for the backup zip file.
+             */
+            'filename_prefix' => '',
 
-        //     /*
-        //      * The disk names on which the backups will be stored.
-        //      */
-        //     'disks' => [
-        //         'local',
-        //     ],
-        //],
+            /*
+             * The disk names on which the backups will be stored.
+             */
+            'disks' => [
+                'local',
+            ],
+        ],
 
         /*
          * The directory where the temporary files will be stored.

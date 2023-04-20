@@ -100,6 +100,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Data Peserta
                             </a>
+                            <a class="nav-link" href="/kelas">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Data Kelas
+                            </a>
                             <a class="nav-link" href="/ruangan">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Data Ruangan

@@ -442,7 +442,7 @@ class UjianController extends Controller
         // echo "<pre>";
         // var_dump($data);
         // echo "</pre>";
-
+        DB::table('ujian')->truncate();
         $ruangan = DB::table('ruangan')
             ->where('keterangan', '=', 'ya')
             ->get();

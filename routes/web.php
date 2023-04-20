@@ -8,6 +8,7 @@ use App\Http\Controllers\SesiController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BackupController;
+use App\Http\Controllers\KelasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +24,9 @@ use App\Http\Controllers\BackupController;
 Route::get('/ttd', function () {
     return view('ttd');
 });
-Route::get('/download-backup', function () {
-    $file = storage_path('app/laravel-backup/' . config('backup.backup.name'));
-
-    return response()->download($file);
-})->name('download-backup');
+//backup
 Route::get('/backup', [BackupController::class, 'index']);
-// Route::get('/backup/create', 'BackupController@create');
-// Route::get('/backup/download/{file_name}', 'BackupController@download');
-// Route::get('/backup/delete/{file_name}', 'BackupController@delete');
+Route::get('/backup-database', [BackupController::class, 'backup']);
 //berita acara
 Route::get('/berita', [UjianController::class, 'berita']);
 Route::get('/berita_acara/{nama_ruangan}/{nama_sesi}', [UjianController::class, 'berita_acara']);
@@ -77,6 +72,13 @@ Route::get('/cetak_ruangan/pengawas', [RuanganController::class, 'pengawas']);
 Route::get('/cetak_ruangan/panitia', [RuanganController::class, 'panitia']);
 Route::get('/cetakruangan/{id_ruangan}', [RuanganController::class, 'cetakruangan']);
 Route::get('/cetak_amplop/{id_ruangan}', [RuanganController::class, 'cetak_amplop']);
+//halaman kelas
+Route::get('/kelas', [KelasController::class, 'index']);
+Route::get('/kelas/tambah', [KelasController::class, 'create']);
+Route::post('/kelas/store', [KelasController::class, 'store']);
+Route::get('/kelas/edit/{id_kelas}', [KelasController::class, 'edit']);
+Route::post('/kelas/update', [KelasController::class, 'update']);
+Route::get('/kelas/hapus/{id_kelas}', [KelasController::class, 'hapus']);
 //halaman sesi
 Route::get('/sesi', [SesiController::class, 'index']);
 Route::get('/sesi/tambah', [SesiController::class, 'create']);

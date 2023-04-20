@@ -7,7 +7,7 @@
       <h3>BACKUP DATABASE</h3>
     </div>
     <div class="card-body">
-            <a class="btn btn-primary" href="#" role="button"><i class="fas fa-download"></i> Download</a>
+            <a class="btn btn-primary" href="/backup-database" role="button"><i class="fas fa-download"></i> Download</a>
         </div>
   </div>
   @endsection

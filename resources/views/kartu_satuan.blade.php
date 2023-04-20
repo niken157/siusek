@@ -45,7 +45,7 @@
     </tr>
     <tr>
       <th scope="row">KELAS </th>
-      <td>: {{ $u->kelas }} {{ $u->jurusan }}</td>
+      <td>: {{ $u->kelas }}</td>
     </tr>
     <tr>
       <th scope="row">  Username </th>

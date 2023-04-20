@@ -31,31 +31,44 @@
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Hasil &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
-                        <input type="text" id="total_sesi" class="form-control" value="{{ ceil($jumlah_sesi) }}" aria-label="Server">
+                        <input type="text" id="total_sesi" readonly class="form-control" value="{{ ceil($jumlah_sesi) }}" aria-label="Server">
                         <span class="input-group-text">Sesi</span>
                       </div>
                 </div>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $("#jumlah_peserta, #jumlah_pc, #ingin_sesi").keyup(function() {
+                            var jumlah_pc  = $("#jumlah_pc").val();
+                            var jumlah_peserta = $("#jumlah_peserta").val();
+
+                            var total_sesi = parseInt(jumlah_peserta) / parseInt(jumlah_pc);
+                            $("#total_sesi").val(Math.ceil(total_sesi));
+
+                            var ingin_sesi  = $("#ingin_sesi").val();
+                            var pc_dibutuhkan = parseInt(jumlah_peserta) / parseInt(ingin_sesi);
+                            $("#pc_dibutuhkan").val(Math.ceil(pc_dibutuhkan));
+
+                            var pc_kurang = parseInt(Math.ceil(pc_dibutuhkan)) - parseInt(jumlah_pc);
+                            $("#pc_kurang").val(Math.ceil(pc_kurang));
+                        });
+                    });
+                </script>
                 <div class="col">
-                    <table class="table">
-                        <tbody>
-                          <tr>
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Jumlah PC yang ada</span>
-                                <input type="text" id="jumlah_semua_pc" class="form-control" readonly value="{{ $jumlah_semua_pc }}" aria-label="Server">
+                                <span class="input-group-text">Jumlah Sesi Yang Diinginkan</span>
+                                <input type="text" id="ingin_sesi" class="form-control" aria-label="Server">
+                                <span class="input-group-text">Sesi</span>
                             </div>
-                          </tr>
-                          <tr>
-                            <td>Jumlah Yang Dibutuhkan</td>
-                            <td>=</td>
-                            <td> <input type="text" id="jumlah_pc" class="form-control" readonly aria-label="Server"></td>
-                          </tr>
-                          <tr>
-                            <td>Kekurangan</td>
-                            <td>=</td>
-                            <td> <input type="text" id="kurang_pc" class="form-control" readonly  aria-label="Server"></td>
-                          </tr>
-                        </tbody>
-                      </table>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Jumlah PC yang dibutuhkan</span>
+                                <input type="text" id="pc_dibutuhkan" readonly class="form-control" aria-label="Server">
+                                <span class="input-group-text">PC</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">PC kurang &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                                <input type="text" id="pc_kurang" readonly class="form-control" aria-label="Server">
+                                <span class="input-group-text">PC</span>
+                              </div>
                 </div>
               </div>
             <table class="table table-striped table-hover" id="datatablesSimple">
@@ -90,18 +103,5 @@
         </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#jumlah_peserta, #jumlah_pc").keyup(function() {
-            var jumlah_pc  = $("#jumlah_pc").val();
-            var jumlah_peserta = $("#jumlah_peserta").val();
-            var jumlah_semua_pc = $("#jumlah_semua_pc").val();
-            var kurang_pc = parseInt(jumlah_pc) - parseInt(jumlah_semua_pc);
-
-            var total_sesi = parseInt(jumlah_peserta) / parseInt(jumlah_pc);
-            $("#total_sesi").val(Math.ceil(total_sesi));
-        });
-    });
-</script>
 
 @endsection
