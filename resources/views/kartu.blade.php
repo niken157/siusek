@@ -21,7 +21,8 @@
     .div {
         margin-left: 15px;
         /* height: 10cm; */
-        width: 6cm;
+        width: 8cm;
+        height: 4cm;
         /* margin-bottom: 0px; */
     }
     td {

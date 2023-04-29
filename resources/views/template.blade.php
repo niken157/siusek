@@ -133,11 +133,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-print"></i></div>
                                 Cetak Ruangan
                             </a> --}}
-                            <a class="nav-link" href="/backup">
+                            {{-- <a class="nav-link" href="/backup">
                                 <div class="sb-nav-link-icon"><i class="fas fa-download"></i></div>
                                 Backup DataBase
 
-                            </a>
+                            </a> --}}
                             <div class="sb-sidenav-menu-heading">Setting</div>
                             <a class="nav-link" href="/pengaturan">
                                 <div class="sb-nav-link-icon"><i class="fas fa-gear"></i></div>
