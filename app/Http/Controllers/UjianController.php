@@ -9,6 +9,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 class UjianController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
             $ujian = DB::table('peserta')

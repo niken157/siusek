@@ -13,6 +13,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class PesertaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 	public function index()
 	{
     	// mengambil data dari table peserta
@@ -29,6 +33,7 @@ class PesertaController extends Controller
     public function import()
     {
         Excel::import(new PesertaImport,request()->file('file'));
+        alert()->success('Proses Berhasil','Berhasil Mengimport Data.');
         return back();
     }
     public function export()

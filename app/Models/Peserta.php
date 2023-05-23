@@ -9,5 +9,5 @@ class Peserta extends Model
 {
     use HasFactory;
     protected $table = "peserta";
-    protected $fillable = ['id_peserta','nis','nama_peserta','kelas','jenis_kelamin','agama','created_at','updated_at'];
+    protected $fillable = ['id_peserta','nis','nama_peserta','kelas','jenis_kelamin','agama'];
 }

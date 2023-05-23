@@ -18,6 +18,6 @@ class PesertaExport implements FromCollection, WithHeadings
     }
     public function headings(): array
     {
-        return ["id_peserta","nis","nama_peserta","kelas","jenis_kelamin","agama","created_at","updated_at"];
+        return ["No","NIS","Nama Peserta","Kelas","Jenis Kelamin","Agama","created_at","updated_at"];
     }
 }

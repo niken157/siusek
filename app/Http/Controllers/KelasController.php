@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Validator;
 
 class KelasController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $kelas = DB:: table('kelas') ->get();
